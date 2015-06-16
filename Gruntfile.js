@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         },
         files: [{
           '<%= meta.build %>css/style.css': '<%= meta.assets %>css/style.less',
-          '<%= meta.build %>css/bootstrap.css': '<%= meta.assets %>css/bootstrap/bootstrap.less',        
+          '<%= meta.build %>css/bootstrap.css': '<%= meta.assets %>css/bootstrap/bootstrap.less',
           '<%= meta.build %>css/booking-style.css': '<%= meta.assets %>css/booking-style.less',
           '<%= meta.build %>css/ie.css': '<%= meta.assets %>css/ie.less',
           '<%= meta.build %>css/print.css': '<%= meta.assets %>css/print.less'
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
           '<%= meta.build %>js/app.js': ['<%= meta.assets %>js/ng/app.js','<%= meta.assets %>js/ng/**/*.js'],
           '<%= meta.build %>js/l10n.js': '<%= meta.assets %>js/l10n.js',
           '<%= meta.build %>js/script.js': ['<%= meta.assets %>js/site.js', '<%= meta.assets %>js/plugins/*.js'],
-          '<%= meta.build %>js/booking-scripts.js': ['<%= meta.assets %>js/plugins/booking-*.js']
+          '<%= meta.build %>js/booking-scripts.js': ['<%= meta.assets %>js/plugins/booking-*.js'],
         }]
       }
     },
@@ -281,7 +281,7 @@ module.exports = function(grunt) {
   });
   grunt.file.expand('./node_modules/grunt-*/tasks').forEach(grunt.loadTasks);
   require('time-grunt')(grunt);
-  grunt.registerTask('build', ['clean', 'concat', 'less', 'jade', 'copy', 'autoprefixer', 'htmlhint', 'jshint', 'csslint']);
+  grunt.registerTask('build', ['clean', 'concat', 'less', 'jade', 'copy', 'autoprefixer', 'htmlhint', 'jshint'/*, 'csslint'*/]);
   grunt.registerTask('default', ['build', 'concurrent:dev']);
   grunt.registerTask('test', ['connect:server', 'qunit']);
   grunt.registerTask('pdf', ['markdownpdf']);

@@ -4,7 +4,7 @@ var path = require('path');
 var bodyParser = require('body-parser')
 var app = express();
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3333;
 app.set('port', port);
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade');

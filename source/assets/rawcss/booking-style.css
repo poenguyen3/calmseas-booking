@@ -1,0 +1,4657 @@
+body, html {
+    background-color: #F5F5F5;
+    height: 100%
+}
+
+.fb-dark-bg {
+    background-color: #242424;
+    color: #F5F5F5
+}
+
+.fb-light-bg {
+    background-color: #FFF;
+    color: #333
+}
+
+.fb-gray-bg {
+    background-color: #F5F5F5
+}
+
+.fb-dark-bg>.fb-gray {
+    color: #939393
+}
+
+.fb-light-bg>.fb-gray {
+    color: #B3B3B3
+}
+
+.fb-dark-gray {
+    color: gray
+}
+
+.fb-light-gray {
+    color: #999
+}
+
+.fb-container {
+    padding: 0
+}
+
+.fb-loading {
+    width: 100%;
+    height: 100%;
+    padding: 15% 20px 20px;
+    text-align: center;
+    vertical-align: middle;
+    opacity: .6;
+    filter: alpha(opacity=60)
+}
+
+#fb-main-container {
+    margin-bottom: 5px
+}
+
+.fb-action, .fb-action-rounded {
+    background-color: #A59169;
+    color: #FFF
+}
+
+button.fb-action {
+    border-radius: 0
+}
+
+.fb-price-amount {
+    text-align: right;
+    white-space: nowrap
+}
+
+.fb-price-amount span.fb-price {
+    font-weight: 700
+}
+
+.fb-price .fb-price-currency:after {
+    content: " "
+}
+
+.fb-price-params {
+    color: gray;
+    text-align: right
+}
+
+.fb-price-second {
+    display: none
+}
+
+.fb-price .fb-translate {
+    font-weight: 400;
+    color: #666;
+    font-size: 11pt
+}
+
+body.group .fb-price-second, body.results #fb-results .fb-price-second {
+    display: inline-block
+}
+
+a, a:active, a:hover, a:visited {
+    color: #A59169
+}
+
+.container {
+    width: 100%
+}
+
+.fb-disp-table {
+    display: table
+}
+
+.message {
+    margin-top: 20px
+}
+
+.fb-block-header {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 13pt
+}
+
+.fb-hidden {
+    display: none
+}
+
+.fb-clear {
+    clear: both
+}
+
+.fb-modal-layer {
+    display: none;
+    position: fixed!important;
+    margin: 0!important;
+    z-index: 1001!important;
+    bottom: 0!important;
+    top: 0!important;
+    left: 0!important;
+    min-height: 100%!important;
+    width: 100%!important;
+    height: 100%!important
+}
+
+.fb-modal-layer-inner {
+    overflow: auto;
+    width: 100%!important;
+    height: 100%!important
+}
+
+.fb-left {
+    text-align: left
+}
+
+.fb-right {
+    text-align: right
+}
+
+.fb-modal-layer-last {
+    padding-bottom: 60px
+}
+
+.fb-message {
+    padding: 20px
+}
+
+.fb-error {
+    color: #BC4141
+}
+
+.fb-pointer {
+    cursor: pointer
+}
+
+.fb-message.fb-error>.fb-message-inner {
+    border: 1px solid #BC4141
+}
+
+.fb-message.fb-error>.fb-message-inner>.fb-message-picto {
+    background-color: #BC4141;
+    color: #FFF
+}
+
+.fb-message-inner>.fb-message-picto {
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 50px;
+    padding: 10px;
+    height: 100%;
+    position: absolute
+}
+
+.fb-message-inner>.fb-message-text {
+    padding: 15px
+}
+
+a.fb-print-link, a.fb-print-link:hover {
+    color: #FFF;
+    text-decoration: none
+}
+
+#fb-basket:empty, #fb-cancel:empty, #fb-confirmbutton:empty, #fb-confirmrecap:empty, #fb-datacollect:empty, #fb-extras:empty, #fb-group:empty, #fb-guarantee:empty, #fb-hoteldetails:empty, #fb-localize:empty, #fb-messages:empty, #fb-recap:empty, #fb-results:empty, #fb-roomdetails:empty {
+    display: none
+}
+
+.fb-welcome {
+    padding-bottom: 15px;
+    font-size: 20pt
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue';
+    font-size: 1.5em;
+    transition: all .2s linear;
+    -o-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear
+}
+
+.fb-font-light, .fb-font-thin {
+    font-family: 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+}
+
+.fb-font-bold {
+    font-family: 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue';
+    font-weight: 700
+}
+
+.fb-font-regular {
+    font-family: 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+}
+
+.nowrap {
+    white-space: nowrap
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.fb-step:not(.fb-left):not(.fb-right) {
+    text-align: center
+}
+
+#fb-group {
+    display: table;
+    width: 100%;
+    margin-top: -5px
+}
+
+#fb-group-loader {
+    display: none
+}
+
+#fb-group-loader .progress-bar {
+    background-color: #A59169
+}
+
+.fb-group-header .fb-results-welcome {
+    padding: 0
+}
+
+#fb-group-filters-caret {
+    float: right;
+    font-size: 12pt;
+    margin-top: 10pt;
+    cursor: pointer;
+    font-family: mplus-1p-bold, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue';
+    text-transform: uppercase;
+    color: #000;
+    margin-right: 10px
+}
+
+#fb-group-filters-caret.active .fa-caret-down, #fb-group-filters-caret:not(.active) .fa-caret-up, .fb-group-filters:empty {
+    display: none
+}
+
+#applied-filters-button, #applied-filters-button:active, #applied-filters-button:hover {
+    border: 1px solid #C4C4C4;
+    background-color: #fff;
+    position: relative;
+    padding: 5px 10px;
+    padding-right: 55px;
+    color: #A59169;
+    visibility: hidden;
+    text-decoration: none;
+    outline: 0;
+    margin-top: -36px
+}
+
+#applied-filters-button img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: auto
+}
+
+#fb-group-sort-form input[type=radio], #fb-group-sort-form label {
+    margin-left: 10px;
+    text-transform: Capitalize;
+    cursor: pointer
+}
+
+#fb-group-sort-form span.sort-by-label {
+    margin-bottom: 5px;
+    display: inline-block
+}
+
+.fb-filters-form {
+    border-bottom: 1px solid #C4C4C4;
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    border-top: 1px solid #C4C4C4;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0
+}
+
+.fb-group-filters>div {
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+
+.fb-group-map {
+    height: 400px
+}
+
+#.fb-group-list {
+    display: table
+}
+
+body.group {
+    overflow: auto!important
+}
+
+#fb-group-list-fade-layer {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 999;
+    -ms-filter: "alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0
+}
+
+.fb-group-view-switcher {
+    padding-top: 10px
+}
+
+.fb-group-view-switcher .btn-group {
+    padding-left: 0;
+    padding-right: 0
+}
+
+.fb-group-view-switcher>.btn-group>button {
+    color: #A59169
+}
+
+.fb-group-view-switcher>.btn-group>button.active {
+    color: gray
+}
+
+#fb-results-alternate-xsell .fb-group-item, #group-items .fb-group-item {
+    border-bottom: 1px solid #C4C4C4;
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 0
+}
+
+#fb-results-alternate-xsell .fb-group-item:empty, #group-items .fb-group-item:empty {
+    display: none
+}
+
+#fb-results-alternate-xsell .fb-group-item:first-child, #group-items .fb-group-item:first-child {
+    margin-top: 20px
+}
+
+#fb-results-alternate-xsell .fb-group-item:last-child, #group-items .fb-group-item:last-child {
+    margin-bottom: 60px
+}
+
+#fb-results-alternate-xsell .fb-group-item-title, #group-items .fb-group-item-title {
+    padding: 10px
+}
+
+#group-items .gm-style .fb-group-infowindow {
+    font-family: mplus-1p-regular, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+}
+
+#group-items .gm-style .fb-results-price {
+    font-size: 16px
+}
+
+#group-items .gm-style .fb-group-item-title {
+    font-size: 12px
+}
+
+#fb-results-alternate-xsell .fb-group-item-photo, #group-items .fb-group-item-photo {
+    height: 100px
+}
+
+#fb-results-alternate-xsell .fb-group-item-desc, #group-items .fb-group-item-desc {
+    padding: 10px 0 20px
+}
+
+#fb-results-alternate-xsell .fb-group-item-desc .fb-group-hotel-desc, #group-items .fb-group-item-desc .fb-group-hotel-desc {
+    display: block;
+    max-height: 200px;
+    padding-bottom: 10px
+}
+
+.fb-group-item-button, .fb-group-item-pricing {
+    padding: 10px 0 20px
+}
+
+.fb-group-item-button {
+    right: 15px
+}
+
+.fb-group-item-pricing:empty {
+    visibility: hidden
+}
+
+#fb-group-map .fb-group-item-pricing {
+    margin-bottom: -13px
+}
+
+.fb-group-infowindow-close {
+    float: right;
+    position: relative;
+    padding: 8px;
+    cursor: pointer
+}
+
+.fb-group-item-pricing>div>div:first-child {
+    padding-bottom: 15px
+}
+
+body.results .fb-group-unavailable {
+    display: none
+}
+
+#fb-results-alternate-xsell .fb-group-item-pricing .fb-results-price {
+    padding: 0 15px
+}
+
+#thawteseal {
+    padding-top: 15px
+}
+
+.fb-btn-restart, .fb-social-buttons {
+    margin-top: 15px
+}
+
+a.btn-facebook {
+    background-color: #4C66A4;
+    color: #FFF;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif
+}
+
+a.btn-twitter {
+    background-color: #39D;
+    color: #FFF;
+    font-family: 'Helvetica Neue', Arial, 'lucida grande', sans-serif
+}
+
+#fb-currency-notice {
+    color: gray;
+    text-align: left;
+    font-size: 11pt
+}
+
+.fb-carousel-path {
+    height: 124px;
+    margin-top: 20px;
+    overflow-x: hidden
+}
+
+.fb-carousel-path-item {
+    border: 2px solid transparent;
+    cursor: pointer;
+    position: relative;
+    float: left
+}
+
+.fb-carousel-path-item.active {
+    border: 2px solid #fff
+}
+
+.fb-path-grid-item {
+    margin: 5px
+}
+
+.fb-carousel-path-image {
+    background-attachment: scroll, scroll;
+    background-clip: border-box, border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-origin: padding-box, padding-box;
+    background-position: 0 100%, 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90px;
+    width: 110px
+}
+
+.fb-dialog-head-xs {
+    position: absolute
+}
+
+.fb-dialog-head-xs>button {
+    margin-right: 15px;
+    position: absolute;
+    right: 0;
+    z-index: 15
+}
+
+.fb-accommodation-images {
+    padding-left: 0;
+    padding-right: 0
+}
+
+.fb-carousel-image {
+    background-attachment: scroll, scroll;
+    background-clip: border-box, border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-origin: padding-box, padding-box;
+    background-position: 0 100%, 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative
+}
+
+.fb-carousel-image, .fb-results-acc-photo {
+    height: 175px
+}
+
+.fb-carousel-image.fb-details {
+    height: 250px
+}
+
+.carousel-control {
+    bottom: 20px;
+    font-size: 10px;
+    height: 20px;
+    width: 20px;
+    top: 135px
+}
+
+.carousel-control.fb-details {
+    top: 210px
+}
+
+.carousel-control.left {
+    left: auto;
+    right: 32px
+}
+
+.carousel-control.right {
+    right: 10px
+}
+
+.fb-dialog-section-title {
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 20px
+}
+
+.fb-dialog-section-subtitle {
+    color: gray
+}
+
+.fb-dialog-section-text {
+    color: #b3b3b3
+}
+
+#fb-property-accordion, .fb-dialog-topfeatures {
+    margin-top: 20px
+}
+
+#fb-property-details-map {
+    height: 250px
+}
+
+#fb-st-container, #fb-st-container2 {
+    margin-top: 20px
+}
+
+.modal.fb-modal-msg .modal-content {
+    border-radius: 0
+}
+
+.modal.fb-modal-msg>.modal-dialog {
+    width: 300px
+}
+
+.modal.fb-modal-msg .modal-header {
+    font-size: 16pt
+}
+
+.modal.fb-modal-msg .modal-footer>button.btn-default {
+    background-color: #A59169;
+    border: 0 none;
+    border-radius: 0;
+    color: #FFF;
+    font-size: inherit
+}
+
+@media all and (min-width:600px) {
+    .font-light, body {
+        font-family: 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+    }
+    .font-bold {
+        font-family: 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue';
+        font-weight: 700
+    }
+    .font-regular {
+        font-family: 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+    }
+    #fb-group-map {
+        height: 600px;
+        border-right: 1px solid #C4C4C4
+    }
+    .fb-group-header {
+        padding-top: 20px
+    }
+    #fb-results-alternate-xsell .fb-group-item-photo, #group-items .fb-group-item-photo {
+        height: 120px
+    }
+    .fb-group-view-switcher {
+        padding-top: 0
+    }
+    .fb-group-item .fb-group-item-pricing {
+        position: absolute;
+        background-color: #fff;
+        color: #333;
+        bottom: 110px;
+        height: 76px;
+        right: 15px
+    }
+    .fb-group-item {
+        position: relative
+    }
+    .fb-group-item .fb-group-item-pricing .fb-results-price {
+        padding-right: 15px
+    }
+    .fb-group-item .fb-property-price-unavailable {
+        background-color: rgba(36, 36, 36, .65);
+        text-align: right;
+        font-style: italic;
+        color: #fff
+    }
+    #fb-group-loader {
+        display: block;
+        z-index: 999;
+        position: relative;
+        width: 100%;
+        height: 3px;
+        top: -4px;
+        margin-bottom: -3px
+    }
+    body.group .fb-price-second {
+        clear: both;
+        display: block;
+        float: right;
+        margin-right: -14px;
+        width: 100%
+    }
+    body.group .fb-price-second .fb-translate {
+        display: block;
+        float: left;
+        margin-right: 10px
+    }
+    .fb-room-details-link {
+        line-height: 1.8em
+    }
+    .fb-carousel-image, .fb-results-acc-photo {
+        height: 370px
+    }
+    .fb-carousel-image.fb-details {
+        height: 480px
+    }
+    .carousel-control {
+        font-size: 20px;
+        height: 40px;
+        width: 40px;
+        top: 310px
+    }
+    .fb-carousel-path-image {
+        height: 110px;
+        width: 160px
+    }
+    .carousel-control.fb-details {
+        top: 420px
+    }
+    .carousel-control.left {
+        right: 62px
+    }
+    .carousel-control.right {
+        right: 20px
+    }
+    #fb-property-details-map {
+        height: 500px
+    }
+    .fb-btn-restart {
+        margin-top: 40px
+    }
+    .modal.fb-modal-msg>.modal-dialog {
+        width: 650px
+    }
+    .fb-block-header {
+        font-size: 15pt
+    }
+}
+
+@media all and (min-width:960px) {
+    body {
+        background-color: #F5F5F5;
+        color: #333;
+        font-family: Arial, Helvetica, 'Helvetica Neue', 'Segoe UI', Roboto
+    }
+    .font-light {
+        font-family: Arial, Helvetica, 'Helvetica Neue', 'Segoe UI', Roboto
+    }
+    .font-bold {
+        font-family: Arial, Helvetica, 'Helvetica Neue', 'Segoe UI', Roboto;
+        font-weight: 700
+    }
+    .font-regular {
+        font-family: Arial, Helvetica, 'Helvetica Neue', 'Segoe UI', Roboto
+    }
+    #fb-group-map {
+        float: left;
+        width: 50%
+    }
+    #fb-group-list {
+        float: right;
+        width: 50%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch
+    }
+    .fb-carousel-image {
+        height: 370px
+    }
+    .fb-carousel-image.fb-details {
+        height: 480px
+    }
+    .carousel-control {
+        top: 310px
+    }
+    .carousel-control.fb-details {
+        top: 420px
+    }
+    #fb-property-details-map {
+        height: 750px
+    }
+    #fb-collapse-photos .fb-carousel-path-item {
+        margin: 10px
+    }
+    .modal.fb-modal-msg>.modal-dialog {
+        width: 800px
+    }
+}
+
+#arrival, #departure {
+    cursor: pointer
+}
+
+.carousel-control.left, .carousel-control.right {
+    background: none repeat scroll 0 0 #000
+}
+
+.carousel-control .fa-icon-chevron-left, .carousel-control .fa-icon-chevron-right, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+    display: inline-block;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    z-index: 5
+}
+
+.panel-default>.fb-panel-heading {
+    background-color: #242424;
+    color: #F5F5F5;
+    border-color: #C4C4C4;
+    border-radius: 0
+}
+
+.panel-default.fb-panel {
+    border: 0 none;
+    border-radius: 0
+}
+
+.panel-default.fb-panel .panel-body, .panel-default.fb-panel>.panel-heading+.panel-collapse .panel-body {
+    border: 0 none;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0
+}
+
+.panel-default.fb-panel>.panel-heading {
+    border-top: 1px solid #555
+}
+
+.panel-title a, .panel-title a:hover, .panel-title a:visited {
+    color: inherit;
+    text-decoration: none
+}
+
+body {
+    font-family: mplus-1p-regular, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue';
+    font-size: 12pt
+}
+
+.fb-font-light {
+    font-family: mplus-1p-light, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+}
+
+.fb-font-thin {
+    font-family: mplus-1p-thin, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+}
+
+.fb-font-bold {
+    font-family: mplus-1p-bold, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+}
+
+.fb-font-regular {
+    font-family: mplus-1p-regular, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+}
+
+.fb-hotel-stars {
+    font-size: 12pt
+}
+
+.fb-stars-mini {
+    font-size: 8pt
+}
+
+.fb-header-hotel-details {
+    font-size: 12pt
+}
+
+.fb-price-amount>span.fb-price {
+    font-size: 15pt;
+    text-align: right
+}
+
+.fb-price-amount span.fb-price>span.fb-price-currency {
+    font-size: 10pt
+}
+
+.fb-net-price-amount>span.fb-price {
+    font-weight: 400;
+    font-size: 10pt
+}
+
+.fb-price-params, .fb-price-small-text {
+    font-size: 10pt
+}
+
+#group-items .fb-group-header>span.fb-results-welcome, .fb-welcome {
+    font-size: 18pt
+}
+
+.fb-dialog-title {
+    font-size: 24pt
+}
+
+.fb-dialog-subtitle {
+    font-size: 14pt
+}
+
+.panel-title span.fb-translate {
+    font-size: 16pt
+}
+
+.modal.fb-modal-msg .modal-header {
+    font-family: mplus-1p-bold, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+}
+
+@media all and (min-width:600px) {
+    body {
+        font-family: mplus-1p-regular, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+    }
+    .font-light {
+        font-family: mplus-1p-light, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+    }
+    .font-bold {
+        font-family: mplus-1p-bold, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+    }
+    .font-regular {
+        font-family: mplus-1p-regular, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+    }
+    .font-thin {
+        font-family: mplus-1p-thin, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+    }
+}
+
+@media all and (min-width:960px) {
+    body {
+        font-family: mplus-1p-regular, Arial, Helvetica, 'Helvetica Neue', 'Segoe UI', Roboto
+    }
+    .font-light {
+        font-family: mplus-1p-light, Arial, Helvetica, 'Helvetica Neue', 'Segoe UI', Roboto
+    }
+    .font-bold {
+        font-family: mplus-1p-bold, Arial, Helvetica, 'Helvetica Neue', 'Segoe UI', Roboto
+    }
+    .font-regular {
+        font-family: mplus-1p-regular, Arial, Helvetica, 'Helvetica Neue', 'Segoe UI', Roboto
+    }
+    .font-thin {
+        font-family: mplus-1p-thin, Arial, Helvetica, 'Helvetica Neue', 'Segoe UI', Roboto
+    }
+    .container {
+        max-width: 960px;
+        width: 100%
+    }
+    #group-items .fb-group-header>span.fb-results-welcome, .fb-welcome {
+        font-size: 20pt
+    }
+}
+
+#watermark {
+    display: block!important;
+    color: rgba(0, 0, 0, .5)!important;
+    font-size: 100%!important;
+    line-height: 100%!important;
+    background: transparent url(../images/watermark.png) repeat top left!important;
+    background-size: 25%!important;
+    -webkit-transform: rotate(-25deg)!important;
+    -moz-transform: rotate(-25deg)!important;
+    transform-origin: 50% 50%!important;
+    position: fixed!important;
+    margin: 0!important;
+    z-index: 1001!important;
+    top: 0!important;
+    left: -50%!important;
+    width: 200%!important;
+    height: 100%!important;
+    opacity: .1!important;
+    filter: alpha(opacity=10)!important;
+    pointer-events: none!important
+}
+
+.fb-group-filter-options {
+    font-size: 10pt
+}
+
+.filter-form-footer {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0
+}
+
+.filter-form-footer .fa {
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+    cursor: pointer
+}
+
+.loading_dots {
+    font-size: 10px;
+    line-height: 1;
+    display: inline-block
+}
+
+.loading_dots span {
+    border-radius: 100%;
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+    display: inline-block!important;
+    height: .5em;
+    margin: 0 1px;
+    width: .5em;
+    -webkit-animation: loading_dots .8s linear infinite;
+    -moz-animation: loading_dots .8s linear infinite;
+    -ms-animation: loading_dots .8s linear infinite;
+    animation: loading_dots .8s linear infinite;
+    background: #000
+}
+
+.loading_dots.inverse span {
+    background: #fff
+}
+
+.loading_dots span:nth-child(1) {
+    -webkit-animation-delay: .2s;
+    -moz-animation-delay: .2s;
+    -ms-animation-delay: .2s;
+    animation-delay: .2s
+}
+
+.loading_dots span:nth-child(2) {
+    -webkit-animation-delay: .4s;
+    -moz-animation-delay: .4s;
+    -ms-animation-delay: .4s;
+    animation-delay: .4s
+}
+
+.loading_dots span:nth-child(3) {
+    -webkit-animation-delay: .6s;
+    -moz-animation-delay: .6s;
+    -ms-animation-delay: .6s;
+    animation-delay: .6s
+}
+
+@-webkit-keyframes loading_dots {
+    100%, 70% {
+        background: 0 0
+    }
+}
+
+@-moz-keyframes loading_dots {
+    100%, 70% {
+        background: 0 0
+    }
+}
+
+@-ms-keyframes loading_dots {
+    100%, 70% {
+        background: 0 0
+    }
+}
+
+@keyframes loading_dots {
+    100%, 70% {
+        background: 0 0
+    }
+}
+
+.flag {
+    display: none!important;
+    width: 16px;
+    height: 11px;
+    background: url(/images/flags.png) no-repeat;
+    margin-right: .25em;
+    margin-top: .25em
+}
+
+.flag.flag-ad {
+    background-position: -16px 0
+}
+
+.flag.flag-ae {
+    background-position: -32px 0
+}
+
+.flag.flag-af {
+    background-position: -48px 0
+}
+
+.flag.flag-ag {
+    background-position: -64px 0
+}
+
+.flag.flag-ai {
+    background-position: -80px 0
+}
+
+.flag.flag-al {
+    background-position: -96px 0
+}
+
+.flag.flag-am {
+    background-position: -112px 0
+}
+
+.flag.flag-an {
+    background-position: -128px 0
+}
+
+.flag.flag-ao {
+    background-position: -144px 0
+}
+
+.flag.flag-ar {
+    background-position: -160px 0
+}
+
+.flag.flag-as {
+    background-position: -176px 0
+}
+
+.flag.flag-at {
+    background-position: -192px 0
+}
+
+.flag.flag-au {
+    background-position: -208px 0
+}
+
+.flag.flag-aw {
+    background-position: -224px 0
+}
+
+.flag.flag-az {
+    background-position: -240px 0
+}
+
+.flag.flag-ba {
+    background-position: 0 -11px
+}
+
+.flag.flag-bb {
+    background-position: -16px -11px
+}
+
+.flag.flag-bd {
+    background-position: -32px -11px
+}
+
+.flag.flag-be {
+    background-position: -48px -11px
+}
+
+.flag.flag-bf {
+    background-position: -64px -11px
+}
+
+.flag.flag-bg {
+    background-position: -80px -11px
+}
+
+.flag.flag-bh {
+    background-position: -96px -11px
+}
+
+.flag.flag-bi {
+    background-position: -112px -11px
+}
+
+.flag.flag-bj {
+    background-position: -128px -11px
+}
+
+.flag.flag-bm {
+    background-position: -144px -11px
+}
+
+.flag.flag-bn {
+    background-position: -160px -11px
+}
+
+.flag.flag-bo {
+    background-position: -176px -11px
+}
+
+.flag.flag-br {
+    background-position: -192px -11px
+}
+
+.flag.flag-bs {
+    background-position: -208px -11px
+}
+
+.flag.flag-bt {
+    background-position: -224px -11px
+}
+
+.flag.flag-bv {
+    background-position: -240px -11px
+}
+
+.flag.flag-bw {
+    background-position: 0 -22px
+}
+
+.flag.flag-by {
+    background-position: -16px -22px
+}
+
+.flag.flag-bz {
+    background-position: -32px -22px
+}
+
+.flag.flag-ca {
+    background-position: -48px -22px
+}
+
+.flag.flag-catalonia {
+    background-position: -64px -22px
+}
+
+.flag.flag-cd {
+    background-position: -80px -22px
+}
+
+.flag.flag-cf {
+    background-position: -96px -22px
+}
+
+.flag.flag-cg {
+    background-position: -112px -22px
+}
+
+.flag.flag-ch {
+    background-position: -128px -22px
+}
+
+.flag.flag-ci {
+    background-position: -144px -22px
+}
+
+.flag.flag-ck {
+    background-position: -160px -22px
+}
+
+.flag.flag-cl {
+    background-position: -176px -22px
+}
+
+.flag.flag-cm {
+    background-position: -192px -22px
+}
+
+.flag.flag-cn {
+    background-position: -208px -22px
+}
+
+.flag.flag-co {
+    background-position: -224px -22px
+}
+
+.flag.flag-cr {
+    background-position: -240px -22px
+}
+
+.flag.flag-cu {
+    background-position: 0 -33px
+}
+
+.flag.flag-cv {
+    background-position: -16px -33px
+}
+
+.flag.flag-cw {
+    background-position: -32px -33px
+}
+
+.flag.flag-cy {
+    background-position: -48px -33px
+}
+
+.flag.flag-cz {
+    background-position: -64px -33px
+}
+
+.flag.flag-de {
+    background-position: -80px -33px
+}
+
+.flag.flag-dj {
+    background-position: -96px -33px
+}
+
+.flag.flag-dk {
+    background-position: -112px -33px
+}
+
+.flag.flag-dm {
+    background-position: -128px -33px
+}
+
+.flag.flag-do {
+    background-position: -144px -33px
+}
+
+.flag.flag-dz {
+    background-position: -160px -33px
+}
+
+.flag.flag-ec {
+    background-position: -176px -33px
+}
+
+.flag.flag-ee {
+    background-position: -192px -33px
+}
+
+.flag.flag-eg {
+    background-position: -208px -33px
+}
+
+.flag.flag-eh {
+    background-position: -224px -33px
+}
+
+.flag.flag-england {
+    background-position: -240px -33px
+}
+
+.flag.flag-er {
+    background-position: 0 -44px
+}
+
+.flag.flag-es {
+    background-position: -16px -44px
+}
+
+.flag.flag-et {
+    background-position: -32px -44px
+}
+
+.flag.flag-eu {
+    background-position: -48px -44px
+}
+
+.flag.flag-fi {
+    background-position: -64px -44px
+}
+
+.flag.flag-fj {
+    background-position: -80px -44px
+}
+
+.flag.flag-fk {
+    background-position: -96px -44px
+}
+
+.flag.flag-fm {
+    background-position: -112px -44px
+}
+
+.flag.flag-fo {
+    background-position: -128px -44px
+}
+
+.flag.flag-fr {
+    background-position: -144px -44px
+}
+
+.flag.flag-ga {
+    background-position: -160px -44px
+}
+
+.flag.flag-gb {
+    background-position: -176px -44px
+}
+
+.flag.flag-gd {
+    background-position: -192px -44px
+}
+
+.flag.flag-ge {
+    background-position: -208px -44px
+}
+
+.flag.flag-gf {
+    background-position: -224px -44px
+}
+
+.flag.flag-gg {
+    background-position: -240px -44px
+}
+
+.flag.flag-gh {
+    background-position: 0 -55px
+}
+
+.flag.flag-gi {
+    background-position: -16px -55px
+}
+
+.flag.flag-gl {
+    background-position: -32px -55px
+}
+
+.flag.flag-gm {
+    background-position: -48px -55px
+}
+
+.flag.flag-gn {
+    background-position: -64px -55px
+}
+
+.flag.flag-gp {
+    background-position: -80px -55px
+}
+
+.flag.flag-gq {
+    background-position: -96px -55px
+}
+
+.flag.flag-gr {
+    background-position: -112px -55px
+}
+
+.flag.flag-gs {
+    background-position: -128px -55px
+}
+
+.flag.flag-gt {
+    background-position: -144px -55px
+}
+
+.flag.flag-gu {
+    background-position: -160px -55px
+}
+
+.flag.flag-gw {
+    background-position: -176px -55px
+}
+
+.flag.flag-gy {
+    background-position: -192px -55px
+}
+
+.flag.flag-hk {
+    background-position: -208px -55px
+}
+
+.flag.flag-hm {
+    background-position: -224px -55px
+}
+
+.flag.flag-hn {
+    background-position: -240px -55px
+}
+
+.flag.flag-hr {
+    background-position: 0 -66px
+}
+
+.flag.flag-ht {
+    background-position: -16px -66px
+}
+
+.flag.flag-hu {
+    background-position: -32px -66px
+}
+
+.flag.flag-ic {
+    background-position: -48px -66px
+}
+
+.flag.flag-id {
+    background-position: -64px -66px
+}
+
+.flag.flag-ie {
+    background-position: -80px -66px
+}
+
+.flag.flag-il {
+    background-position: -96px -66px
+}
+
+.flag.flag-im {
+    background-position: -112px -66px
+}
+
+.flag.flag-in {
+    background-position: -128px -66px
+}
+
+.flag.flag-io {
+    background-position: -144px -66px
+}
+
+.flag.flag-iq {
+    background-position: -160px -66px
+}
+
+.flag.flag-ir {
+    background-position: -176px -66px
+}
+
+.flag.flag-is {
+    background-position: -192px -66px
+}
+
+.flag.flag-it {
+    background-position: -208px -66px
+}
+
+.flag.flag-je {
+    background-position: -224px -66px
+}
+
+.flag.flag-jm {
+    background-position: -240px -66px
+}
+
+.flag.flag-jo {
+    background-position: 0 -77px
+}
+
+.flag.flag-jp {
+    background-position: -16px -77px
+}
+
+.flag.flag-ke {
+    background-position: -32px -77px
+}
+
+.flag.flag-kg {
+    background-position: -48px -77px
+}
+
+.flag.flag-kh {
+    background-position: -64px -77px
+}
+
+.flag.flag-ki {
+    background-position: -80px -77px
+}
+
+.flag.flag-km {
+    background-position: -96px -77px
+}
+
+.flag.flag-kn {
+    background-position: -112px -77px
+}
+
+.flag.flag-kp {
+    background-position: -128px -77px
+}
+
+.flag.flag-kr {
+    background-position: -144px -77px
+}
+
+.flag.flag-kurdistan {
+    background-position: -160px -77px
+}
+
+.flag.flag-kw {
+    background-position: -176px -77px
+}
+
+.flag.flag-ky {
+    background-position: -192px -77px
+}
+
+.flag.flag-kz {
+    background-position: -208px -77px
+}
+
+.flag.flag-la {
+    background-position: -224px -77px
+}
+
+.flag.flag-lb {
+    background-position: -240px -77px
+}
+
+.flag.flag-lc {
+    background-position: 0 -88px
+}
+
+.flag.flag-li {
+    background-position: -16px -88px
+}
+
+.flag.flag-lk {
+    background-position: -32px -88px
+}
+
+.flag.flag-lr {
+    background-position: -48px -88px
+}
+
+.flag.flag-ls {
+    background-position: -64px -88px
+}
+
+.flag.flag-lt {
+    background-position: -80px -88px
+}
+
+.flag.flag-lu {
+    background-position: -96px -88px
+}
+
+.flag.flag-lv {
+    background-position: -112px -88px
+}
+
+.flag.flag-ly {
+    background-position: -128px -88px
+}
+
+.flag.flag-ma {
+    background-position: -144px -88px
+}
+
+.flag.flag-mc {
+    background-position: -160px -88px
+}
+
+.flag.flag-md {
+    background-position: -176px -88px
+}
+
+.flag.flag-me {
+    background-position: -192px -88px
+}
+
+.flag.flag-mg {
+    background-position: -208px -88px
+}
+
+.flag.flag-mh {
+    background-position: -224px -88px
+}
+
+.flag.flag-mk {
+    background-position: -240px -88px
+}
+
+.flag.flag-ml {
+    background-position: 0 -99px
+}
+
+.flag.flag-mm {
+    background-position: -16px -99px
+}
+
+.flag.flag-mn {
+    background-position: -32px -99px
+}
+
+.flag.flag-mo {
+    background-position: -48px -99px
+}
+
+.flag.flag-mp {
+    background-position: -64px -99px
+}
+
+.flag.flag-mq {
+    background-position: -80px -99px
+}
+
+.flag.flag-mr {
+    background-position: -96px -99px
+}
+
+.flag.flag-ms {
+    background-position: -112px -99px
+}
+
+.flag.flag-mt {
+    background-position: -128px -99px
+}
+
+.flag.flag-mu {
+    background-position: -144px -99px
+}
+
+.flag.flag-mv {
+    background-position: -160px -99px
+}
+
+.flag.flag-mw {
+    background-position: -176px -99px
+}
+
+.flag.flag-mx {
+    background-position: -192px -99px
+}
+
+.flag.flag-my {
+    background-position: -208px -99px
+}
+
+.flag.flag-mz {
+    background-position: -224px -99px
+}
+
+.flag.flag-na {
+    background-position: -240px -99px
+}
+
+.flag.flag-nc {
+    background-position: 0 -110px
+}
+
+.flag.flag-ne {
+    background-position: -16px -110px
+}
+
+.flag.flag-nf {
+    background-position: -32px -110px
+}
+
+.flag.flag-ng {
+    background-position: -48px -110px
+}
+
+.flag.flag-ni {
+    background-position: -64px -110px
+}
+
+.flag.flag-nl {
+    background-position: -80px -110px
+}
+
+.flag.flag-no {
+    background-position: -96px -110px
+}
+
+.flag.flag-np {
+    background-position: -112px -110px
+}
+
+.flag.flag-nr {
+    background-position: -128px -110px
+}
+
+.flag.flag-nu {
+    background-position: -144px -110px
+}
+
+.flag.flag-nz {
+    background-position: -160px -110px
+}
+
+.flag.flag-om {
+    background-position: -176px -110px
+}
+
+.flag.flag-pa {
+    background-position: -192px -110px
+}
+
+.flag.flag-pe {
+    background-position: -208px -110px
+}
+
+.flag.flag-pf {
+    background-position: -224px -110px
+}
+
+.flag.flag-pg {
+    background-position: -240px -110px
+}
+
+.flag.flag-ph {
+    background-position: 0 -121px
+}
+
+.flag.flag-pk {
+    background-position: -16px -121px
+}
+
+.flag.flag-pl {
+    background-position: -32px -121px
+}
+
+.flag.flag-pm {
+    background-position: -48px -121px
+}
+
+.flag.flag-pn {
+    background-position: -64px -121px
+}
+
+.flag.flag-pr {
+    background-position: -80px -121px
+}
+
+.flag.flag-ps {
+    background-position: -96px -121px
+}
+
+.flag.flag-pt {
+    background-position: -112px -121px
+}
+
+.flag.flag-pw {
+    background-position: -128px -121px
+}
+
+.flag.flag-py {
+    background-position: -144px -121px
+}
+
+.flag.flag-qa {
+    background-position: -160px -121px
+}
+
+.flag.flag-re {
+    background-position: -176px -121px
+}
+
+.flag.flag-ro {
+    background-position: -192px -121px
+}
+
+.flag.flag-rs {
+    background-position: -208px -121px
+}
+
+.flag.flag-ru {
+    background-position: -224px -121px
+}
+
+.flag.flag-rw {
+    background-position: -240px -121px
+}
+
+.flag.flag-sa {
+    background-position: 0 -132px
+}
+
+.flag.flag-sb {
+    background-position: -16px -132px
+}
+
+.flag.flag-sc {
+    background-position: -32px -132px
+}
+
+.flag.flag-scotland {
+    background-position: -48px -132px
+}
+
+.flag.flag-sd {
+    background-position: -64px -132px
+}
+
+.flag.flag-se {
+    background-position: -80px -132px
+}
+
+.flag.flag-sg {
+    background-position: -96px -132px
+}
+
+.flag.flag-sh {
+    background-position: -112px -132px
+}
+
+.flag.flag-si {
+    background-position: -128px -132px
+}
+
+.flag.flag-sk {
+    background-position: -144px -132px
+}
+
+.flag.flag-sl {
+    background-position: -160px -132px
+}
+
+.flag.flag-sm {
+    background-position: -176px -132px
+}
+
+.flag.flag-sn {
+    background-position: -192px -132px
+}
+
+.flag.flag-so {
+    background-position: -208px -132px
+}
+
+.flag.flag-somaliland {
+    background-position: -224px -132px
+}
+
+.flag.flag-sr {
+    background-position: -240px -132px
+}
+
+.flag.flag-ss {
+    background-position: 0 -143px
+}
+
+.flag.flag-st {
+    background-position: -16px -143px
+}
+
+.flag.flag-sv {
+    background-position: -32px -143px
+}
+
+.flag.flag-sx {
+    background-position: -48px -143px
+}
+
+.flag.flag-sy {
+    background-position: -64px -143px
+}
+
+.flag.flag-sz {
+    background-position: -80px -143px
+}
+
+.flag.flag-tc {
+    background-position: -96px -143px
+}
+
+.flag.flag-td {
+    background-position: -112px -143px
+}
+
+.flag.flag-tf {
+    background-position: -128px -143px
+}
+
+.flag.flag-tg {
+    background-position: -144px -143px
+}
+
+.flag.flag-th {
+    background-position: -160px -143px
+}
+
+.flag.flag-tj {
+    background-position: -176px -143px
+}
+
+.flag.flag-tk {
+    background-position: -192px -143px
+}
+
+.flag.flag-tl {
+    background-position: -208px -143px
+}
+
+.flag.flag-tm {
+    background-position: -224px -143px
+}
+
+.flag.flag-tn {
+    background-position: -240px -143px
+}
+
+.flag.flag-to {
+    background-position: 0 -154px
+}
+
+.flag.flag-tr {
+    background-position: -16px -154px
+}
+
+.flag.flag-tt {
+    background-position: -32px -154px
+}
+
+.flag.flag-tv {
+    background-position: -48px -154px
+}
+
+.flag.flag-tw {
+    background-position: -64px -154px
+}
+
+.flag.flag-tz {
+    background-position: -80px -154px
+}
+
+.flag.flag-ua {
+    background-position: -96px -154px
+}
+
+.flag.flag-ug {
+    background-position: -112px -154px
+}
+
+.flag.flag-um {
+    background-position: -128px -154px
+}
+
+.flag.flag-us {
+    background-position: -144px -154px
+}
+
+.flag.flag-uy {
+    background-position: -160px -154px
+}
+
+.flag.flag-uz {
+    background-position: -176px -154px
+}
+
+.flag.flag-va {
+    background-position: -192px -154px
+}
+
+.flag.flag-vc {
+    background-position: -208px -154px
+}
+
+.flag.flag-ve {
+    background-position: -224px -154px
+}
+
+.flag.flag-vg {
+    background-position: -240px -154px
+}
+
+.flag.flag-vi {
+    background-position: 0 -165px
+}
+
+.flag.flag-vn {
+    background-position: -16px -165px
+}
+
+.flag.flag-vu {
+    background-position: -32px -165px
+}
+
+.flag.flag-wales {
+    background-position: -48px -165px
+}
+
+.flag.flag-wf {
+    background-position: -64px -165px
+}
+
+.flag.flag-ws {
+    background-position: -80px -165px
+}
+
+.flag.flag-ye {
+    background-position: -96px -165px
+}
+
+.flag.flag-yt {
+    background-position: -112px -165px
+}
+
+.flag.flag-za {
+    background-position: -128px -165px
+}
+
+.flag.flag-zanzibar {
+    background-position: -144px -165px
+}
+
+.flag.flag-zm {
+    background-position: -160px -165px
+}
+
+.flag.flag-zw {
+    background-position: -176px -165px
+}
+
+.flag.flag-ha {
+    background-position: -208px -22px
+}
+
+#fb-results {
+    display: block;
+    float: left;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    width: 680px;
+    min-height: 1100px
+}
+
+#results-items .fb-result-header>span {
+    padding: 0
+}
+
+#results-items .fb-result-header>span.fb-results-welcome {
+    font-size: 22pt
+}
+
+#results-items .fb-result-header {
+    font-size: 11pt
+}
+
+#results-items .fb-result-subheader {
+    padding-top: 40px
+}
+
+#results-items .fb-results-accommodation, #results-items .fb-results-rate {
+    padding-top: 10px
+}
+
+#results-items .fb-results-accommodation>.fb-results-acc-photo {
+    padding: 0
+}
+
+#results-items .fb-results-accommodation>.fb-results-acc-selects {
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    border-bottom: 1px solid #C4C4C4;
+    padding: 10px
+}
+
+#results-items .fb-results-accommodation>.fb-results-acc-selects>div {
+    padding: 0 0 0 5px
+}
+
+#results-items .fb-results-accommodation>.fb-results-acc-selects a {
+    font-size: 11pt
+}
+
+#results-items .fb-results-rate {
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    border-bottom: 1px solid #C4C4C4;
+    padding-top: 20px
+}
+
+#results-items .fb-results-ratekeys {
+    font-size: .9em
+}
+
+#results-items .fb-results-ratekeys>div span {
+    text-align: right
+}
+
+#results-items .fb-results-ratekeys .fb-ratekey-clickable {
+    cursor: pointer
+}
+
+#results-items .fb-results-ratekey {
+    padding-bottom: 5px;
+    padding-left: 10px
+}
+
+#results-items .fb-results-ratekey .fb-container {
+    cursor: pointer
+}
+
+#results-items .fb-results-rate-title {
+    overflow: hidden;
+    padding: 0 5px 0 0;
+    font-size: 15pt
+}
+
+#results-items .fb-results-rate-details {
+    border-bottom: 1px solid #C4C4C4;
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    display: none
+}
+
+#results-items .fb-results-rate-details-head {
+    border-bottom: 1px solid #C4C4C4;
+    padding-bottom: 15px;
+    padding-top: 15px
+}
+
+#results-items .fb-results-rate-details .fb-results-rate-details-body, #results-items .fb-results-rate-details .fb-results-rate-details-body-left, #results-items .fb-results-rate-details .fb-results-rate-details-body-right {
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+#results-items .fb-results-acc-group input, #results-items .fb-results-acc-group select {
+    padding-left: 2px;
+    padding-right: 2px
+}
+
+#results-items .fb-results-rate-title>span {
+    padding-left: 10px;
+    font-size: 12pt
+}
+
+#results-items .fb-results-price, #results-items .fb-results-price>span {
+    padding: 0
+}
+
+#results-items .fb-results-select {
+    padding: 10px 0
+}
+
+#results-items .fb-results-details-xs {
+    padding: 10px 0 15px;
+    text-align: center
+}
+
+.fb-room-details-link {
+    line-height: 1.8em
+}
+
+.fb-dates-calendar {
+    margin-top: 30px
+}
+
+#fb-dates-button>div {
+    padding-top: 15px;
+    padding-bottom: 15px
+}
+
+#fb-dates-button>div>button {
+    text-transform: uppercase
+}
+
+ul.nav-tabs.fb-dates-head>li>.fb-dates-top {
+    height: 3px;
+    border-bottom: 1px solid #EEE
+}
+
+ul.nav-tabs.fb-dates-head>li.active>.fb-dates-top {
+    background-color: #333;
+    border: 0 none
+}
+
+ul.nav-tabs.fb-dates-head>li {
+    border-left: 1px solid #EEE;
+    border-right: 1px solid #EEE;
+    border-bottom: 0 none;
+    width: 50%
+}
+
+ul.nav-tabs.fb-dates-head>li:not(.active) {
+    border-bottom: 1px solid #EEE
+}
+
+.fb-dates-calendar ul.nav-tabs, ul.nav-tabs.fb-dates-head>li.active {
+    border-bottom: 0 none
+}
+
+ul.nav-tabs.fb-dates-head>li a {
+    color: inherit;
+    padding: 15px 0
+}
+
+.fb-results-acc-icon {
+    padding-bottom: 3px;
+    padding-top: 3px
+}
+
+.fb-results-extrarates-header {
+    padding: 10px 20px;
+    border-bottom: 1px solid #C4C4C4;
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4
+}
+
+.fb-results-extrarates {
+    display: none
+}
+
+#fb-results-alternate {
+    margin-top: 30px
+}
+
+#fb-arrival-date-head, #fb-departure-date-head {
+    font-size: 12pt
+}
+
+.fb-carousel-image.fb-large-layer-room, .fb-results-acc-photo.fb-large-layer-room {
+    height: 370px
+}
+
+.fb-carousel-image.fb-medium-layer-room, .fb-results-acc-photo.fb-medium-layer-room, .fb-results-acc-selects.fb-medium-layer-room {
+    height: 250px
+}
+
+.fb-carousel-image.fb-small-layer-room, .fb-results-acc-photo.fb-small-layer-room, .fb-results-acc-selects.fb-small-layer-room {
+    height: 130px
+}
+
+.fb-room-surface.fb-medium-layer-room {
+    margin-top: 5px
+}
+
+.fb-room-surface.fb-large-layer-room {
+    display: none
+}
+
+.fb-room-occupancy {
+    margin-top: 10px;
+    color: #555;
+    font-size: 14px
+}
+
+.carousel.fb-small-layer-room .carousel-indicators, .fb-room-occupancy.fb-large-layer-room {
+    display: none
+}
+
+.carousel.fb-medium-layer-room .carousel-control {
+    top: 195px
+}
+
+.carousel.fb-small-layer-room .carousel-control {
+    top: 80px;
+    display: none
+}
+
+@media all and (max-width:959px) {
+    #fb-results {
+        margin-top: 0;
+        width: initial;
+        min-height: initial
+    }
+    #results-items .fb-result-header>span.fb-results-welcome {
+        font-size: 18pt
+    }
+}
+
+@media all and (max-width:599px) {
+    #fb-arrival-date-head, #fb-departure-date-head {
+        font-size: 10pt
+    }
+    #results-items .fb-results-accommodation>.fb-results-acc-selects>div:not(:first-child) {
+        padding-bottom: 5px;
+        padding-top: 10px
+    }
+    .fb-room-details-link {
+        line-height: 1em
+    }
+}
+
+#fb-quicksearch:empty {
+    height: 65px
+}
+
+body.confirm #fb-quicksearch {
+    height: 0
+}
+
+#fb-qs-form {
+    background-color: #333;
+    font-size: 10pt;
+    position: relative
+}
+
+.fb-container.fb-qs-edit #fb-qs-summary {
+    background-color: #333
+}
+
+#fb-quicksearch {
+    border-bottom: 1px solid #C4C4C4
+}
+
+#fb-quicksearch .fb-container {
+    max-width: 960px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: table
+}
+
+#fb-quicksearch #fb-qs-property select, #fb-quicksearch input {
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #181818;
+    border-color: #484848;
+    color: #fff
+}
+
+#fb-qs-rooms input.fb-input, #fb-quicksearch>.fb-container.fb-qs-edit #fb-qs-arrival .fb-translate, #fb-quicksearch>.fb-container.fb-qs-edit #fb-qs-departure .fb-translate {
+    background-color: #333;
+    border-color: #484848;
+    color: #F5F5F5
+}
+
+;
+#fb-quicksearch #fb-qs-summary .fb-qs-summary-item input {
+    background-color: #FFF;
+    color: #555;
+    border-color: #CCC
+}
+
+#fb-quicksearch .input-group-btn>button {
+    min-width: 30px
+}
+
+#fb-qs-form input.fb-input {
+    padding-right: 4px
+}
+
+#fb-qs-form input.fb-input.fb-input-childrenAges {
+    min-width: 33px
+}
+
+#fb-quicksearch>.fb-container.fb-qs-edit {
+    background-color: #333
+}
+
+#fb-quicksearch>.fb-container:not(.fb-qs-edit) #fb-qs-summary-rooms {
+    display: block
+}
+
+#fb-quicksearch>.fb-container.fb-qs-edit #fb-qs-summary-rooms {
+    display: none
+}
+
+#fb-quicksearch .fb-occgroup-controls {
+    padding: 0;
+    max-width: 119px;
+    min-width: 87px
+}
+
+#fb-qs-rooms {
+    padding: 0
+}
+
+#fb-qs-rooms>div>div {
+    padding: 5px
+}
+
+#fb-qs-cancel {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer
+}
+
+.fb-qs-button {
+    font-size: 13pt;
+    cursor: pointer;
+    text-align: center;
+    padding: 20px 0;
+    float: right
+}
+
+.fb-qs-button.qs-mobile {
+    display: none
+}
+
+#fb-quicksearch>.fb-container.fb-qs-edit>.fb-qs-button {
+    background-color: #A59169;
+    color: #F5F5F5
+}
+
+#fb-quicksearch .fb-occgroup-label {
+    padding-left: 5px;
+    min-height: 30px
+}
+
+#fb-quicksearch .fb-occgroup-label>span {
+    vertical-align: middle
+}
+
+#fb-qs-summary {
+    font-size: 11pt;
+    margin-right: -15px;
+    cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 5px;
+    min-height: 0
+}
+
+#fb-quicksearch>.fb-container.fb-qs-edit>#fb-qs-summary {
+    cursor: default
+}
+
+#fb-qs-summary-rooms>.fb-qs-summary-item, #fb-qs-summary>.fb-qs-summary-item {
+    padding: 5px
+}
+
+#fb-quicksearch .fb-qs-summary-item>div {
+    color: #939393;
+    padding-left: 0
+}
+
+#fb-quicksearch .fb-qs-summary-date {
+    color: #939393;
+    padding-left: 5px;
+    padding-right: 5px
+}
+
+#fb-quicksearch .fb-qs-summary-item>div:first-child {
+    color: #333;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 3px
+}
+
+#fb-quicksearch .fb-qs-room-title {
+    padding-top: 10px
+}
+
+#fb-qs-add-room {
+    padding-top: 3px
+}
+
+#fb-qs-nbnights {
+    color: grey;
+    padding-top: 30px;
+    padding-bottom: 0
+}
+
+#fb-quicksearch #accesscode {
+    width: auto
+}
+
+#fb-qs-accesscode>span {
+    padding-top: 5px;
+    padding-left: 0;
+    padding-right: 0
+}
+
+[id^=fb-qs-room-] {
+    padding-top: 15px;
+    padding-right: 0;
+    padding-left: 0
+}
+
+[id^=childrenAges-] .fb-occgroup-controls {
+    position: absolute;
+    bottom: 3px;
+    right: 0
+}
+
+#fb-qs-property {
+    padding-top: 10px
+}
+
+body.group #fb-quicksearch {
+    background-color: #F5F5F5;
+    z-index: 999;
+    position: relative
+}
+
+@media all and (max-width:959px) {
+    #fb-quicksearch .fb-container: not(.fb-qs-edit) #fb-qs-summary, #fb-quicksearch>.fb-container: not(.fb-qs-edit) #fb-qs-arrival, #fb-quicksearch>.fb-container: not(.fb-qs-edit) #fb-qs-departure, #fb-quicksearch>.fb-container: not(.fb-qs-edit) #fb-qs-summary-rooms {
+        display: none
+    }
+    #fb-quicksearch>:first-child {
+        border-bottom: 0
+    }
+    #fb-quicksearch .fb-qs-room-children>div>div {
+        padding: 0
+    }
+    #fb-qs-accesscode {
+        padding-top: 10px
+    }
+    #fb-qs-property {
+        padding-left: 0;
+        padding-right: 0
+    }
+}
+
+@media all and (max-width:599px) {
+    #fb-quicksearch #accesscode {
+        margin-top: 5px
+    }
+    .fb-qs-button {
+        background-color: #242424;
+        color: #F5F5F5;
+        border-top: 1px solid #C4C4C4
+    }
+    .fb-qs-button.fb-qs-group {
+        padding: 5px 0
+    }
+    [id^=childrenAges-] .fb-occgroup-controls {
+        position: relative
+    }
+    #fb-quicksearch .fb-qs-room-title>span>span {
+        padding-left: 0
+    }
+    .fb-qs-button {
+        display: none
+    }
+    .fb-qs-button.qs-mobile {
+        display: block
+    }
+    #fb-quicksearch>.fb-container.fb-qs-edit .fb-qs-button.qs-mobile {
+        border-top: 0
+    }
+}
+
+#fb-small-info {
+    cursor: pointer
+}
+
+#fb-header-breadcrumb, #fb-header-group, #fb-header-hotel, #fb-header-toolbar {
+    padding: 5px
+}
+
+.fb-header-hotel-details {
+    cursor: pointer
+}
+
+#fb-header {
+    height: 300px;
+    background-attachment: scroll, scroll;
+    background-clip: border-box, border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-origin: padding-box, padding-box;
+    background-position: center, center;
+    background-repeat: repeat, no-repeat;
+    background-size: cover;
+    position: relative
+}
+
+#fb-header-group, #fb-header-hotel {
+    height: 220px;
+    z-index: 5
+}
+
+#fb-header.fb-header-small-group, body.group #fb-header {
+    height: 80px
+}
+
+#fb-header-toolbar {
+    background-color: transparent;
+    padding-top: 0;
+    height: 30px
+}
+
+i.fb-header-info-icon {
+    font-size: 1.4em
+}
+
+.fb-hotel-title {
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000;
+    filter: progid: DXImageTransform.Microsoft.Shadow(color='black', Direction=135, Strength=4);
+    zoom: 1;
+    font-size: 20pt
+}
+
+#fb-localize-currencies {
+    margin-top: 30px
+}
+
+#fb-localize .fb-localize-title {
+    margin-bottom: 10px;
+    margin-top: 20px
+}
+
+#fb-localize span.fb-localize-block {
+    margin-top: 20px
+}
+
+#fb-localize span.fb-localize-item {
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+
+#fb-localize span.fb-localize-item.fb-localize-selected, #fb-localize span.fb-localize-item:hover {
+    background-color: #000
+}
+
+#fb-localize .fb-localize-tagged {
+    border-left: 5px solid gray
+}
+
+#fb-localize .fb-localize-title {
+    font-size: 1.3em
+}
+
+#fb-small-info {
+    padding-top: 5px
+}
+
+#fb-header.fb-header-small {
+    height: 150px
+}
+
+#fb-header.fb-header-small #fb-header-hotel {
+    height: 70px;
+    padding-top: 0
+}
+
+#fb-cur-lang>span {
+    padding: 5px 20px;
+    cursor: pointer
+}
+
+#fb-cur-lang {
+    text-align: right;
+    white-space: nowrap
+}
+
+#fb-header.fb-header-small-group #fb-header-group, body.group #fb-header-group {
+    height: 50px;
+    padding-top: 0;
+    padding-bottom: 25px;
+    font-size: 16pt
+}
+
+#fb-header.fb-header-small-group #fb-header-toolbar, body.group #fb-header, body.group #fb-header-toolbar {
+    background-color: #242424;
+    z-index: 999
+}
+
+#fb-header-breadcrumb {
+    bottom: 0;
+    height: 120px;
+    padding-top: 80px;
+    position: absolute;
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, .65) 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, .65)));
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, .65) 100%);
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, .65) 100%);
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, .65) 100%);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, .65) 100%)
+}
+
+.fb-step>span.fb-breadcrumb-nb {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #f9f9f9;
+    opacity: .6;
+    filter: alpha(opacity=60);
+    font-size: .9em
+}
+
+.fb-step>span.fb-breadcrumb-text {
+    cursor: pointer;
+    padding-left: 10px;
+    opacity: .6;
+    filter: alpha(opacity=60);
+    font-size: .9em
+}
+
+.fb-step.active>span.fb-breadcrumb-nb {
+    background-color: #333;
+    border: 0 none;
+    color: #FFF;
+    opacity: 1;
+    filter: alpha(opacity=100)
+}
+
+.fb-step.active>span.fb-breadcrumb-text {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    font-family: mplus-1p-bold, 'Segoe UI', Roboto, Arial, Helvetica, 'Helvetica Neue'
+}
+
+@media all and (max-width:599px) {
+    #fb-header {
+        height: 240px
+    }
+    #fb-header-group, #fb-header-hotel {
+        height: 170px
+    }
+    #fb-header-toolbar {
+        background-color: #242424
+    }
+    #fb-header.fb-header-small-group, body.group #fb-header {
+        height: 65px
+    }
+    #fb-header.fb-header-small-group #fb-header-group, body.group #fb-header-group {
+        height: 35px
+    }
+    #fb-cur-lang>span {
+        padding: 0
+    }
+}
+
+#fb-footer {
+    background-color: #242424;
+    color: #F5F5F5;
+    width: 100%;
+    margin-top: 60px;
+    bottom: 0
+}
+
+body.none #fb-footer {
+    display: none
+}
+
+body.group #fb-footer {
+    position: fixed;
+    height: 2px
+}
+
+#fb-app-footer {
+    padding-bottom: 10px;
+    padding-top: 10px
+}
+
+@media all and (max-width:599px) {
+    #fb-footer {
+        display: none
+    }
+}
+
+#fb-basket-spacer {
+    clear: both;
+    background-color: inherit;
+    display: block;
+    height: 100px;
+    width: 100%
+}
+
+#fb-basket {
+    bottom: auto;
+    position: inherit;
+    float: right;
+    width: 280px;
+    margin-top: 108px;
+    height: auto
+}
+
+#fb-basket-header {
+    font-size: 15pt;
+    border-bottom: 1px solid #C4C4C4;
+    border-top: 3px solid #000;
+    padding: 10px 0;
+    z-index: 999
+}
+
+#fb-basket-header-price-details {
+    background-color: #F5F5F5;
+    border-bottom: 1px solid #C4C4C4;
+    display: none;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 11pt
+}
+
+#fb-basket-header-price-details .fb-price-amount {
+    padding-left: 5px;
+    padding-right: 0;
+    font-size: 11pt
+}
+
+#fb-basket-header-price-details .fb-price-details-total {
+    padding-top: 20px;
+    font-size: 11pt
+}
+
+#fb-basket-header-price-details .fb-price-amount>span.fb-price {
+    font-size: 11pt
+}
+
+#fb-basket-header-price-details .fb-price-amount>span.fb-price>span.fb-price-currency {
+    font-size: 8pt
+}
+
+#fb-basket-header-price-details .fb-price-details-total>.fb-price-amount>span.fb-price {
+    font-size: 11pt
+}
+
+#fb-basket-header-price-details .fb-price-details-total>.fb-price-amount>span.fb-price>span.fb-price-currency {
+    font-size: 8pt
+}
+
+#fb-basket-header .fb-price-amount>span.fb-price>span, #fb-basket-header .fb-price-params {
+    font-size: 10pt
+}
+
+.fb-basket-header-details {
+    font-size: 12pt
+}
+
+#fb-basket-body {
+    z-index: 999;
+    box-shadow: 0 2px 0 #d9d9d9
+}
+
+#fb-basket-body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    border-radius: 10px
+}
+
+#fb-basket-body>.fb-basket-accommodation {
+    padding: 20px 0;
+    border-bottom: 1px solid #C4C4C4;
+    font-size: 12pt
+}
+
+#fb-basket-body>.fb-body-room-details {
+    border-bottom: 1px solid #C4C4C4;
+    display: none;
+    padding-bottom: 20px;
+    padding-top: 20px
+}
+
+#fb-basket-body .fb-room-title {
+    text-align: left;
+    font-size: 14pt
+}
+
+#fb-basket-body .fb-room-title>span {
+    font-size: 12pt
+}
+
+#fb-basket-body .fb-price-amount>span.fb-price {
+    font-size: 14pt
+}
+
+#fb-basket-body .fb-price-amount>span.fb-price>span {
+    font-size: 10pt
+}
+
+#fb-basket-body .fb-price-params {
+    text-align: left;
+    font-size: 12pt
+}
+
+#fb-basket-body a, #fb-basket-header a {
+    font-size: 11pt
+}
+
+.fb-price-tax-included {
+    margin-top: 15px
+}
+
+.fb-price-tax-notincluded {
+    margin-top: 10px
+}
+
+#fb-basket-services {
+    border-bottom: 1px solid #C4C4C4;
+    padding-bottom: 20px;
+    padding-top: 20px
+}
+
+#fb-basket-services-details {
+    border-bottom: 1px solid #C4C4C4;
+    display: none;
+    padding-bottom: 20px;
+    padding-top: 20px
+}
+
+.fb-basket-remain {
+    background-color: #f5f5f5;
+    border: 1px #B3B3B3 dotted;
+    height: 80px;
+    margin: 10px 0;
+    padding-top: 30px;
+    text-align: center
+}
+
+#fb-basket-checkout>button {
+    border-radius: 0;
+    padding: 15px 0;
+    width: 100%
+}
+
+#fb-basket-checkout {
+    text-align: center;
+    padding: 10px 0
+}
+
+@media all and (max-width:959px) {
+    #fb-basket.fb-basket-empty {
+        display: none
+    }
+    #fb-basket {
+        bottom: 0;
+        position: fixed;
+        margin-top: 0;
+        z-index: 999;
+        float: none;
+        width: 100%
+    }
+    #fb-basket-header {
+        padding-top: 0;
+        border-top: 2px solid #333;
+        border-left: 2px solid #333;
+        border-right: 2px solid #333
+    }
+    #fb-basket-body {
+        border-left: 2px solid #333;
+        border-right: 2px solid #333;
+        box-shadow: none
+    }
+    #fb-basket-body, #fb-basket-header {
+        clear: both;
+        display: block;
+        float: left
+    }
+    #fb-basket-sticky {
+        padding: 10px 0;
+        font-size: 12pt
+    }
+    #fb-basket-sticky, #fb-basket-sticky div {
+        z-index: 999
+    }
+    #fb-basket-sticky>div>button.fb-action {
+        padding: 5px 0;
+        line-height: inherit;
+        width: 90%;
+        font-size: 12pt
+    }
+    #fb-basket-sticky>.fb-basket-sticky-toggle {
+        padding-top: 12px
+    }
+    #fb-basket-sticky>div:first-child>div {
+        padding-left: 0
+    }
+    #fb-basket-sticky .fb-price-amount>span.span.fb-price>span, #fb-basket-sticky .fb-price-params {
+        font-size: 10pt
+    }
+    #fb-basket-sticky {
+        clear: both
+    }
+    #fb-basket-sticky>.fb-basket-sticky-checkout {
+        height: auto;
+        line-height: 2em;
+        margin-right: auto;
+        position: inherit;
+        bottom: inherit;
+        right: inherit
+    }
+    #fb-basket-close {
+        padding: 0
+    }
+    #fb-basket-close>button {
+        padding: 5px 10px
+    }
+}
+
+@media all and (max-width:599px) {
+    #fb-basket-sticky {
+        padding: 0
+    }
+    #fb-basket-sticky>div>button.fb-action {
+        line-height: normal;
+        padding: 10%;
+        width: 100%
+    }
+    #fb-basket-sticky>.fb-basket-sticky-checkout {
+        padding: 0
+    }
+}
+
+body.extras #extras-items .fb-price-second {
+    display: inline-block
+}
+
+#extras-items {
+    padding-top: 15px
+}
+
+#extras-items .fb-extras-item, #extras-requests .fb-extras-request {
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    border-bottom: 1px solid #C4C4C4;
+    padding-bottom: 20px;
+    padding-top: 20px
+}
+
+#extras-items .fb-extras-item {
+    padding-bottom: 15px
+}
+
+#extras-items .fb-extras-item div {
+    padding-bottom: 5px
+}
+
+#extras-requests .fb-extras-request>div>textarea {
+    margin-bottom: 10px;
+    padding: 5px
+}
+
+#extras-items .fb-extras-item .fb-price-amount {
+    text-align: left
+}
+
+#extras-items .fb-extras-item .input-group>input {
+    text-align: center
+}
+
+#extras-items .fb-extra-description {
+    display: none;
+    padding-bottom: 20px;
+    padding-top: 20px
+}
+
+#extras-items .input-group {
+    max-width: 120px
+}
+
+#extras-items .fb-extras-header>span.fb-extras-welcome {
+    font-size: 18pt
+}
+
+#extras-items .fb-extras-item .fb-price-amount>span.fb-price {
+    font-size: 22pt
+}
+
+#extras-items .fb-extras-item .fb-price-amount>span.fb-price>span {
+    font-size: 13pt
+}
+
+#extras-items span.fb-extra-price-rule {
+    font-size: 10pt
+}
+
+#fb-extras-select {
+    padding-left: 0;
+    padding-right: 15px
+}
+
+.fb-extras-checkbox {
+    width: 24px;
+    height: 24px;
+    background: url(/images/check-box-extra.png) no-repeat;
+    display: inline-block;
+    position: relative;
+    bottom: -6px;
+    cursor: pointer
+}
+
+.fb-extras-checkbox.fb-extras-checked {
+    background-position: 0 -48px
+}
+
+.fb-extras-checkbox.fb-extras-unchecked {
+    background-position: 0 0
+}
+
+.fb-extras-checkbox.fb-extras-checked:hover {
+    background-position: 0 -72px
+}
+
+#fb-extras {
+    display: block;
+    float: left;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    width: 680px;
+    min-height: 1100px
+}
+
+@media all and (max-width:959px) {
+    #extras-items .fb-extras-header>span.fb-extras-welcome {
+        font-size: 18pt
+    }
+    #fb-extras {
+        margin-top: 0;
+        width: auto;
+        min-height: initial
+    }
+}
+
+@media all and (max-width:599px) {
+    #fb-extras-select {
+        padding-right: 10px
+    }
+    #extras-items .fb-extras-item .fb-extras-infos {
+        padding-left: 10px
+    }
+}
+
+#fb-recap-container {
+    clear: both
+}
+
+#fb-recap-sub-container {
+    position: relative;
+    border-bottom: 1px solid #C4C4C4;
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4
+}
+
+#fb-recap-hotel {
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    border-bottom: 1px solid #C4C4C4
+}
+
+#fb-recap-hotel-details>dl {
+    padding: 10px 0 0
+}
+
+#fb-recap-hotel-details>dl>dt {
+    clear: left;
+    float: left;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 160px;
+    font-weight: 400
+}
+
+#fb-recap-hotel-details>dl>dd {
+    padding-bottom: 10px;
+    font-size: 11pt
+}
+
+#fb-recap-hotel .fb-title {
+    font-size: 16pt
+}
+
+#fb-recap-booking {
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 100%;
+    min-height: 400px;
+    position: relative;
+    border-right: 1px solid #C4C4C4
+}
+
+#fb-recap-booking hr {
+    margin-bottom: 10px;
+    margin-top: 10px
+}
+
+#fb-recap-booking>.fb-recap-accommodation, #fb-recap-booking>.fb-recap-option, #fb-recap-total {
+    padding-top: 15px;
+    clear: both
+}
+
+#fb-recap-booking>.fb-recap-accommodation .fb-recap-night-item>div:first-child {
+    padding-right: 0
+}
+
+#fb-recap-booking>.fb-recap-accommodation .fb-recap-night-item>div:last-child {
+    padding-left: 5px
+}
+
+#fb-recap-booking>.fb-recap-accommodation>.fb-room-title {
+    padding-top: 2pt;
+    font-size: 13pt
+}
+
+#fb-recap-booking>.fb-recap-accommodation>div>.fb-price-amount>span.fb-price, #fb-recap-booking>.fb-recap-option>div>.fb-price-amount>span.fb-price {
+    font-size: 13pt
+}
+
+#fb-recap-booking>.fb-recap-accommodation>div>.fb-price-amount>span.fb-price>span, #fb-recap-booking>.fb-recap-option>div>.fb-price-amount>span.fb-price>span {
+    font-size: 11pt
+}
+
+#fb-recap-total {
+    padding-bottom: 15px
+}
+
+#fb-recap-total .fb-total-title, #fb-recap-total>.fb-price-amount>span.fb-price {
+    font-size: 18pt
+}
+
+#fb-recap-total .fb-price-amount>span.fb-price>span {
+    font-size: 16pt
+}
+
+#fb-recap-total .fb-price-tax>span.fb-price {
+    font-size: 13pt
+}
+
+#fb-recap-total .fb-price-tax>span.fb-price>span {
+    font-size: 11pt
+}
+
+#fb-recap-booking .fb-recap-accommodation:not(:first-child), #fb-recap-booking .fb-recap-option, #fb-recap-total {
+    border-top: 1px solid #C4C4C4
+}
+
+.recap-final-price {
+    margin-top: 22px
+}
+
+.recap-final-price-box {
+    padding-left: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 0;
+    border-top: 1px solid #eee
+}
+
+.recap-final-price-sentence {
+    padding-left: 0;
+    font-size: 10pt
+}
+
+.recap-final-price-price {
+    padding-right: 0
+}
+
+#fb-recap-warrants {
+    border-left: 1px solid #C4C4C4;
+    padding-left: 0;
+    padding-right: 0;
+    float: right;
+    left: -1px;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    height: 100%
+}
+
+#fb-recap-warrants .fb-warrant {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center
+}
+
+#fb-recap-warrants .fb-warrant-xspicto {
+    padding-right: 0
+}
+
+#fb-recap-warrants .fb-warrant-xspicto>img {
+    top: 2px;
+    vertical-align: top
+}
+
+#fb-recap-warrants .fb-warrant-title {
+    padding-left: 0
+}
+
+#fb-recap-booking .fb-recap-accommodation, #fb-recap-booking .fb-recap-option {
+    padding-top: 40px;
+    padding-bottom: 40px
+}
+
+@media all and (max-width:959px) {
+    #fb-recap-booking {
+        border-left: 1px solid #C4C4C4;
+        border-bottom: 1px solid #C4C4C4
+    }
+    #fb-recap-sub-container {
+        position: relative;
+        border: 0
+    }
+    #fb-recap-warrants {
+        border-right: 1px solid #C4C4C4;
+        border-bottom: 1px solid #C4C4C4;
+        left: 0
+    }
+}
+
+@media all and (max-width:599px) {
+    #fb-recap-booking {
+        padding-left: 0;
+        padding-right: 0
+    }
+    #fb-recap-hotel-details>dl {
+        padding: 0 15px 15px
+    }
+    #fb-recap-hotel-details>dl>dt {
+        float: none
+    }
+    #fb-recap-warrants .fb-warrant {
+        text-align: left
+    }
+    #fb-recap-booking .fb-recap-accommodation:not(:first-child), #fb-recap-booking .fb-recap-option, #fb-recap-total {
+        border-top: 0
+    }
+    #fb-recap-booking .fb-recap-accommodation, #fb-recap-booking .fb-recap-option {
+        padding-top: 15px;
+        padding-bottom: 0
+    }
+}
+
+#fb-confirmrecap-container {
+    clear: both
+}
+
+#fb-confirmrecap-sub-container {
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    border-bottom: 1px solid #C4C4C4;
+    position: relative
+}
+
+#fb-confirmrecap {
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+#fb-confirmrecap .fb-confirm-header {
+    background-color: #68a33d;
+    color: #fff;
+    padding: 25px 5px 15px;
+    font-size: 18pt;
+    height: 115px
+}
+
+#fb-confirmrecap .fb-confirm-header div:last-child {
+    font-size: 14pt
+}
+
+#fb-confirmrecap .fb-confirm-error {
+    background-color: #FED1D1;
+    color: #B8211D
+}
+
+#fb-confirmrecap .fb-confirm-cancel {
+    background-color: #242424
+}
+
+#fb-confirmrecap .fb-confirm-print {
+    background-color: #333;
+    color: #fff;
+    padding-bottom: 15px;
+    padding-top: 25px;
+    font-size: 13pt;
+    height: 115px
+}
+
+#fb-confirmrecap .fb-confirm-message {
+    padding: 40px 15px 25px
+}
+
+#fb-confirmrecap .fb-confirm-title {
+    padding-top: 5px;
+    font-size: 16pt
+}
+
+#fb-confirmrecap .fb-title {
+    font-size: 16pt;
+    padding-bottom: 15px;
+    padding-top: 15px
+}
+
+#fb-confirmrecap .fb-confirm-subtitle {
+    padding-bottom: 10px
+}
+
+#fb-confirm-recap-booking #fb-recap-booking {
+    margin-top: 40px;
+    border: 0 none;
+    border-bottom: 1px solid #C4C4C4
+}
+
+#fb-confirm-recap-booking {
+    padding: 20px 0;
+    border-right: 1px solid #C4C4C4;
+    page-break-after: always
+}
+
+#fb-confirmrecap-map {
+    height: 215px;
+    margin-bottom: 15px;
+    width: 100%
+}
+
+#fb-confirmrecap-hotel-details>dl {
+    padding: 10px 15px 0
+}
+
+#fb-confirmrecap-hotel-details>dl>dt {
+    font-weight: 400;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    clear: left;
+    float: left;
+    width: 160px
+}
+
+#fb-confirmrecap-hotel-details>dl>dd {
+    padding-bottom: 10px;
+    padding-left: 160px
+}
+
+#fb-confirmrecap-hotel-details>dl>dd.nopad {
+    padding-bottom: 0
+}
+
+#fb-confirmrecap-warrants {
+    border-top: 1px solid #C4C4C4;
+    padding-left: 0;
+    padding-right: 0;
+    bottom: 0;
+    height: 100%;
+    right: 0;
+    top: 0
+}
+
+#fb-confirmrecap-warrants .fb-warrant {
+    text-align: left;
+    padding-bottom: 20px
+}
+
+#fb-confirmrecap-warrants .fb-warrant:first-child {
+    border-right: 0;
+    padding-top: 3em
+}
+
+#fb-confirmrecap-warrants .fb-warrant:not(:first-child):not(:last-child) {
+    padding-bottom: 3em;
+    padding-top: 20px
+}
+
+#fb-confirmrecap-warrants .fb-warrant>.fb-warrant-title>img {
+    margin-right: 5px
+}
+
+#fb-confirmrecap-warrants .fb-confirmrecap-social {
+    padding-top: 0;
+    padding-bottom: 20px;
+    border-top: 1px solid #C4C4C4
+}
+
+#fb-confirmrecap-warrants .fb-confirmrecap-social .fb-font-bold {
+    padding-top: 15px;
+    padding-bottom: 15px
+}
+
+.confirmrecap-final-price {
+    margin-top: 22px
+}
+
+.confirmrecap-final-price-box {
+    padding-left: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 0;
+    border-top: 1px solid #eee
+}
+
+.confirmrecap-final-price-sentence {
+    padding-left: 0;
+    font-size: 10pt
+}
+
+.confirmrecap-final-price-price {
+    padding-right: 0;
+    padding-left: 0
+}
+
+@media all and (max-width:959px) {
+    #fb-confirmrecap .fb-confirm-header {
+        font-size: 16pt
+    }
+    #fb-confirm-recap-booking {
+        border-right: 0
+    }
+    #fb-confirmrecap .fb-confirm-header div:last-child {
+        font-size: 13pt
+    }
+    #fb-confirmrecap-warrants .fb-warrant:first-child {
+        border-right: 1px solid #C4C4C4;
+        padding-top: 20px
+    }
+}
+
+@media all and (max-width:599px) {
+    #fb-confirmrecap {
+        padding-left: 0;
+        padding-right: 0
+    }
+    #fb-confirmrecap .fb-confirm-header {
+        padding-top: 20px;
+        font-size: 15pt;
+        height: initial
+    }
+    #fb-confirmrecap .fb-confirm-print {
+        background-color: #4c7f27;
+        padding-top: 15px;
+        height: initial
+    }
+    #fb-confirmrecap .fb-confirm-message {
+        padding: 0
+    }
+    #fb-confirmrecap-hotel-details>dl {
+        padding-top: 0
+    }
+    #fb-confirmrecap-hotel-details>dl>dd {
+        padding-left: 0
+    }
+    #fb-confirmrecap-hotel-details>dl>dt {
+        float: none;
+        width: initial
+    }
+    #fb-confirmrecap .fb-confirm-title, #fb-confirmrecap .fb-title {
+        font-size: 14pt
+    }
+    #fb-confirmrecap-warrants .fb-warrant:first-child {
+        padding-bottom: 0;
+        border-right: 0
+    }
+    #fb-confirmrecap-warrants .fb-warrant:not(:first-child):not(:last-child) {
+        padding-bottom: 48px
+    }
+    #fb-confirmrecap-warrants .fb-warrant:first-child {
+        border-bottom: 1px solid #C4C4C4
+    }
+}
+
+#fb-cancel {
+    min-height: 600px;
+    margin-top: 20px
+}
+
+.fb-cancel-header {
+    margin-top: 20px
+}
+
+@media all and (max-width:959px) {
+    #fb-cancel {
+        min-height: 400px;
+        margin-top: 0
+    }
+}
+
+#fb-confirmbutton .fb-confirmbutton-container>form>div {
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    padding-bottom: 20px
+}
+
+#fb-confirmbutton .fb-confirmbutton-container>form>.fb-warrant-title {
+    padding-bottom: 0
+}
+
+#fb-confirmbutton .fb-confirmbutton-container>form>div:first-child {
+    border-top: 1px solid #C4C4C4;
+    padding-top: 20px
+}
+
+#fb-confirmbutton .fb-confirmbutton-container>form>.fb-confirmbutton-notice {
+    border: 0 none;
+    border-top: 1px solid #C4C4C4;
+    padding-top: 20px
+}
+
+#fb-confirmbutton .fb-confirmbutton-container>form>div:last-child {
+    border: 0 none
+}
+
+#fb-confirmbutton-button {
+    margin-top: 10px;
+    padding: 15px 0
+}
+
+#fb-confirmbutton label.fb-error {
+    position: absolute;
+    bottom: 5px;
+    left: 45px
+}
+
+#fb-datacollect .fb-datacollect-container, #fb-guarantee .fb-guarantee-container {
+    border-left: 1px solid #C4C4C4;
+    padding-bottom: 15px;
+    padding-top: 20px;
+    min-height: 680px
+}
+
+#fb-datacollect .fb-collect-wide {
+    border-right: 1px solid #C4C4C4;
+    min-height: inherit
+}
+
+#fb-guarantee .fb-guarantee-container {
+    border-right: 1px solid #C4C4C4
+}
+
+#fb-datacollect .fb-inner-container:after, #fb-datacollect .fb-inner-container:before, #fb-guarantee .fb-inner-container:after, #fb-guarantee .fb-inner-container:before {
+    content: " ";
+    display: table
+}
+
+#fb-datacollect .fb-inner-container:after, #fb-guarantee .fb-inner-container:after {
+    clear: none
+}
+
+#fb-datacollect .fb-inner-container, #fb-guarantee .fb-inner-container {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%
+}
+
+#fb-guarantee .fb-guarantee-text {
+    padding-bottom: 10px
+}
+
+@media all and (max-width:959px) {
+    #fb-datacollect .fb-inner-container:after, #fb-guarantee .fb-inner-container:after {
+        clear: both
+    }
+    #fb-datacollect .fb-datacollect-container, #fb-guarantee .fb-guarantee-container {
+        min-height: initial;
+        border-right: 1px solid #C4C4C4
+    }
+    #fb-datacollect .fb-datacollect-container {
+        border-bottom: 1px solid #C4C4C4
+    }
+    #fb-datacollect .fb-collect-wide.fb-datacollect-container {
+        border-bottom: 0
+    }
+}
+
+#fb-findthebestrate .best-price {
+    color: #fc5a02!important
+}
+
+#fb-findthebestrate .available {
+    color: #fff
+}
+
+#fb-findthebestrate .no-available {
+    color: gray
+}
+
+#fb-findthebestrate a:focus, #fb-findthebestrate a:hover {
+    text-decoration: none
+}
+
+#fb-findthebestrate .findthebestrate-header {
+    border: 1px solid #C4C4C4;
+    margin-top: 15px
+}
+
+#fb-findthebestrate .findthebestrate-header .header-summary {
+    padding: 8px 12px
+}
+
+#fb-findthebestrate .findthebestrate-header .header-summary p {
+    display: inline-block;
+    font-weight: 700;
+    margin: 0;
+    vertical-align: middle;
+    max-width: 504px
+}
+
+#fb-findthebestrate .findthebestrate-header .header-summary .form-group {
+    margin-left: 10px
+}
+
+#fb-findthebestrate .findthebestrate-header .header-summary .form-group select {
+    cursor: pointer
+}
+
+#fb-findthebestrate .findthebestrate-header .header-description {
+    background: #fff;
+    padding: 25px;
+    border-top: 1px solid #C4C4C4
+}
+
+#fb-findthebestrate .findthebestrate-header .header-description .description-picture {
+    float: left
+}
+
+#fb-findthebestrate .findthebestrate-header .header-description .description-content {
+    margin-left: 200px
+}
+
+#fb-findthebestrate .findthebestrate-header .header-description .description-content h3 {
+    margin-top: 0
+}
+
+#fb-findthebestrate .findthebestrate-header .header-description:empty {
+    display: none
+}
+
+#fb-findthebestrate .findthebestrate-calendar {
+    background: #fff;
+    margin-top: 25px
+}
+
+#fb-findthebestrate .calendar-header ul.select-months {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 80px;
+    width: 85.75%;
+    float: left
+}
+
+#fb-findthebestrate .calendar-header ul.select-months>li {
+    display: inline-block;
+    width: 25%;
+    height: 80px;
+    text-align: center;
+    border-top: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    vertical-align: top
+}
+
+#fb-findthebestrate .calendar-header ul.select-months>li>a {
+    width: 100%;
+    display: inline-block;
+    height: 100%;
+    color: #000
+}
+
+#fb-findthebestrate .calendar-header ul.select-months>li>a:hover {
+    text-decoration: none
+}
+
+#fb-findthebestrate .calendar-header ul.select-months>li .month-name {
+    font-size: 27px;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 4px
+}
+
+#fb-findthebestrate .calendar-header ul.select-months>li .month-price .fb-price {
+    font-size: 12pt
+}
+
+#fb-findthebestrate .calendar-header ul.select-months>li .month-price .fb-price-currency {
+    font-size: 9pt
+}
+
+#fb-findthebestrate .calendar-header ul.select-months>li .month-price .fb-price .fb-price-decimal {
+    font-size: 9pt;
+    margin-left: 2px
+}
+
+#fb-findthebestrate .calendar-header ul.select-months>li .month-price .fb-price .fb-price-decimal-separator {
+    font-size: 9pt
+}
+
+#fb-findthebestrate .calendar-header ul.select-months>li .month-name:first-letter {
+    text-transform: uppercase
+}
+
+#fb-findthebestrate .calendar-header ul.select-months>li:first-child {
+    border-left: 1px solid #C4C4C4
+}
+
+#fb-findthebestrate .calendar-header ul.select-months>li.active {
+    box-shadow: 0 -8px 0 #000, 0 0 0 white, -5px 0 5px #ddd, 5px 0 5px #ddd
+}
+
+#fb-findthebestrate .calendar-header ul.select-months>li.active .month-name {
+    font-weight: 700
+}
+
+#fb-findthebestrate .calendar-header .select-others-months {
+    position: relative;
+    width: 14.25%;
+    float: right;
+    border-right: 1px solid #C4C4C4;
+    border-top: 1px solid #C4C4C4;
+    height: 80px;
+    text-align: center
+}
+
+#fb-findthebestrate .calendar-header .select-others-months>a {
+    line-height: 77px;
+    width: 100%;
+    height: 100%;
+    display: inline-block
+}
+
+#fb-findthebestrate .calendar-header .select-others-months>a .fa {
+    vertical-align: middle
+}
+
+#fb-findthebestrate .calendar-header .select-others-months ul.others-months {
+    position: absolute;
+    display: none;
+    right: 0;
+    width: 343px;
+    z-index: 100;
+    background: #242424;
+    color: #fff;
+    list-style: none;
+    text-align: left;
+    padding: 0 7px;
+    height: 317px;
+    overflow-y: scroll
+}
+
+#fb-findthebestrate .calendar-header .select-others-months ul.others-months::-webkit-scrollbar {
+    background: #242424
+}
+
+#fb-findthebestrate .calendar-header .select-others-months ul.others-months::-webkit-scrollbar-thumb {
+    background: #A59169
+}
+
+#fb-findthebestrate .calendar-header .select-others-months ul.others-months li {
+    border-bottom: 1px solid #C4C4C4
+}
+
+#fb-findthebestrate .calendar-header .select-others-months ul.others-months li a {
+    width: 100%;
+    height: 100%;
+    padding: 12px 10px;
+    display: inline-block
+}
+
+#fb-findthebestrate .calendar-header .select-others-months ul.others-months li .month-name:first-letter {
+    text-transform: uppercase
+}
+
+#fb-findthebestrate .calendar-header .select-others-months.active {
+    background: #242424;
+    box-shadow: none
+}
+
+#fb-findthebestrate .calendar-header .select-others-months.active>a .fa {
+    color: #fff
+}
+
+#fb-findthebestrate .calendar-header .select-others-months.active>a:hover {
+    text-decoration: none
+}
+
+#fb-findthebestrate .calendar-header .select-others-months ul.others-months li .month-name {
+    width: 40%;
+    font-weight: 700;
+    display: inline-block;
+    font-size: 20px;
+    vertical-align: middle
+}
+
+#fb-findthebestrate .calendar-header .select-others-months ul.others-months li .month-best-price {
+    text-align: right;
+    display: inline-block;
+    width: 58%;
+    vertical-align: middle;
+    font-size: 14px
+}
+
+#fb-findthebestrate .calendar-widget {
+    padding: 0!important
+}
+
+#fb-findthebestrate .calendar-widget .ui-datepicker {
+    width: 100%;
+    background: inherit;
+    border: 0;
+    padding: 0
+}
+
+#fb-findthebestrate .calendar-widget .ui-datepicker-calendar thead, #fb-findthebestrate .calendar-widget .ui-datepicker-header {
+    display: none
+}
+
+#fb-findthebestrate .calendar-widget tbody td * span {
+    display: inline
+}
+
+#fb-findthebestrate .calendar-widget tbody td {
+    padding: 0;
+    height: 92px;
+    width: 14.29%;
+    border: 1px solid #C4C4C4;
+    position: relative
+}
+
+#fb-findthebestrate .ui-datepicker td span {
+    padding: 0
+}
+
+#fb-findthebestrate .calendar-widget tbody td>a {
+    height: 92px
+}
+
+#fb-findthebestrate .calendar-widget tbody td.ui-datepicker-unselectable>a {
+    cursor: default
+}
+
+#fb-findthebestrate .calendar-widget tbody td.no-available>a, #fb-findthebestrate .calendar-widget tbody td.unaivailable-selection>a {
+    opacity: .5
+}
+
+#fb-findthebestrate .calendar-widget tbody td .day-name {
+    display: block;
+    padding: 0;
+    margin-bottom: 10px
+}
+
+#fb-findthebestrate .calendar-widget tbody td .day-content {
+    color: #000
+}
+
+#fb-findthebestrate .calendar-widget tbody td .day-content .fb-price .fb-price-decimal {
+    font-size: 10pt;
+    margin-left: 2px
+}
+
+#fb-findthebestrate .calendar-widget tbody td .day-content .fb-price .fb-price-decimal-separator {
+    font-size: 10pt
+}
+
+#fb-findthebestrate .calendar-widget tbody td .selection {
+    position: absolute;
+    top: 0;
+    border: 3px solid #A59169;
+    border-right-width: 0;
+    border-left-width: 0;
+    width: 102%;
+    left: -1px;
+    height: 100%
+}
+
+#fb-findthebestrate .calendar-widget tbody tr td.ui-state-active-between {
+    border-left: 0;
+    border-right: 0
+}
+
+#fb-findthebestrate .calendar-widget tbody td.ui-state-active-from {
+    border-right: 0
+}
+
+#fb-findthebestrate .calendar-widget tbody td.ui-state-active-to {
+    border-left: 0
+}
+
+#fb-findthebestrate .calendar-widget tbody tr td.ui-state-active-between.ui-datepicker-last-day-month .selection, #fb-findthebestrate .calendar-widget tbody tr td.ui-state-active-between:last-child .selection {
+    border-right-width: 3px;
+    width: 101%
+}
+
+#fb-findthebestrate .calendar-widget tbody tr td.ui-state-active-between.ui-datepicker-first-day-month .selection, #fb-findthebestrate .calendar-widget tbody tr td.ui-state-active-between:first-child .selection {
+    border-left-width: 3px;
+    width: 101%;
+    left: 0
+}
+
+#fb-findthebestrate .calendar-widget tbody tr td:first-child.ui-state-active .selection {
+    border-left-width: 3px;
+    left: 0
+}
+
+#fb-findthebestrate .calendar-widget tbody tr td:last-child.ui-state-active .selection {
+    border-right-width: 3px;
+    left: 0;
+    width: 100%
+}
+
+#fb-findthebestrate .calendar-widget tbody td.ui-state-active-from .selection {
+    border-left-width: 3px
+}
+
+#fb-findthebestrate .calendar-widget tbody td.ui-state-active-to .selection {
+    border-right-width: 3px
+}
+
+#fb-findthebestrate .calendar-widget tbody td.ui-state-active-from.ui-state-active-to .selection {
+    width: 100%;
+    left: 0
+}
+
+#fb-findthebestrate .calendar-widget tbody td .selection .infos {
+    width: 100%;
+    margin: 0;
+    background: #A59169;
+    height: 14px;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    line-height: 17px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 12px
+}
+
+#fb-findthebestrate .calendar-widget tbody td .selection .stay-price {
+    width: 100%;
+    margin: 0;
+    background: inherit;
+    position: absolute;
+    text-align: center;
+    top: 30px;
+    color: #000;
+    vertical-align: middle
+}
+
+#fb-findthebestrate .calendar-widget tbody td .selection .btn-close {
+    display: inline-block;
+    background: #A59169;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    color: #eee;
+    font-size: 21px;
+    line-height: 16px
+}
+
+#fb-findthebestrate .calendar-widget tbody td.ui-state-disabled {
+    background-color: #f5f5f5;
+    background-clip: padding-box
+}
+
+#fb-findthebestrate .calendar-widget tbody td.ui-datepicker-other-month {
+    border: 0
+}
+
+#fb-findthebestrate .ui-datepicker {
+    color: inherit
+}
+
+#fb-findthebestrate .ui-datepicker table.ui-datepicker-calendar {
+    margin: 0;
+    border: 1px solid #C4C4C4
+}
+
+#fb-findthebestrate .findthebestrate-footer .container {
+    padding-left: 0;
+    padding-right: 0
+}
+
+#fb-findthebestrate .findthebestrate-footer .container ul.footer-blocs {
+    padding: 5px 0;
+    height: 80px;
+    margin: 0;
+    list-style: none
+}
+
+#fb-findthebestrate .findthebestrate-footer .container ul.footer-blocs>li {
+    float: left;
+    width: 30%;
+    border-right: 1px solid #C4C4C4;
+    height: 100%
+}
+
+#fb-findthebestrate .findthebestrate-footer .container ul.footer-blocs>li:last-child {
+    border-right: 0
+}
+
+#fb-findthebestrate .findthebestrate-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #333;
+    left: 0;
+    z-index: 100;
+    color: #fff
+}
+
+#fb-findthebestrate .findthebestrate-footer #fb-basket-checkout {
+    text-align: right
+}
+
+#fb-findthebestrate .findthebestrate-footer #fb-basket-checkout button {
+    padding: 13px 0;
+    width: 250px;
+    text-transform: uppercase
+}
+
+#fb-findthebestrate .findthebestrate-footer .container ul.footer-blocs li.summary {
+    font-weight: 700;
+    padding: 5px 10px;
+    text-align: center;
+    width: 40%;
+    line-height: 30px
+}
+
+#fb-findthebestrate .findthebestrate-footer ul.footer-blocs li.summary .nb-persons {
+    display: inline-block;
+    width: 100%
+}
+
+#fb-findthebestrate .findthebestrate-footer .nights-control>p {
+    font-weight: 700;
+    text-align: left
+}
+
+#fb-findthebestrate .findthebestrate-footer .nights-control .fb-occgroup-controls {
+    float: none;
+    margin-left: -15px
+}
+
+#fb-findthebestrate .findthebestrate-footer .nights-control .fb-occgroup-controls input {
+    text-align: center
+}
+
+.ui-datepicker {
+    padding: 1em;
+    width: 100%;
+    z-index: 9999!important;
+    background-color: #333;
+    border: 1px solid #484848;
+    color: #F5F5F5
+}
+
+.fb-dates-calendar .ui-datepicker {
+    background-color: #FFF;
+    border: 1px solid #EEE;
+    color: #333;
+    width: 100%!important
+}
+
+select.ui-datepicker-month {
+    background-color: #333;
+    border: 1px solid #484848;
+    color: #F5F5F5
+}
+
+.fb-dates-calendar select.ui-datepicker-month {
+    background-color: #FFF;
+    border: 1px solid #EEE;
+    color: #333
+}
+
+.ui-datepicker-header {
+    border-bottom: 1px solid #484848;
+    height: 40px
+}
+
+.fb-dates-calendar .ui-datepicker-header {
+    border: 0 none;
+    height: 40px
+}
+
+.ui-datepicker-group:not(.ui-datepicker-group-last) {
+    border-right: 1px solid #484848
+}
+
+.fb-dates-calendar .ui-datepicker-group:not(.ui-datepicker-group-last) {
+    border-right: 0 none
+}
+
+table.ui-datepicker-calendar td:not(.ui-datepicker-unselectable) {
+    border: 1px solid #404040
+}
+
+.fb-dates-calendar table.ui-datepicker-calendar td:not(.ui-datepicker-unselectable):not(.ui-datepicker-current-day) {
+    border: 0 none
+}
+
+table.ui-datepicker-calendar td a {
+    text-align: center
+}
+
+.ui-datepicker .ui-datepicker-next, .ui-datepicker .ui-datepicker-prev {
+    font-size: 2em;
+    line-height: 2em;
+    overflow: hidden
+}
+
+.ui-datepicker .ui-datepicker-next .ui-icon, .ui-datepicker .ui-datepicker-prev .ui-icon {
+    text-indent: 0;
+    cursor: pointer;
+    margin-top: -1.4em
+}
+
+.ui-datepicker .ui-datepicker-prev .ui-icon:before {
+    content: "<   "
+}
+
+.ui-datepicker .ui-datepicker-next .ui-icon:before {
+    content: ">   "
+}
+
+.fb-dates-calendar .ui-datepicker .ui-datepicker-prev .ui-icon:before {
+    content: "<   "
+}
+
+.fb-dates-calendar .ui-datepicker .ui-datepicker-next .ui-icon:before {
+    content: ">   "
+}
+
+.fb-dates-calendar .ui-datepicker .ui-datepicker-title {
+    font-weight: 700
+}
+
+.fb-dates-calendar .ui-datepicker {
+    font-size: 10pt
+}
+
+.fb-dates-calendar .ui-datepicker td {
+    padding: 5px
+}
+
+.ui-datepicker td {
+    padding: .5em .65em .5em 0;
+    border: 1px solid #fff;
+    text-align: center
+}
+
+.ui-datepicker td a, .ui-datepicker td span {
+    text-align: center!important
+}
+
+.ui-datepicker td.ui-datepicker-unselectable {
+    background-color: inherit
+}
+
+.fb-dates-calendar .ui-datepicker td a {
+    color: #333
+}
+
+.fb-dates-calendar .ui-datepicker td.ui-datepicker-unselectable {
+    color: #DDD
+}
+
+.fb-dates-calendar .ui-datepicker td.ui-datepicker-current-day {
+    border: 3px solid #A59169
+}
+
+.fb-dates-calendar .ui-datepicker td.fb-cal-arrival-spot {
+    background-color: #C3C3C3;
+    color: #fff
+}
+
+#ui-datepicker-div table.ui-datepicker-calendar td:not(.ui-datepicker-unselectable) a, #ui-datepicker-div table.ui-datepicker-calendar td:not(.ui-datepicker-unselectable) a:active, #ui-datepicker-div table.ui-datepicker-calendar td:not(.ui-datepicker-unselectable) a:hover, #ui-datepicker-div table.ui-datepicker-calendar td:not(.ui-datepicker-unselectable) a:visited {
+    color: #fff
+}
+
+#ui-datepicker-div .ui-datepicker-unselectable span {
+    color: #6f6f6f
+}
+
+#ui-datepicker-div td.ui-datepicker-today {
+    background: rgba(255, 255, 255, .15)
+}
+
+#ui-datepicker-div table.ui-datepicker-calendar td:not(.ui-datepicker-unselectable) a:hover, #ui-datepicker-div td.ui-datepicker-current-day {
+    background-color: #A59169
+}
+
+
+/*! jQuery UI - v1.10.3 - 2013-10-08
+* http://jqueryui.com
+* Includes: jquery.ui.core.css, jquery.ui.datepicker.css
+* Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
+
+.ui-helper-hidden {
+    display: none
+}
+
+.ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px
+}
+
+.ui-helper-reset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    line-height: 1.3;
+    text-decoration: none;
+    font-size: 100%;
+    list-style: none
+}
+
+.ui-helper-clearfix:after, .ui-helper-clearfix:before {
+    content: "";
+    display: table;
+    border-collapse: collapse
+}
+
+.ui-helper-clearfix:after {
+    clear: both
+}
+
+.ui-helper-clearfix {
+    min-height: 0
+}
+
+.ui-helper-zfix {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    filter: Alpha(Opacity=0)
+}
+
+.ui-front {
+    z-index: 100
+}
+
+.ui-state-disabled {
+    cursor: default!important
+}
+
+.ui-icon {
+    display: block;
+    text-indent: -99999px;
+    overflow: hidden;
+    background-repeat: no-repeat
+}
+
+.ui-widget-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+
+.ui-datepicker {
+    width: 17em;
+    padding: .2em .2em 0;
+    display: none
+}
+
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    padding: .2em 0
+}
+
+.ui-datepicker .ui-datepicker-next, .ui-datepicker .ui-datepicker-prev {
+    position: absolute;
+    top: 2px;
+    width: 1.8em;
+    height: 1.8em
+}
+
+.ui-datepicker .ui-datepicker-next-hover, .ui-datepicker .ui-datepicker-prev-hover {
+    top: 1px
+}
+
+.ui-datepicker .ui-datepicker-prev {
+    left: 2px
+}
+
+.ui-datepicker .ui-datepicker-next {
+    right: 2px
+}
+
+.ui-datepicker .ui-datepicker-prev-hover {
+    left: 1px
+}
+
+.ui-datepicker .ui-datepicker-next-hover {
+    right: 1px
+}
+
+.ui-datepicker .ui-datepicker-next span, .ui-datepicker .ui-datepicker-prev span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+    top: 50%;
+    margin-top: -8px
+}
+
+.ui-datepicker .ui-datepicker-title {
+    margin: 0 2.3em;
+    line-height: 1.8em;
+    text-align: center
+}
+
+.ui-datepicker .ui-datepicker-title select {
+    font-size: 1em;
+    margin: 1px 0
+}
+
+.ui-datepicker select.ui-datepicker-month-year {
+    width: 100%
+}
+
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+    width: 49%
+}
+
+.ui-datepicker table {
+    width: 100%;
+    font-size: .9em;
+    border-collapse: collapse;
+    margin: 0 0 .4em
+}
+
+.ui-datepicker th {
+    padding: .7em .3em;
+    text-align: center;
+    font-weight: 700;
+    border: 0
+}
+
+.ui-datepicker td {
+    border: 0;
+    padding: 1px
+}
+
+.ui-datepicker td a, .ui-datepicker td span {
+    display: block;
+    padding: .2em;
+    text-align: right;
+    text-decoration: none
+}
+
+.ui-datepicker .ui-datepicker-buttonpane {
+    background-image: none;
+    margin: .7em 0 0;
+    padding: 0 .2em;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+    float: right;
+    margin: .5em .2em .4em;
+    cursor: pointer;
+    padding: .2em .6em .3em;
+    width: auto;
+    overflow: visible
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+    float: left
+}
+
+.ui-datepicker.ui-datepicker-multi {
+    width: auto
+}
+
+.ui-datepicker-multi .ui-datepicker-group {
+    float: left
+}
+
+.ui-datepicker-multi .ui-datepicker-group table {
+    width: 95%;
+    margin: 0 auto .4em
+}
+
+.ui-datepicker-multi-2 .ui-datepicker-group {
+    width: 50%
+}
+
+.ui-datepicker-multi-3 .ui-datepicker-group {
+    width: 33.3%
+}
+
+.ui-datepicker-multi-4 .ui-datepicker-group {
+    width: 25%
+}
+
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header, .ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+    border-left-width: 0
+}
+
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+    clear: left
+}
+
+.ui-datepicker-row-break {
+    clear: both;
+    width: 100%;
+    font-size: 0
+}
+
+.ui-datepicker-rtl {
+    direction: rtl
+}
+
+.ui-datepicker-rtl .ui-datepicker-prev {
+    right: 2px;
+    left: auto
+}
+
+.ui-datepicker-rtl .ui-datepicker-next {
+    left: 2px;
+    right: auto
+}
+
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+    right: 1px;
+    left: auto
+}
+
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+    left: 1px;
+    right: auto
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+    clear: right
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+    float: left
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current, .ui-datepicker-rtl .ui-datepicker-group {
+    float: right
+}
+
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header, .ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+    border-right-width: 0;
+    border-left-width: 1px
+}
+
+@media print {
+    #fb-footer, #fb-guarantee, #fb-messages, #fb-quicksearch {
+        display: none
+    }
+    .fb-confirm-message {
+        padding-bottom: 5px!important;
+        padding-top: 5px!important
+    }
+    #fb-header, #fb-header-hotel {
+        height: 80px!important
+    }
+    #fb-confirmrecap {
+        border: 1px solid #C4C4C4
+    }
+    #fb-confirm-recap-booking {
+        border: 0 none!important;
+        display: block!important;
+        float: none!important;
+        clear: both!important;
+        width: 100%!important;
+        padding: 5px
+    }
+    #fb-confirmrecap-warrants {
+        border: 0 none!important;
+        display: block!important;
+        clear: both!important;
+        float: none!important;
+        width: 100%!important
+    }
+    #fb-confirmrecap-warrants .fb-warrant {
+        border: 0 none!important;
+        padding: 5px
+    }
+    #fb-confirmrecap-hotel-details {
+        border: 0 none!important;
+        width: 100%
+    }
+    #fb-confirmrecap-hotel-details>dl {
+        clear: both;
+        float: none;
+        margin-bottom: 5px;
+        padding: 5px;
+        width: 100%
+    }
+    #fb-confirmrecap-hotel-details>dl>dt {
+        margin-top: 10px;
+        vertical-align: top;
+        width: 300px
+    }
+    #fb-confirmrecap-hotel-details>dl>dd {
+        margin-top: 10px;
+        vertical-align: top
+    }
+    .fb-confirm-head-pr {
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        border: 0 none!important
+    }
+    #fb-confirmrecap-hotel-details>dl>dd.nopad {
+        margin-top: 10px;
+        padding-bottom: 10px
+    }
+    #fb-confirmrecap-sub-container {
+        border: 0 none!important
+    }
+    .fb-results-acc-title {
+        border: 0 none!important;
+        margin-top: 0;
+        padding: 10px;
+        font-size: 16pt;
+        font-weight: 700
+    }
+    .fb-title {
+        margin-top: 5px;
+        padding: 10px;
+        font-size: 16pt;
+        font-weight: 700;
+        padding-bottom: 5px;
+        padding-top: 15px
+    }
+    .fb-confirm-title {
+        font-weight: 700
+    }
+    .fb-container {
+        width: 100%
+    }
+    .fb-confirm-header {
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 100%
+    }
+}
