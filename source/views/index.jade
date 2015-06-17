@@ -51,7 +51,9 @@ block container
                 span.content
                   span.text 18-05-2015
                   span.field
-                    input#checkin.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.hasDatepicker(type='text', name='arrival', readonly='readonly', style='')
+                    input#checkout.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.hasDatepicker(type='text', name='arrival', readonly='readonly', style='')
+          .cs-search-roomsnum.col-xs-6.col-sm-6.col-md-5.text-center
+            span 2 phòng
           .cs-search-rooms.col-xs-6.col-sm-6.col-md-5(style="display: none")
             .cs-search-room.col-md-4
                 span.bold-text.lb Phòng 1
@@ -79,10 +81,10 @@ block container
                 .col-xs-6.col-sm-6.col-md-6
                   .input-group
                     span.input-group-btn
-                      button#less-adults-1.btn.btn-sm.brown-btn -
-                    input#adults1.form-control.input-sm(type='text', name='adults1')
+                      button.less-adult.btn.btn-sm.brown-btn -
+                    input.adult1.form-control.input-sm(type='text', name='adults1')
                     span.input-group-btn
-                      button#more-adults-1.btn.btn-sm.brown-btn +
+                      button.btn.btn-sm.brown-btn +
                 .col-xs-6.col-sm-6.col-md-6.unit
                   span.f(data-key='adult', data-mode='1', data-fallback='', data-placeholders='%20')   adult
               .cs-room-people.pad-top.col-xs-12.col-sm-4.col-md-4
@@ -90,10 +92,10 @@ block container
                   .col-xs-6.col-sm-6.col-md-6
                     .input-group
                       span.input-group-btn
-                        button#less-children-1.btn.btn-sm.brown-btn -
-                      input#children1.form-control.input-sm(type='text', name='children1')
+                        button.less-children-1.btn.btn-sm.brown-btn -
+                      input.form-control.input-sm(type='text', name='children1')
                       span.input-group-btn
-                        button#more-children-1.btn.btn-sm.brown-btn +
+                        button.more-child.btn.btn-sm.brown-btn +
                   .col-xs-6.col-sm-6.col-md-6.unit
                     span.fb-translate(data-key='child', data-mode='1', data-fallback='', data-placeholders='%20')   child
                     i.fa.fa-info-circle(title='(0-12 years)')
@@ -104,10 +106,10 @@ block container
                     .col-xs-6.col-sm-6.col-md-6
                       .input-group
                         span.input-group-btn
-                          button#less-childrenAges-1-1.btn.btn-sm.brown-btn -
-                        input#childrenAges1-1.form-control.input-sm(type='text', data-child='1', name='childrenAges1-1')
+                          button.btn.btn-sm.brown-btn -
+                        input.form-control.input-sm(type='text', data-child='1', name='childrenAges1-1')
                         span.input-group-btn
-                          button#more-childrenAges-1-1.btn.btn-sm.brown-btn +
+                          button.btn.btn-sm.brown-btn +
             .cs-room.col-xs-12.col-sm-12.col-md-12
               .cs-room-title.pad-top.col-xs-12.col-sm-3.col-md-2
                 span
@@ -118,10 +120,10 @@ block container
                 .col-xs-6.col-sm-6.col-md-6
                   .input-group
                     span.input-group-btn
-                      button#less-adults-1.btn.btn-sm.brown-btn -
-                    input#adults1.form-control.input-sm(type='text', name='adults1')
+                      button.btn.btn-sm.brown-btn -
+                    input.form-control.input-sm(type='text', name='adults1')
                     span.input-group-btn
-                      button#more-adults-1.btn.btn-sm.brown-btn +
+                      button.btn.btn-sm.brown-btn +
                 .col-xs-6.col-sm-6.col-md-6.unit
                   span.f(data-key='adult', data-mode='1', data-fallback='', data-placeholders='%20')   adult
               .cs-room-people.pad-top.col-xs-12.col-sm-4.col-md-4
@@ -129,10 +131,10 @@ block container
                   .col-xs-6.col-sm-6.col-md-6
                     .input-group
                       span.input-group-btn
-                        button#less-children-1.btn.btn-sm.brown-btn -
-                      input#children1.form-control.input-sm(type='text', name='children1')
+                        button.less-children-1.btn.btn-sm.brown-btn -
+                      input.form-control.input-sm(type='text', name='children1')
                       span.input-group-btn
-                        button#more-children-1.btn.btn-sm.brown-btn +
+                        button.more-child.btn.btn-sm.brown-btn +
                   .col-xs-6.col-sm-6.col-md-6.unit
                     span.fb-translate(data-key='child', data-mode='1', data-fallback='', data-placeholders='%20')   child
                     i.fa.fa-info-circle(title='(0-12 years)')
@@ -143,10 +145,10 @@ block container
                     .col-xs-6.col-sm-6.col-md-6
                       .input-group
                         span.input-group-btn
-                          button#less-childrenAges-1-1.btn.btn-sm.brown-btn -
-                        input#childrenAges1-1.form-control.input-sm(type='text', data-child='1', name='childrenAges1-1')
+                          button.btn.btn-sm.brown-btn -
+                        input.form-control.input-sm(type='text', data-child='1', name='childrenAges1-1')
                         span.input-group-btn
-                          button#more-childrenAges-1-1.btn.btn-sm.brown-btn +
+                          button.btn.btn-sm.brown-btn +
             .cs-room.col-xs-12.col-sm-12.col-md-12
               .cs-room-title.pad-top.col-xs-12.col-sm-3.col-md-2
                 span
@@ -160,10 +162,10 @@ block container
                 .col-xs-6.col-sm-6.col-md-6
                   .input-group
                     span.input-group-btn
-                      button#less-adults-1.btn.btn-sm.brown-btn -
-                    input#adults1.form-control.input-sm(type='text', name='adults1')
+                      button.btn.btn-sm.brown-btn -
+                    input.form-control.input-sm(type='text', name='adults1')
                     span.input-group-btn
-                      button#more-adults-1.btn.btn-sm.brown-btn +
+                      button.btn.btn-sm.brown-btn +
                 .col-xs-6.col-sm-6.col-md-6.unit
                   span.f(data-key='adult', data-mode='1', data-fallback='', data-placeholders='%20')   adult
               .cs-room-people.pad-top.col-xs-12.col-sm-4.col-md-4
@@ -171,10 +173,10 @@ block container
                   .col-xs-6.col-sm-6.col-md-6
                     .input-group
                       span.input-group-btn
-                        button#less-children-1.btn.btn-sm.brown-btn -
-                      input#children1.form-control.input-sm(type='text', name='children1')
+                        button.less-children-1.btn.btn-sm.brown-btn -
+                      input.form-control.input-sm(type='text', name='children1')
                       span.input-group-btn
-                        button#more-children-1.btn.btn-sm.brown-btn +
+                        button.more-child.btn.btn-sm.brown-btn +
                   .col-xs-6.col-sm-6.col-md-6.unit
                     span.fb-translate(data-key='child', data-mode='1', data-fallback='', data-placeholders='%20')   child
                     i.fa.fa-info-circle(title='(0-12 years)')
@@ -185,11 +187,27 @@ block container
                     .col-xs-6.col-sm-6.col-md-6
                       .input-group
                         span.input-group-btn
-                          button#less-childrenAges-1-1.btn.btn-sm.brown-btn -
-                        input#childrenAges1-1.form-control.input-sm(type='text', data-child='1', name='childrenAges1-1')
+                          button.btn.btn-sm.brown-btn -
+                        input.form-control.input-sm(type='text', data-child='1', name='childrenAges1-1')
                         span.input-group-btn
-                          button#more-childrenAges-1-1.btn.btn-sm.brown-btn +
-
+                          button.btn.btn-sm.brown-btn +
             .clearfix
-        .cs-search
-
+            .fa.fa-close.close-search-button
+        .cs-search-button-mobile
+    .container
+      .cs-search-result
+        .cs-result-header
+          h2.title Danh sách phòng tìm được
+          h4.best-choice Bạn có thể tìm được phòng với giá tốt nhất. Vì đây thuộc website chính thức của khách sạn
+        .cs-result-rooms.cs-rooms-standard
+          .caption.col-xs-12.bg-dark3.text-white
+            span Stardard room
+          .gallery-slider.col-xs-12.no-pad
+            img(src="images/photos/standar1.jpg" alt="calmseas booking")
+          .more-detail.col-xs-12
+            .more-detail-link
+              a(href="#") 
+                span Thông tin và hình ảnh cụ thể
+                span.fa.fa-caret-right
+    .cs-rooms-summary
+    div(style="height: 200px")

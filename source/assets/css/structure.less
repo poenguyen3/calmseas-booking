@@ -1,5 +1,5 @@
 * {
-  font-family: 'mplus-1p-light', Helvetica,'Helvetica Neue';
+  font-family: Helvetica,'Helvetica Neue';
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
@@ -19,7 +19,9 @@ body {
     -o-transition: @value;
     transition: @value;
 }
-
+.pointer {
+  cursor: pointer;
+}
 .no-pad {
   padding: 0px;
 }
@@ -219,7 +221,13 @@ tb-white-dark {background-color: #333333; color: #ffffff}
     color: #f5f5f5;
     position: relative;
     padding-bottom: 20px;
-
+    .close-search-button {
+      position: absolute;
+      font-size: 1.8rem;
+      right: 10px;
+      bottom: 10px;
+      .pointer;
+    }
     .cs-room {
       padding-top: 20px;
       .pad-top {
@@ -247,5 +255,58 @@ tb-white-dark {background-color: #333333; color: #ffffff}
       }
     }
 
+  }
+}
+
+.cs-search-result {
+  width: 680px;
+  float: left;
+  margin-top: 22px;
+  .cs-result-header {
+    h2 {
+      font-size: 1.6rem;
+      line-height: 2.3rem;
+      color: #454545;
+    }
+    h4 {
+      font-size: 1rem;
+      padding-top: 8px;
+      color: #999999;
+    }
+  }
+
+  .cs-result-rooms {
+    padding-top: 30px;
+    background: #f9f9f9;
+    .caption {
+      height: 50px;
+      line-height: 50px;
+      font-size: 1.4rem;
+    }
+
+    .gallery-slider {
+      height: 270px;
+      overflow: hidden;
+      > img {
+        max-width: 100%;
+      }
+    }
+
+    .more-detail {
+      height: 50px;
+      border-bottom: 1px solid #c4c4c4;
+      border-left: 1px solid #c4c4c4;
+      border-right: 1px solid #c4c4c4;
+      .more-detail-link {
+        float: right;
+        line-height: 50px;
+        a {
+          color: #A59169;
+          .fa {
+            padding-left: 6px;
+          }
+        }
+      }
+    }
   }
 }
