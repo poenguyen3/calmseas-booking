@@ -19,16 +19,39 @@ body {
     -o-transition: @value;
     transition: @value;
 }
+/* common classes for usign many times */
 .pointer {
   cursor: pointer;
+}
+.u-border {
+  border-left: 1px solid #c4c4c4;
+  border-right: 1px solid #c4c4c4;
+  border-bottom: 1px solid #c4c4c4;
 }
 .no-pad {
   padding: 0px;
 }
+.upper {
+  text-transform: uppercase;
+}
 .brown-btn {
   background-color: #A59169;
+  color: #ffffff;
+}
+.brown-text {
+  color: #A59169;
+  &:hover {
+    color: #A59169;
+  }
+  &:visited {
+    color: #A59169;
+  }
+}
+.no-rad {
+  border-radius: 0px;
 }
 .bg-dark3 {background-color: #333333}
+.bg-light {background-color: #ffffff}
 .text-white {color: #ffffff;}
 
 tb-dark-white {background-color: #ffffff; color: #333333}
@@ -277,7 +300,7 @@ tb-white-dark {background-color: #333333; color: #ffffff}
 
   .cs-result-rooms {
     padding-top: 30px;
-    background: #f9f9f9;
+    background: #f5f5f5;
     .caption {
       height: 50px;
       line-height: 50px;
@@ -285,7 +308,7 @@ tb-white-dark {background-color: #333333; color: #ffffff}
     }
 
     .gallery-slider {
-      height: 270px;
+      height: 330px;
       overflow: hidden;
       > img {
         max-width: 100%;
@@ -294,9 +317,7 @@ tb-white-dark {background-color: #333333; color: #ffffff}
 
     .more-detail {
       height: 50px;
-      border-bottom: 1px solid #c4c4c4;
-      border-left: 1px solid #c4c4c4;
-      border-right: 1px solid #c4c4c4;
+      .u-border;
       .more-detail-link {
         float: right;
         line-height: 50px;
@@ -307,6 +328,260 @@ tb-white-dark {background-color: #333333; color: #ffffff}
           }
         }
       }
+    }
+
+    .cs-feature-detail {
+      background-color: #f5f5f5;
+      .u-border;
+      .lb {
+        border-bottom: 1px solid #c4c4c4;
+        .title {
+          padding: 15px;
+          font-weight: bold;
+          font-size: 1.1rem;
+          color: #333333;
+        }
+
+        .close-btn {
+          padding-right: 10px;
+          padding: 15px;
+          font-size: 1rem;
+        }
+      }
+
+      .content {
+        padding: 0 15px;
+        padding-top: 20px;
+        color: #555555;
+        font-size: 1rem;
+        line-height: 1.4rem;
+      }
+
+      .term {
+        padding: 15px;
+      }
+    }
+
+    .cs-room-package {
+      padding: 0 15px;
+      padding-top: 20px;
+      .u-border;
+
+      .cs-package-name {
+        color: #333333;
+        .upper {
+          font-size: 1.2rem;
+          color: #454545;
+        }
+        a {
+          color: #A59169;
+          padding-left: 8px;
+          font-size: 1rem;
+        }
+      }
+
+      .cs-package-price {
+
+        .cs-amount {
+          font-weight: bold;
+          color: #333333;
+          .unit {
+            font-size: 1rem;
+            padding-right: 5px;
+          }
+          .num {
+            font-size: 1.5rem;
+          }
+        }
+        .cs-rp-sum {
+          font-size: 0.9rem;
+          color: gray;
+          line-height: 1.5rem;
+        }
+      }
+
+      .cs-package-info {
+        .feature {
+          .pointer;
+        }
+        color: gray;
+        .fa {
+          font-size: 1.2rem;
+        }
+        .prop {
+          padding-bottom: 10px;
+          padding-left: 8px;
+       }
+      }
+
+      .cs-package-book {
+        padding: 10px 0;
+        .book-text {
+          font-weight: bold;
+          font-size: 0.9rem;
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.cs-room-select-summary {
+  width: 280px;
+  margin-top: 108px;
+  float: right;
+  height: auto;
+  background-color: #ffffff;
+
+  .total {
+    padding: 10px 0;
+    z-index: 11;
+    border-top: 3px solid #222222;
+    border-bottom: 1px solid #c4c4c4;
+    .lb {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      color: #444444;
+    }
+    .detail {
+      line-height: 1.3rem;
+      font-size: 0.9rem;
+      .pointer;
+      .fa {
+        padding-left: 6px;
+      }
+    }
+    .price {
+      padding-left: 0px;
+      .unit {
+        font-size: 0.8rem;
+        color: #343434;
+      }
+      .num {
+        font-size: 1.2rem;
+        color: #222222;
+        padding-left: 4px;
+      }
+    }
+    .room-night {
+      font-size: 0.9rem;
+      line-height: 1.3rem;
+      padding-top: 4px;
+      color: gray;
+    }
+  }
+
+  .summary-detail {
+    border-bottom: 1px solid #c4c4c4;
+    background-color: #f5f5f5;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .text {
+      font-size: 1rem;
+      line-height: 1.3rem;
+      color: #333333;
+    }
+    .night, .total-price, .included, .addition {
+      .no-pad;
+      padding: 4px 0;
+      .text {
+        .no-pad;
+        color: #565656;
+      }
+    }
+    .price {
+      line-height: 1.3rem;
+      padding-left: 0;
+      padding-right: 0;
+      .text-right;
+      .unit {
+        font-size: 0.7rem;
+        color: #787878;
+      }
+      .num {
+        font-size: 1rem;
+        color: #666666;
+        padding-left: 4px;
+      }
+    }
+    .total-price {
+      .text {
+        color: #111111;
+        font-weight: bold;
+      }
+      .price {
+        .unit, .num {
+          font-weight: 500;
+          color: #333333;
+        }
+      }
+    }
+    .included {
+      padding-top: 15px;
+    }
+
+  }
+
+  > .room {
+    border-bottom: 1px solid #c4c4c4;
+    &.remain {
+      border: 1px dotted #c4c4c4;
+      background: #f5f5f5;
+      margin: 10px 0;
+      height: 70px;
+      .text {
+        line-height: 70px;
+        color: gray;
+      }
+    }
+
+    &.selected {
+      padding: 15px 0;
+      .room-num {
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1.3rem;
+        color: #333333;
+      }
+      .price {
+        line-height: 1.3rem;
+        padding-left: 0px;
+        .unit {
+          font-size: 0.8rem;
+          color: #343434;
+        }
+        .num {
+          font-size: 1.2rem;
+          color: #222222;
+          padding-left: 4px;
+        }
+      }
+      .room-name, .package-name {
+        font-weight: 100;
+        font-size: 1rem;
+        color: gray;
+        line-height: 1.6rem;
+      }
+      .package-name {
+        padding-bottom: 15px;
+      }
+      .remove-btn {
+        padding-top: 5px;
+      }
+      .package-name {
+        border-bottom: 1px dashed #cecece;
+      }
+    }
+  }
+
+  .book-button {
+
+    button {
+      .upper;
+      font-size: 1.2rem;
+      height: 60px;
+      line-height: 60px;
     }
   }
 }

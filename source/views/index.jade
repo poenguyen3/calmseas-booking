@@ -194,20 +194,69 @@ block container
             .clearfix
             .fa.fa-close.close-search-button
         .cs-search-button-mobile
-    .container
-      .cs-search-result
+    .container.no-pad
+      .cs-search-result.col-xs-12
         .cs-result-header
           h2.title Danh sách phòng tìm được
           h4.best-choice Bạn có thể tìm được phòng với giá tốt nhất. Vì đây thuộc website chính thức của khách sạn
-        .cs-result-rooms.cs-rooms-standard
-          .caption.col-xs-12.bg-dark3.text-white
-            span Stardard room
-          .gallery-slider.col-xs-12.no-pad
-            img(src="images/photos/standar1.jpg" alt="calmseas booking")
-          .more-detail.col-xs-12
-            .more-detail-link
-              a(href="#") 
-                span Thông tin và hình ảnh cụ thể
-                span.fa.fa-caret-right
+        include blocks/search-result-room
+        include blocks/search-result-room
+        include blocks/search-result-room
+      .cs-room-select-summary
+        .total.col-xs-12.no-pad
+          .title.col-xs-6.no-pad
+            .col-xs-12.lb Tổng cộng
+            .col-xs-12.detail
+              a(href="#").brown-text
+                span Chi tiết
+                span.fa.fa-caret-down
+          .sum.col-xs-6
+            .price.col-xs-12.no-pad.text-right
+              span.unit VND
+              span.num 2,420,000
+            .room-night.col-xs-12.no-pad.text-right
+              span.room 1 phòng
+              span ,
+              span.night 1 đêm
+          .clearfix
+        .summary-detail.col-xs-12
+          .night.col-xs-12
+            .text.col-xs-7 Đêm 1
+            .price.col-xs-5
+              span.unit VND
+              span.num 1,200,000
+          .total-price.col-xs-12
+            .text.col-xs-7 Tổng cộng
+            .price.col-xs-5
+              span.unit VND
+              span.num 4,200,000
+          .included.col-xs-12
+            .text Bao gồm
+          .addition.col-xs-12
+            .text.col-xs-7 Dịch vụ
+            .price.col-xs-5
+              span.unit VND
+              span.num 108,00
+          .addition.col-xs-12
+            .text.col-xs-7 VAT
+            .price.col-xs-5
+              span.unit VND
+              span.num 408,00
+        .room.selected.col-xs-12.no-pad
+          .room-num.col-xs-4 Phòng 1
+          .price.col-xs-8.text-right
+            span.unit VND
+            span.num 2,410,000
+          .room-name.col-xs-12 Standard
+          .package-name.col-xs-12 GÓI TIẾT KIỆM MÙA HÈ
+          .remove-btn.col-xs-12.text-center
+            a(href="#").remove.brown-text Xóa
+        .room.remain.col-xs-12.no-pad.text-center
+          span.text Chọn phòng 2
+        .room.remain.col-xs-12.no-pad.text-center
+          span.text Chọn phòng 3
+        .book-button.col-xs-12.no-pad
+          button.btn.brown-btn.no-rad.col-xs-12.no-pad Đặt phòng
+
     .cs-rooms-summary
     div(style="height: 200px")
