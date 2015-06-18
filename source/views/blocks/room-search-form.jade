@@ -1,5 +1,5 @@
-.cs-search-container
-  .container.editing.no-pad
+.cs-search-container(ng-controller="search-form" search-form-control ng-click="checkExpand($event)")
+  .container.no-pad
     .cs-search-button.text-center.col-xs-12.col-sm-12.col-md-3
       span.bold-text CHỈNH TÙY CHỌN
       .fa.fa-caret-down
@@ -12,7 +12,7 @@
             span.content
               span.text 16-05-2015
               span.field
-                input#checkin.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.hasDatepicker(type='text', name='arrival', readonly='readonly', style='')
+                input#checkin.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.datepicker(type='text', name='arrival', readonly='readonly', style='')
         .checkout.col-xs-12.col-sm-6.col-md-6
           .title
             .fa.fa-calendar.left-i
@@ -20,10 +20,10 @@
             span.content
               span.text 18-05-2015
               span.field
-                input#checkout.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.hasDatepicker(type='text', name='arrival', readonly='readonly', style='')
+                input#checkout.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.datepicker(type='text', name='arrival', readonly='readonly', style='')
       .cs-search-roomsnum.col-xs-6.col-sm-6.col-md-5.text-center
         span 2 phòng
-      .cs-search-rooms.col-xs-6.col-sm-6.col-md-5(style="display: none")
+      .cs-search-rooms.col-xs-6.col-sm-6.col-md-5
         .cs-search-room.col-md-4
             span.bold-text.lb Phòng 1
             span.content
@@ -161,5 +161,5 @@
                     span.input-group-btn
                       button.btn.btn-sm.brown-btn +
         .clearfix
-        .fa.fa-close.close-search-button
+        .fa.fa-close.close-search-button(ng-click="collapseForm($event)")
     .cs-search-button-mobile

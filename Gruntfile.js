@@ -59,6 +59,14 @@ module.exports = function(grunt) {
           dest: '<%= meta.build %>data/'
         }]
       },
+      rawcss: {
+        files: [{
+          expand: true,
+          cwd: '<%= meta.assets %>rawcss/',
+          src: '**/*',
+          dest: '<%= meta.build %>css/'
+        }]
+      },
       images: {
         files: [{
           expand: true,
@@ -140,7 +148,7 @@ module.exports = function(grunt) {
         interrupt: true
       },
       js: {
-        files: ['<%= meta.assets %>js/plugins/*.js', '<%= meta.assets %>js/*.js'],
+        files: ['<%= meta.assets %>js/ng/**/*.js', '<%= meta.assets %>js/ng/*.js', '<%= meta.assets %>js/plugins/*.js', '<%= meta.assets %>js/*.js'],
         tasks: ['jshint', 'concat']
       },
       jade: {
@@ -153,7 +161,7 @@ module.exports = function(grunt) {
       },
       less: {
         files: ['<%= meta.assets %>css/**/*.less'],
-        tasks: ['less', 'autoprefixer', 'csslint']
+        tasks: ['less', 'autoprefixer', 'csslint', 'copy:rawcss']
       },
       fonts: {
         files: ['<%= meta.assets %>fonts/**/*'],

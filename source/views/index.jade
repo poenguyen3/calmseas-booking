@@ -6,32 +6,8 @@ block vars
   -menuIndex = 0
 
 block container
-  #booking-container.booking-container
-    header.cs-header(style="background-image: url(images/header-bg.jpg); background-repeat: no-repeat")
-      .header-toolbar.col-xs-12
-      h1.header-hotel-brief.col-xs-12
-        span.hotel-name.bold-text Calmseas Nha Trang Hotel
-        span.stars
-          .fa.fa-star
-          .fa.fa-star
-          .fa.fa-star
-        span.hotel-info
-          .fa.fa-info-circle
-          span Hotel information
-      .header-steps.col-xs-12
-        .container
-          .step-nav.step-1.col-xs-4.col-md-4.text-left.active
-            a(href="#").step-link(data-id="1")
-              span.step-num 1
-              span.step-text.hidden-xs Chọn phòng
-          .step-nav.step-2.col-xs-4.col-md-4.text-center
-            a(href="#").step-link(data-id="2")
-              span.step-num 2
-              span.step-text.hidden-xs Chọn gói cộng thêm
-          .step-nav.step-3.col-xs-4.col-md-4.text-right
-            a(href="#").step-link(data-id="3")
-              span.step-num 3
-              span.step-text.hidden-xs Đặt phòng
+  #booking-container.booking-container(ng-app="calm-booking" ng-controller="booking-central")
+    include blocks/booking-header
     include blocks/room-search-form
     .container.no-pad.step-container.step-1.step-2
       .cs-search-result.col-xs-12.step-container.step-1
@@ -43,89 +19,7 @@ block container
         include blocks/search-result-room
       include blocks/extra-selector
       include blocks/room-select-summary
-    .container.no-pad.confirm.step-container.step-3
-      h2.title  Xác nhận thông tin đặt phòng
-      .header-caption.col-xs-12.no-pad
-        span.title.col-xs-10.col-sm-12 
-          span.lb Thông tin đặt phòng
-          span -
-          span.time Từ ngày 20/06 đến ngày 22/06 năm 2015
-        span.col-xs-2.visible-xs
-          span.fa.fa-caret-down
-      .cs-hotel-info
-        h3.hotel-name.col-xs-12 Calmseas Hotel
-        .info.col-xs-12
-          .field.col-xs-12
-            span.prop Địa chỉ
-            span.value  99 Phạm Văn Đồng - Vĩnh Hải - Nha Trang - Khánh Hoà
-          .field.col-xs-12
-            span.prop Thời gian mở cửa
-            span.value  24/24h
-          .field.col-xs-12
-            span.prop Check-in vào lúc
-            span.value  14:00
-          .field.col-xs-12
-            span.prop Check-out vào lúc
-            span.value  12:00
-        .clearfix
-      .cs-book-summary
-        .cs-room-summary.col-xs-12.col-md-8
-          .book-room.col-xs-12
-            .room-num-customer.col-xs-6.col-sm-3
-              .num Phòng 1
-              .customer
-                span 2 Người lớn
-                br
-                span 1 trẻ em
-            .room-name.col-sm-6.hidden-xs
-              .name  Standard Room
-              .package-name Gói tiết kiệm mùa hè
-            .room-price.col-xs-6.col-sm-3
-              .price.col-xs-12.no-pad
-                span.unit VND
-                span.num 1,200,000
-              .more-detail.col-xs-12.text-right.no-pad
-                a(href="#").brown-text
-                  span.text Chi tiết
-                  span.fa.fa-caret-down
-          .book-room.col-xs-12
-            .room-num-customer.col-xs-6.col-sm-3
-              .num Phòng 1
-              .customer
-                span 2 Người lớn
-                br
-                span 1 trẻ em
-            .room-name.col-sm-6.hidden-xs
-              .name  Standard Room
-              .package-name Gói tiết kiệm mùa hè
-            .room-price.col-xs-6.col-sm-3
-              .price.col-xs-12.no-pad
-                span.unit VND
-                span.num 1,200,000
-              .more-detail.col-xs-12.text-right.no-pad
-                a(href="#").brown-text
-                  span.text Chi tiết
-                  span.fa.fa-caret-down
-          .book-room.col-xs-12
-            .room-num-customer.col-xs-6.col-sm-3
-              .num Phòng 1
-              .customer
-                span 2 Người lớn
-                br
-                span 1 trẻ em
-            .room-name.col-sm-6.hidden-xs
-              .name  Standard Room
-              .package-name Gói tiết kiệm mùa hè
-            .room-price.col-xs-6.col-sm-3
-              .price.col-xs-12.no-pad
-                span.unit VND
-                span.num 1,200,000
-              .more-detail.col-xs-12.text-right.no-pad
-                a(href="#").brown-text
-                  span.text Chi tiết
-                  span.fa.fa-caret-down                  
-        .cs-features.col-xs-12.col-md-4 
-
+    include blocks/booking-confirm
 
 
     div(style="height: 200px")
