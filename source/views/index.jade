@@ -21,242 +21,111 @@ block container
       .header-steps.col-xs-12
         .container
           .step-nav.step-1.col-xs-4.col-md-4.text-left.active
-            span.step-num 1
-            span.step-text.hidden-xs Chọn phòng
+            a(href="#").step-link(data-id="1")
+              span.step-num 1
+              span.step-text.hidden-xs Chọn phòng
           .step-nav.step-2.col-xs-4.col-md-4.text-center
-            span.step-num 2
-            span.step-text.hidden-xs Chọn gói cộng thêm
+            a(href="#").step-link(data-id="2")
+              span.step-num 2
+              span.step-text.hidden-xs Chọn gói cộng thêm
           .step-nav.step-3.col-xs-4.col-md-4.text-right
-            span.step-num 3
-            span.step-text.hidden-xs Đặt phòng
-    .cs-search-container
-      .container.editing.no-pad
-        .cs-search-button.text-center.col-xs-12.col-sm-12.col-md-3
-          span.bold-text CHỈNH TÙY CHỌN
-          .fa.fa-caret-down
-        .cs-search-summary.col-xs-12.col-sm-12.col-md-9
-          .cs-search-day.col-xs-12.col-sm-12.col-md-7
-            .checkin.col-xs-12.col-sm-6.col-md-6
-              .title
-                .fa.fa-calendar.left-i
-                span.bold-text.lb Ngày đến
-                span.content
-                  span.text 16-05-2015
-                  span.field
-                    input#checkin.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.hasDatepicker(type='text', name='arrival', readonly='readonly', style='')
-            .checkout.col-xs-12.col-sm-6.col-md-6
-              .title
-                .fa.fa-calendar.left-i
-                span.bold-text.lb Ngày đi
-                span.content
-                  span.text 18-05-2015
-                  span.field
-                    input#checkout.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.hasDatepicker(type='text', name='arrival', readonly='readonly', style='')
-          .cs-search-roomsnum.col-xs-6.col-sm-6.col-md-5.text-center
-            span 2 phòng
-          .cs-search-rooms.col-xs-6.col-sm-6.col-md-5(style="display: none")
-            .cs-search-room.col-md-4
-                span.bold-text.lb Phòng 1
-                span.content
-                  span.text 1 người lớn - 2 trẻ em
-            .cs-search-room.col-md-4
-                span.bold-text.lb Phòng 2
-                span.content
-                  span.text 1 người lớn
-            .cs-search-room.col-md-4
-                span.bold-text.lb Phòng 3
-                span.content
-                  span.text 2 người lớn
-          .clearfix
-        .clearfix
-        .cs-search-form.bg-dark3
-          form
-            .cs-room.col-xs-12.col-sm-12.col-md-12
-              .cs-room-title.pad-top.col-xs-12.col-sm-3.col-md-2
-                span
-                  span.col-xs-9.col-sm-12.col-md-12
-                    span.fa.fa-hotel
-                    span.room-num Phòng 1
-              .cs-room-adults.pad-top.col-xs-12.col-sm-4.col-md-4
-                .col-xs-6.col-sm-6.col-md-6
-                  .input-group
-                    span.input-group-btn
-                      button.less-adult.btn.btn-sm.brown-btn -
-                    input.adult1.form-control.input-sm(type='text', name='adults1')
-                    span.input-group-btn
-                      button.btn.btn-sm.brown-btn +
-                .col-xs-6.col-sm-6.col-md-6.unit
-                  span.f(data-key='adult', data-mode='1', data-fallback='', data-placeholders='%20')   adult
-              .cs-room-people.pad-top.col-xs-12.col-sm-4.col-md-4
-                .col-xs-12.col-sm-12.col-md-12
-                  .col-xs-6.col-sm-6.col-md-6
-                    .input-group
-                      span.input-group-btn
-                        button.less-children-1.btn.btn-sm.brown-btn -
-                      input.form-control.input-sm(type='text', name='children1')
-                      span.input-group-btn
-                        button.more-child.btn.btn-sm.brown-btn +
-                  .col-xs-6.col-sm-6.col-md-6.unit
-                    span.fb-translate(data-key='child', data-mode='1', data-fallback='', data-placeholders='%20')   child
-                    i.fa.fa-info-circle(title='(0-12 years)')
-                .child-age
-                  .col-xs-12(style='margin-top: 10px; padding:0px')
-                    .col-xs-6.col-sm-6.col-md-6.unit(style='text-align:right; padding-left:0px; padding-right:5px;')
-                      span Age Child 1
-                    .col-xs-6.col-sm-6.col-md-6
-                      .input-group
-                        span.input-group-btn
-                          button.btn.btn-sm.brown-btn -
-                        input.form-control.input-sm(type='text', data-child='1', name='childrenAges1-1')
-                        span.input-group-btn
-                          button.btn.btn-sm.brown-btn +
-            .cs-room.col-xs-12.col-sm-12.col-md-12
-              .cs-room-title.pad-top.col-xs-12.col-sm-3.col-md-2
-                span
-                  span.col-xs-9.col-sm-12.col-md-12
-                    span.fa.fa-hotel
-                    span.room-num Phòng 1
-              .cs-room-adults.pad-top.col-xs-12.col-sm-4.col-md-4
-                .col-xs-6.col-sm-6.col-md-6
-                  .input-group
-                    span.input-group-btn
-                      button.btn.btn-sm.brown-btn -
-                    input.form-control.input-sm(type='text', name='adults1')
-                    span.input-group-btn
-                      button.btn.btn-sm.brown-btn +
-                .col-xs-6.col-sm-6.col-md-6.unit
-                  span.f(data-key='adult', data-mode='1', data-fallback='', data-placeholders='%20')   adult
-              .cs-room-people.pad-top.col-xs-12.col-sm-4.col-md-4
-                .col-xs-12.col-sm-12.col-md-12
-                  .col-xs-6.col-sm-6.col-md-6
-                    .input-group
-                      span.input-group-btn
-                        button.less-children-1.btn.btn-sm.brown-btn -
-                      input.form-control.input-sm(type='text', name='children1')
-                      span.input-group-btn
-                        button.more-child.btn.btn-sm.brown-btn +
-                  .col-xs-6.col-sm-6.col-md-6.unit
-                    span.fb-translate(data-key='child', data-mode='1', data-fallback='', data-placeholders='%20')   child
-                    i.fa.fa-info-circle(title='(0-12 years)')
-                .child-age
-                  .col-xs-12(style='margin-top: 10px; padding:0px')
-                    .col-xs-6.col-sm-6.col-md-6.unit(style='text-align:right; padding-left:0px; padding-right:5px;')
-                      span Age Child 1
-                    .col-xs-6.col-sm-6.col-md-6
-                      .input-group
-                        span.input-group-btn
-                          button.btn.btn-sm.brown-btn -
-                        input.form-control.input-sm(type='text', data-child='1', name='childrenAges1-1')
-                        span.input-group-btn
-                          button.btn.btn-sm.brown-btn +
-            .cs-room.col-xs-12.col-sm-12.col-md-12
-              .cs-room-title.pad-top.col-xs-12.col-sm-3.col-md-2
-                span
-                  span.col-xs-9.col-sm-12.col-md-12
-                    span.fa.fa-hotel
-                    span.room-num Phòng 1
-                      span.col-xs-12.col-sm-12.col-md-12.no-pad(style='line-height: 1rem;')
-                        a.cs-room-remove(href='#')
-                          span Remove
-              .cs-room-adults.pad-top.col-xs-12.col-sm-4.col-md-4
-                .col-xs-6.col-sm-6.col-md-6
-                  .input-group
-                    span.input-group-btn
-                      button.btn.btn-sm.brown-btn -
-                    input.form-control.input-sm(type='text', name='adults1')
-                    span.input-group-btn
-                      button.btn.btn-sm.brown-btn +
-                .col-xs-6.col-sm-6.col-md-6.unit
-                  span.f(data-key='adult', data-mode='1', data-fallback='', data-placeholders='%20')   adult
-              .cs-room-people.pad-top.col-xs-12.col-sm-4.col-md-4
-                .col-xs-12.col-sm-12.col-md-12
-                  .col-xs-6.col-sm-6.col-md-6
-                    .input-group
-                      span.input-group-btn
-                        button.less-children-1.btn.btn-sm.brown-btn -
-                      input.form-control.input-sm(type='text', name='children1')
-                      span.input-group-btn
-                        button.more-child.btn.btn-sm.brown-btn +
-                  .col-xs-6.col-sm-6.col-md-6.unit
-                    span.fb-translate(data-key='child', data-mode='1', data-fallback='', data-placeholders='%20')   child
-                    i.fa.fa-info-circle(title='(0-12 years)')
-                .child-age
-                  .col-xs-12(style='margin-top: 10px; padding:0px')
-                    .col-xs-6.col-sm-6.col-md-6.unit(style='text-align:right; padding-left:0px; padding-right:5px;')
-                      span Age Child 1
-                    .col-xs-6.col-sm-6.col-md-6
-                      .input-group
-                        span.input-group-btn
-                          button.btn.btn-sm.brown-btn -
-                        input.form-control.input-sm(type='text', data-child='1', name='childrenAges1-1')
-                        span.input-group-btn
-                          button.btn.btn-sm.brown-btn +
-            .clearfix
-            .fa.fa-close.close-search-button
-        .cs-search-button-mobile
-    .container.no-pad
-      .cs-search-result.col-xs-12
+            a(href="#").step-link(data-id="3")
+              span.step-num 3
+              span.step-text.hidden-xs Đặt phòng
+    include blocks/room-search-form
+    .container.no-pad.step-container.step-1.step-2
+      .cs-search-result.col-xs-12.step-container.step-1
         .cs-result-header
           h2.title Danh sách phòng tìm được
           h4.best-choice Bạn có thể tìm được phòng với giá tốt nhất. Vì đây thuộc website chính thức của khách sạn
         include blocks/search-result-room
         include blocks/search-result-room
         include blocks/search-result-room
-      .cs-room-select-summary
-        .total.col-xs-12.no-pad
-          .title.col-xs-6.no-pad
-            .col-xs-12.lb Tổng cộng
-            .col-xs-12.detail
-              a(href="#").brown-text
-                span Chi tiết
-                span.fa.fa-caret-down
-          .sum.col-xs-6
-            .price.col-xs-12.no-pad.text-right
-              span.unit VND
-              span.num 2,420,000
-            .room-night.col-xs-12.no-pad.text-right
-              span.room 1 phòng
-              span ,
-              span.night 1 đêm
-          .clearfix
-        .summary-detail.col-xs-12
-          .night.col-xs-12
-            .text.col-xs-7 Đêm 1
-            .price.col-xs-5
-              span.unit VND
-              span.num 1,200,000
-          .total-price.col-xs-12
-            .text.col-xs-7 Tổng cộng
-            .price.col-xs-5
-              span.unit VND
-              span.num 4,200,000
-          .included.col-xs-12
-            .text Bao gồm
-          .addition.col-xs-12
-            .text.col-xs-7 Dịch vụ
-            .price.col-xs-5
-              span.unit VND
-              span.num 108,00
-          .addition.col-xs-12
-            .text.col-xs-7 VAT
-            .price.col-xs-5
-              span.unit VND
-              span.num 408,00
-        .room.selected.col-xs-12.no-pad
-          .room-num.col-xs-4 Phòng 1
-          .price.col-xs-8.text-right
-            span.unit VND
-            span.num 2,410,000
-          .room-name.col-xs-12 Standard
-          .package-name.col-xs-12 GÓI TIẾT KIỆM MÙA HÈ
-          .remove-btn.col-xs-12.text-center
-            a(href="#").remove.brown-text Xóa
-        .room.remain.col-xs-12.no-pad.text-center
-          span.text Chọn phòng 2
-        .room.remain.col-xs-12.no-pad.text-center
-          span.text Chọn phòng 3
-        .book-button.col-xs-12.no-pad
-          button.btn.brown-btn.no-rad.col-xs-12.no-pad Đặt phòng
+      include blocks/extra-selector
+      include blocks/room-select-summary
+    .container.no-pad.confirm.step-container.step-3
+      h2.title  Xác nhận thông tin đặt phòng
+      .header-caption.col-xs-12.no-pad
+        span.title.col-xs-10.col-sm-12 
+          span.lb Thông tin đặt phòng
+          span -
+          span.time Từ ngày 20/06 đến ngày 22/06 năm 2015
+        span.col-xs-2.visible-xs
+          span.fa.fa-caret-down
+      .cs-hotel-info
+        h3.hotel-name.col-xs-12 Calmseas Hotel
+        .info.col-xs-12
+          .field.col-xs-12
+            span.prop Địa chỉ
+            span.value  99 Phạm Văn Đồng - Vĩnh Hải - Nha Trang - Khánh Hoà
+          .field.col-xs-12
+            span.prop Thời gian mở cửa
+            span.value  24/24h
+          .field.col-xs-12
+            span.prop Check-in vào lúc
+            span.value  14:00
+          .field.col-xs-12
+            span.prop Check-out vào lúc
+            span.value  12:00
+        .clearfix
+      .cs-book-summary
+        .cs-room-summary.col-xs-12.col-md-8
+          .book-room.col-xs-12
+            .room-num-customer.col-xs-6.col-sm-3
+              .num Phòng 1
+              .customer
+                span 2 Người lớn
+                br
+                span 1 trẻ em
+            .room-name.col-sm-6.hidden-xs
+              .name  Standard Room
+              .package-name Gói tiết kiệm mùa hè
+            .room-price.col-xs-6.col-sm-3
+              .price.col-xs-12.no-pad
+                span.unit VND
+                span.num 1,200,000
+              .more-detail.col-xs-12.text-right.no-pad
+                a(href="#").brown-text
+                  span.text Chi tiết
+                  span.fa.fa-caret-down
+          .book-room.col-xs-12
+            .room-num-customer.col-xs-6.col-sm-3
+              .num Phòng 1
+              .customer
+                span 2 Người lớn
+                br
+                span 1 trẻ em
+            .room-name.col-sm-6.hidden-xs
+              .name  Standard Room
+              .package-name Gói tiết kiệm mùa hè
+            .room-price.col-xs-6.col-sm-3
+              .price.col-xs-12.no-pad
+                span.unit VND
+                span.num 1,200,000
+              .more-detail.col-xs-12.text-right.no-pad
+                a(href="#").brown-text
+                  span.text Chi tiết
+                  span.fa.fa-caret-down
+          .book-room.col-xs-12
+            .room-num-customer.col-xs-6.col-sm-3
+              .num Phòng 1
+              .customer
+                span 2 Người lớn
+                br
+                span 1 trẻ em
+            .room-name.col-sm-6.hidden-xs
+              .name  Standard Room
+              .package-name Gói tiết kiệm mùa hè
+            .room-price.col-xs-6.col-sm-3
+              .price.col-xs-12.no-pad
+                span.unit VND
+                span.num 1,200,000
+              .more-detail.col-xs-12.text-right.no-pad
+                a(href="#").brown-text
+                  span.text Chi tiết
+                  span.fa.fa-caret-down                  
+        .cs-features.col-xs-12.col-md-4 
 
-    .cs-rooms-summary
+
+
     div(style="height: 200px")

@@ -23,6 +23,10 @@ body {
 .pointer {
   cursor: pointer;
 }
+.side-border {
+  border-left: 1px solid #c4c4c4;
+  border-right: 1px solid #c4c4c4;  
+}
 .u-border {
   border-left: 1px solid #c4c4c4;
   border-right: 1px solid #c4c4c4;
@@ -54,8 +58,8 @@ body {
 .bg-light {background-color: #ffffff}
 .text-white {color: #ffffff;}
 
-tb-dark-white {background-color: #ffffff; color: #333333}
-tb-white-dark {background-color: #333333; color: #ffffff}
+.tb-dark-white {background-color: #ffffff; color: #333333}
+.tb-white-dark {background-color: #333333; color: #ffffff}
 
 .booking-container {
   background-color: #f9f9f9;
@@ -268,7 +272,7 @@ tb-white-dark {background-color: #333333; color: #ffffff}
         padding-left: 6px;
       }
       .unit {
-        padding-top: 8px;
+        padding: 0px;
         .fa {
           padding-left: 8px;
         }
@@ -543,6 +547,7 @@ tb-white-dark {background-color: #333333; color: #ffffff}
         font-size: 1rem;
         line-height: 1.3rem;
         color: #333333;
+        padding-right: 0;
       }
       .price {
         line-height: 1.3rem;
@@ -557,11 +562,16 @@ tb-white-dark {background-color: #333333; color: #ffffff}
           padding-left: 4px;
         }
       }
-      .room-name, .package-name {
+      .room-name, .package-name, .extra-name {
         font-weight: 100;
         font-size: 1rem;
         color: gray;
         line-height: 1.6rem;
+      }
+      .detail-link {
+        .fa {
+          padding-left: 4px;
+        }
       }
       .package-name {
         padding-bottom: 15px;
@@ -571,6 +581,9 @@ tb-white-dark {background-color: #333333; color: #ffffff}
       }
       .package-name {
         border-bottom: 1px dashed #cecece;
+        &.no-border {
+          border-bottom: 0px;
+        }
       }
     }
   }
@@ -584,4 +597,205 @@ tb-white-dark {background-color: #333333; color: #ffffff}
       line-height: 60px;
     }
   }
+}
+
+.cs-extras-container {
+  width: 680px;
+  float: left;
+  margin-top: 22px;
+  .cs-extra-header {
+    h2 {
+      font-size: 1.6rem;
+      line-height: 2.3rem;
+      color: #454545;
+    }
+  }
+
+  .cs-extra-selects {
+    padding-top: 30px;
+    background: #f5f5f5;
+    .caption {
+      height: 50px;
+      line-height: 50px;
+      font-size: 1.4rem;
+    }
+
+    .cs-extra {
+      padding: 20px 0;
+      .u-border;
+      
+      .pic {
+        img {
+          max-width: 100%;
+        }
+      }
+      .extra-info {
+        .no-pad;
+
+        .extra-name {
+          padding-bottom: 8px;
+          font-size: 1.2rem;
+          line-height: 1.5rem;
+        }
+
+        .extra-detail-link {
+          .fa {
+            padding-left: 5px;
+          }
+        }
+        .extra-detail {
+          padding-top: 15px;
+          padding-bottom: 15px;
+          color: #565656;
+          line-height: 1.3rem;
+          font-size: 1rem;
+          p {
+            padding-top: 8px;
+          }
+        }
+        .extra-price {
+          padding-top: 8px;
+          .unit {
+            padding-right: 5px;
+          }
+          .num {
+            font-size: 1.3rem;
+          }
+        }
+      }
+      .extra-select {
+        .text-right;
+        font-size: 1.3rem;
+        .pointer;
+        .text {
+          color: #444444;
+
+        }
+        .fa {
+          .brown-text;
+          padding-left: 8px;
+        }
+      }
+    }
+
+    .cs-special-request {
+      padding: 20px 0;
+      .u-border;
+      textarea {
+        height: 130px;
+        padding: 5px;
+        line-height: 1.3rem;
+        font-size: 1rem;
+        width: 100%;
+      }
+      .desc {
+          color: gray;
+          font-size: 1rem;
+          padding-top: 10px;
+      }
+    }
+  }
+}
+
+.confirm {
+  > h2 {
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+    color: #454545;
+    padding-bottom: 25px;
+    padding-top: 20px;
+  }
+  .header-caption {
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4rem;
+    .tb-white-dark;
+  }
+
+  .cs-hotel-info {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .u-border;
+    h3 {
+      font-size: 1.4rem;
+      color: #333333;
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
+    .field {
+      .no-pad;
+      font-size: 1.1rem;
+      line-height: 1.5rem;
+      padding: 4px 0;
+      .value {
+        padding-left: 5px;
+        color: #333333
+      }
+      .prop {
+        color: gray;
+        width: 150px;
+        display: inline-block;
+      }
+    }
+  }
+
+  .cs-book-summary {
+    .cs-room-summary {
+      .side-border;
+      .bg-light;
+      .book-room {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #c4c4c4;
+        .room-num-customer {
+          .num {
+            font-size: 1.3rem;
+            color: #333333;
+          }
+          .customer {
+            padding-top: 4px;
+            font-size: 0.9rem;
+            line-height: 1.2rem;
+            color: gray;
+          }
+        }
+        .room-name {
+          font-size: 1.2rem;
+          color: gray;
+          line-height: 1.7rem;
+        }
+        .room-price { 
+          .price {
+            .unit {
+              font-size: 0.8rem;
+              padding-right: 4px;
+              color: #666666;
+            }
+            .num {
+              font-size: 1.3rem;
+              color: #333333;
+            }
+          }
+          .more-detail {
+            font-size: 1.1rem;
+            padding-top: 6px;
+            .fa {
+              padding-left: 4px;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+.step-container 
+{
+  &.step-2, &.step-3 {
+    display: none;
+  }
+  &.step-1 {
+    display: block;
+  }
+  
 }

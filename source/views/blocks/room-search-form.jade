@@ -1,0 +1,165 @@
+.cs-search-container
+  .container.editing.no-pad
+    .cs-search-button.text-center.col-xs-12.col-sm-12.col-md-3
+      span.bold-text CHỈNH TÙY CHỌN
+      .fa.fa-caret-down
+    .cs-search-summary.col-xs-12.col-sm-12.col-md-9
+      .cs-search-day.col-xs-12.col-sm-12.col-md-7
+        .checkin.col-xs-12.col-sm-6.col-md-6
+          .title
+            .fa.fa-calendar.left-i
+            span.bold-text.lb Ngày đến
+            span.content
+              span.text 16-05-2015
+              span.field
+                input#checkin.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.hasDatepicker(type='text', name='arrival', readonly='readonly', style='')
+        .checkout.col-xs-12.col-sm-6.col-md-6
+          .title
+            .fa.fa-calendar.left-i
+            span.bold-text.lb Ngày đi
+            span.content
+              span.text 18-05-2015
+              span.field
+                input#checkout.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.hasDatepicker(type='text', name='arrival', readonly='readonly', style='')
+      .cs-search-roomsnum.col-xs-6.col-sm-6.col-md-5.text-center
+        span 2 phòng
+      .cs-search-rooms.col-xs-6.col-sm-6.col-md-5(style="display: none")
+        .cs-search-room.col-md-4
+            span.bold-text.lb Phòng 1
+            span.content
+              span.text 1 người lớn - 2 trẻ em
+        .cs-search-room.col-md-4
+            span.bold-text.lb Phòng 2
+            span.content
+              span.text 1 người lớn
+        .cs-search-room.col-md-4
+            span.bold-text.lb Phòng 3
+            span.content
+              span.text 2 người lớn
+      .clearfix
+    .clearfix
+    .cs-search-form.bg-dark3
+      form
+        .cs-room.col-xs-12.col-sm-12.col-md-12
+          .cs-room-title.pad-top.col-xs-12.col-sm-3.col-md-2
+            span
+              span.col-xs-9.col-sm-12.col-md-12
+                span.fa.fa-hotel
+                span.room-num Phòng 1
+          .cs-room-adults.pad-top.col-xs-12.col-sm-4.col-md-4
+            .col-xs-6.col-sm-6.col-md-6
+              .input-group
+                span.input-group-btn
+                  button.less-adult.btn.btn-sm.brown-btn -
+                input.adult1.form-control.input-sm(type='text', name='adults1')
+                span.input-group-btn
+                  button.btn.btn-sm.brown-btn +
+            .col-xs-6.col-sm-6.col-md-6.unit
+              span.f(data-key='adult', data-mode='1', data-fallback='', data-placeholders='%20')   adult
+          .cs-room-people.pad-top.col-xs-12.col-sm-4.col-md-4
+            .col-xs-12.col-sm-12.col-md-12
+              .col-xs-6.col-sm-6.col-md-6
+                .input-group
+                  span.input-group-btn
+                    button.less-children-1.btn.btn-sm.brown-btn -
+                  input.form-control.input-sm(type='text', name='children1')
+                  span.input-group-btn
+                    button.more-child.btn.btn-sm.brown-btn +
+              .col-xs-6.col-sm-6.col-md-6.unit
+                span.fb-translate(data-key='child', data-mode='1', data-fallback='', data-placeholders='%20')   child
+                i.fa.fa-info-circle(title='(0-12 years)')
+            .child-age
+              .col-xs-12(style='margin-top: 10px; padding:0px')
+                .col-xs-6.col-sm-6.col-md-6.unit(style='text-align:right; padding-left:0px; padding-right:5px;')
+                  span Age Child 1
+                .col-xs-6.col-sm-6.col-md-6
+                  .input-group
+                    span.input-group-btn
+                      button.btn.btn-sm.brown-btn -
+                    input.form-control.input-sm(type='text', data-child='1', name='childrenAges1-1')
+                    span.input-group-btn
+                      button.btn.btn-sm.brown-btn +
+        .cs-room.col-xs-12.col-sm-12.col-md-12
+          .cs-room-title.pad-top.col-xs-12.col-sm-3.col-md-2
+            span
+              span.col-xs-9.col-sm-12.col-md-12
+                span.fa.fa-hotel
+                span.room-num Phòng 1
+          .cs-room-adults.pad-top.col-xs-12.col-sm-4.col-md-4
+            .col-xs-6.col-sm-6.col-md-6
+              .input-group
+                span.input-group-btn
+                  button.btn.btn-sm.brown-btn -
+                input.form-control.input-sm(type='text', name='adults1')
+                span.input-group-btn
+                  button.btn.btn-sm.brown-btn +
+            .col-xs-6.col-sm-6.col-md-6.unit
+              span.f(data-key='adult', data-mode='1', data-fallback='', data-placeholders='%20')   adult
+          .cs-room-people.pad-top.col-xs-12.col-sm-4.col-md-4
+            .col-xs-12.col-sm-12.col-md-12
+              .col-xs-6.col-sm-6.col-md-6
+                .input-group
+                  span.input-group-btn
+                    button.less-children-1.btn.btn-sm.brown-btn -
+                  input.form-control.input-sm(type='text', name='children1')
+                  span.input-group-btn
+                    button.more-child.btn.btn-sm.brown-btn +
+              .col-xs-6.col-sm-6.col-md-6.unit
+                span.fb-translate(data-key='child', data-mode='1', data-fallback='', data-placeholders='%20')   child
+                i.fa.fa-info-circle(title='(0-12 years)')
+            .child-age
+              .col-xs-12(style='margin-top: 10px; padding:0px')
+                .col-xs-6.col-sm-6.col-md-6.unit(style='text-align:right; padding-left:0px; padding-right:5px;')
+                  span Age Child 1
+                .col-xs-6.col-sm-6.col-md-6
+                  .input-group
+                    span.input-group-btn
+                      button.btn.btn-sm.brown-btn -
+                    input.form-control.input-sm(type='text', data-child='1', name='childrenAges1-1')
+                    span.input-group-btn
+                      button.btn.btn-sm.brown-btn +
+        .cs-room.col-xs-12.col-sm-12.col-md-12
+          .cs-room-title.pad-top.col-xs-12.col-sm-3.col-md-2
+            span
+              span.col-xs-9.col-sm-12.col-md-12
+                span.fa.fa-hotel
+                span.room-num Phòng 1
+                  span.col-xs-12.col-sm-12.col-md-12.no-pad(style='line-height: 1rem;')
+                    a.cs-room-remove(href='#')
+                      span Remove
+          .cs-room-adults.pad-top.col-xs-12.col-sm-4.col-md-4
+            .col-xs-6.col-sm-6.col-md-6
+              .input-group
+                span.input-group-btn
+                  button.btn.btn-sm.brown-btn -
+                input.form-control.input-sm(type='text', name='adults1')
+                span.input-group-btn
+                  button.btn.btn-sm.brown-btn +
+            .col-xs-6.col-sm-6.col-md-6.unit
+              span.f(data-key='adult', data-mode='1', data-fallback='', data-placeholders='%20')   adult
+          .cs-room-people.pad-top.col-xs-12.col-sm-4.col-md-4
+            .col-xs-12.col-sm-12.col-md-12
+              .col-xs-6.col-sm-6.col-md-6
+                .input-group
+                  span.input-group-btn
+                    button.less-children-1.btn.btn-sm.brown-btn -
+                  input.form-control.input-sm(type='text', name='children1')
+                  span.input-group-btn
+                    button.more-child.btn.btn-sm.brown-btn +
+              .col-xs-6.col-sm-6.col-md-6.unit
+                span.fb-translate(data-key='child', data-mode='1', data-fallback='', data-placeholders='%20')   child
+                i.fa.fa-info-circle(title='(0-12 years)')
+            .child-age
+              .col-xs-12(style='margin-top: 10px; padding:0px')
+                .col-xs-6.col-sm-6.col-md-6.unit(style='text-align:right; padding-left:0px; padding-right:5px;')
+                  span Age Child 1
+                .col-xs-6.col-sm-6.col-md-6
+                  .input-group
+                    span.input-group-btn
+                      button.btn.btn-sm.brown-btn -
+                    input.form-control.input-sm(type='text', data-child='1', name='childrenAges1-1')
+                    span.input-group-btn
+                      button.btn.btn-sm.brown-btn +
+        .clearfix
+        .fa.fa-close.close-search-button
+    .cs-search-button-mobile
