@@ -1,53 +1,126 @@
 angular.module('calm-booking')
-  .controller('booking-central', ['$scope', function($scope){
+  .controller('booking-central', ['$scope', '$sce', function($scope, $sce){
   	var today = new Date(),
   		nextDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
   		todayFm = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear(),
   		nextDateFm = nextDate.getDate() + '-' + (nextDate.getMonth() + 1) + '-' + nextDate.getFullYear();
+  	$scope.labels = {
+  		validateBtnText: 'Đặt phòng'
+  	};
   	$scope.csSearchParams = {
   		checkin: todayFm,
   		checkout: nextDateFm,
   		nightNum: 1,
+      	roomSelected: 0,
+      	selectingRoom: 0,
   		rooms: [
   			{
-  				selected: true,
-				adult: 1,
-				childs: [],	
-				priceValue: 0,
-				calPrice: '1,200,000',
-				name: 'Standard room',
-				package: 'GÓI TIẾT KIỆM MÙA HÈ'
-  			},
-  			{
   				selected: false,
 				adult: 1,
 				childs: [],
-				priceValue: 0,
-				calPrice: ''
-  			},
+			},
   			{
   				selected: false,
-				adult: 1,
-				childs: [],
-				priceValue: 0,
-				calPrice: ''				
+  				adult: 1,
+  				childs: [],
+				},
+  			{
+  				selected: false,
+  				adult: 1,
+  				childs: [],
   			}
   		]
+  	};
+  	$scope.confirm = {
+  		rooms: []
+  	};
+  	$scope.csExtraList = {
+  		extras: [
+  			{
+  				ind: 0,
+  				img: 'images/photos/bar4.jpg',
+  				name: 'Bữa tối buffet BBQ',
+  				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
+  				price: 1300000,
+  				selected: false
+  			},
+  			{
+  				ind: 1,
+  				img: 'images/photos/bar4.jpg',
+  				name: 'Bữa tối buffet BBQ',
+  				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
+  				price: 1300000,
+  				selected: false
+  			},  			
+  			{
+  				ind: 2,
+  				img: 'images/photos/bar4.jpg',
+  				name: 'Bữa tối buffet BBQ',
+  				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
+  				price: 1300000,
+  				selected: false
+  			},  			
+  			{
+  				ind: 3,
+  				img: 'images/photos/bar4.jpg',
+  				name: 'Bữa tối buffet BBQ',
+  				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
+  				price: 1300000,
+  				selected: false
+  			}
+  		],
+  		specialRequest: ''
   	};
   	$scope.csRoomList = {
   		rooms: [
   			{
   				name: 'Standard Room',
   				imgs: [
+            {src:'images/photos/standar1.jpg', alt: 'Calmsesa Booking'},
+            {src:'images/photos/standar1.jpg', alt: 'Calmsesa Booking'},
   					{src:'images/photos/standar1.jpg', alt: 'Calmsesa Booking'}
   				],
+          feature: [
+            {
+              icon: 'check',
+              text: 'Không gian dễ chịu'
+            },
+            {
+              icon: 'check',
+              text: 'Wifi miễn phí'
+            },
+            {
+              icon: 'check',
+              text: 'Góc nhìn ra biển'
+            }
+          ],
+          maxocc: {
+            total: 4,
+            adult: 2,
+            child: 2
+          },
+          mainbrief: 'Loại phòng sang trọng và quý phái nhất của khách sạn. Nhất định sẽ mang lại cho quý khách cảm giác thoải mái.',
+          briefs: [
+            {
+              title: 'Các đáp ứng kĩ thuật số',
+              icon: '',
+              text: 'TV LCD màn hình rộng, tốc độ truy cập internet mạnh mẽ'
+            },
+            {
+              title: 'Các tiện nghi khác',
+              icon: '',
+              text: 'Máy điều hòa, ...'
+            },
+            {
+              title: 'Các tùy chọn giường nằm',
+              icon: '',
+              text: 'Giường đơn, giường đôi'
+            }
+          ],
   				packages: [
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						priceValue: 1200000,
-  						price: '1,200,000',
-  						calPriceValue: 1200000,
-  						calPrice: '1,200,000',
+  						price: 1200000,
   						feature: [
   							{
   								icon: 'fa-close',
@@ -74,10 +147,7 @@ angular.module('calm-booking')
   					},
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						priceValue: 1500000,
-  						price: '1,500,000',
-  						calPriceValue: 1500000,
-  						calPrice: '1,500,000',
+  						price: 1500000,
   						feature: [
   							{
   								icon: 'fa-close',
@@ -104,10 +174,7 @@ angular.module('calm-booking')
   					},
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						priceValue: 1200000,
-  						price: '1,300,000',
-  						calPriceValue: 1300000,
-  						calPrice: '1,300,000',
+  						price: 1300000,
   						feature: [
   							{
   								icon: 'fa-close',
@@ -137,15 +204,51 @@ angular.module('calm-booking')
   			{
   				name: 'Deluxe Room',
   				imgs: [
+            {src:'images/photos/double1.jpg', alt: 'Calmsesa Booking'},
+            {src:'images/photos/double1.jpg', alt: 'Calmsesa Booking'},
   					{src:'images/photos/double1.jpg', alt: 'Calmsesa Booking'}
   				],
+          feature: [
+            {
+              icon: 'check',
+              text: 'Không gian dễ chịu'
+            },
+            {
+              icon: 'check',
+              text: 'Wifi miễn phí'
+            },
+            {
+              icon: 'check',
+              text: 'Góc nhìn ra biển'
+            }
+          ],
+          maxocc: {
+            total: 4,
+            adult: 2,
+            child: 2
+          },
+          mainbrief: 'Loại phòng sang trọng và quý phái nhất của khách sạn. Nhất định sẽ mang lại cho quý khách cảm giác thoải mái.',
+          briefs: [
+            {
+              title: 'Các đáp ứng kĩ thuật số',
+              icon: '',
+              text: 'TV LCD màn hình rộng, tốc độ truy cập internet mạnh mẽ'
+            },
+            {
+              title: 'Các tiện nghi khác',
+              icon: '',
+              text: 'Máy điều hòa, ...'
+            },
+            {
+              title: 'Các tùy chọn giường nằm',
+              icon: '',
+              text: 'Giường đơn, giường đôi'
+            }
+          ],
   				packages: [
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						priceValue: 1200000,
-  						price: '1,200,000',
-  						calPriceValue: 1200000,
-  						calPrice: '1,200,000',
+  						price: 1200000,
   						feature: [
   							{
   								icon: 'fa-close',
@@ -172,10 +275,7 @@ angular.module('calm-booking')
   					},
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						priceValue: 1500000,
-  						price: '1,500,000',
-  						calPriceValue: 1500000,
-  						calPrice: '1,500,000',
+  						price: 1200000,
   						feature: [
   							{
   								icon: 'fa-close',
@@ -202,10 +302,7 @@ angular.module('calm-booking')
   					},
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						priceValue: 1200000,
-  						price: '1,300,000',
-  						calPriceValue: 1300000,
-  						calPrice: '1,300,000',
+  						price: 1200000,
   						feature: [
   							{
   								icon: 'fa-close',
@@ -235,15 +332,53 @@ angular.module('calm-booking')
   			{
   				name: 'Suite Room',
   				imgs: [
+            {src:'images/photos/suite1.jpg', alt: 'Calmsesa Booking'},
+            {src:'images/photos/suite1.jpg', alt: 'Calmsesa Booking'},
+            {src:'images/photos/suite1.jpg', alt: 'Calmsesa Booking'},
+            {src:'images/photos/suite1.jpg', alt: 'Calmsesa Booking'},
   					{src:'images/photos/suite1.jpg', alt: 'Calmsesa Booking'}
   				],
+          feature: [
+            {
+              icon: 'check',
+              text: 'Không gian dễ chịu'
+            },
+            {
+              icon: 'check',
+              text: 'Wifi miễn phí'
+            },
+            {
+              icon: 'check',
+              text: 'Góc nhìn ra biển'
+            }
+          ],
+          maxocc: {
+            total: 4,
+            adult: 2,
+            child: 2
+          },
+          mainbrief: 'Loại phòng sang trọng và quý phái nhất của khách sạn. Nhất định sẽ mang lại cho quý khách cảm giác thoải mái.',
+          briefs: [
+            {
+              title: 'Các đáp ứng kĩ thuật số',
+              icon: '',
+              text: 'TV LCD màn hình rộng, tốc độ truy cập internet mạnh mẽ'
+            },
+            {
+              title: 'Các tiện nghi khác',
+              icon: '',
+              text: 'Máy điều hòa, ...'
+            },
+            {
+              title: 'Các tùy chọn giường nằm',
+              icon: '',
+              text: 'Giường đơn, giường đôi'
+            }
+          ],
   				packages: [
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						priceValue: 1200000,
-  						price: '1,200,000',
-  						calPriceValue: 1200000,
-  						calPrice: '1,200,000',
+  						price: 1200000,
   						feature: [
   							{
   								icon: 'fa-close',
@@ -270,10 +405,7 @@ angular.module('calm-booking')
   					},
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						priceValue: 1500000,
-  						price: '1,500,000',
-  						calPriceValue: 1500000,
-  						calPrice: '1,500,000',
+  						price: 1200000,
   						feature: [
   							{
   								icon: 'fa-close',
@@ -300,10 +432,7 @@ angular.module('calm-booking')
   					},
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						priceValue: 1200000,
-  						price: '1,300,000',
-  						calPriceValue: 1300000,
-  						calPrice: '1,300,000',
+  						price: 1200000,
   						feature: [
   							{
   								icon: 'fa-close',
@@ -343,8 +472,9 @@ angular.module('calm-booking')
   				}
   			};break;
   			case 'child':{
-  				quan = $scope.csSearchParams.rooms[index].childs.length;
-  				if (quan < 2) {
+          quan = $scope.csSearchParams.rooms[index].childs.length;
+          if (quan < 2) {
+            console.log(quan);
   					$scope.csSearchParams.rooms[index].childs.push(1);
   				}
   			};break;
@@ -389,23 +519,113 @@ angular.module('calm-booking')
   	$scope.selectPackage = function(e, roomInd, packInd){
   		e.preventDefault();
   		var csSearch = $scope.csSearchParams,
-  			roomList = $scope.csRoomList;
+    			roomList = $scope.csRoomList;
+      $scope.csSearchParams.roomSelected++;
   		for (var i = 0, len = csSearch.rooms.length; i < len; i++){
   			if (!csSearch.rooms[i].selected) {
   				csSearch.rooms[i].name = roomList.rooms[roomInd].name;
   				csSearch.rooms[i].package = roomList.rooms[roomInd].packages[packInd].name;
-  				csSearch.rooms[i].calPrice = roomList.rooms[roomInd].packages[packInd].calPrice;
+  				csSearch.rooms[i].price = roomList.rooms[roomInd].packages[packInd].price;
   				csSearch.rooms[i].selected = true;
-  				console.log(csSearch);	
-  				break;
+          $scope.csSearchParams.selectingRoom = i + 1;
+  				return;
   			}
   		}
+      alert('Hiện tại hệ thống chỉ cho phép đặt tối đa một lúc 3 phòng! Mong quý khách thông cảm');
   	};
 
   	$scope.unselectRoom = function(e, roomInd){
   		e.preventDefault();
-  		$scope.csSearchParams.rooms[roomInd].selected = false;
+      var rooms = $scope.csSearchParams.rooms,
+          lastRoom = true,
+          selectingRoom = roomInd;
+      $scope.csSearchParams.roomSelected--;
+      if (roomInd < 2) {
+        for (var i = roomInd; i < 2; i++){
+          if (rooms[i+1].selected) {
+            $scope.csSearchParams.rooms[i] = $.extend(true, {}, rooms[i+1]);
+            $scope.csSearchParams.rooms[i+1].selected = false;
+            lastRoom = false;
+            selectingRoom = i + 1;
+          }
+        }
+        $scope.csSearchParams.selectingRoom = selectingRoom;
+        if (!lastRoom) {
+          return;
+        }
+      }
+  		rooms[roomInd].selected = false;
   	}
 
+    // Calculate money amount
+    $scope.getTotalSelectedPrice = function(){
+      var csSearchParams = $scope.csSearchParams,
+      	  extras = $scope.csExtraList.extras,
+          rooms = csSearchParams.rooms,
+          total = 0;
+      for (var i = 0,len = rooms.length; i < len; i++) {
+        if (rooms[i].selected) {
+          total += rooms[i].price * csSearchParams.nightNum;
+        }
+      }
+      for (var i = 0, len = extras.length; i < len; i++){
+      	if (extras[i].selected) {
+      		total += extras[i].price;
+      	}
+      }
+      return total;
+    };
+
+    $scope.getNightPrice = function(){
+      var searchParams = $scope.csSearchParams,
+          nightPriceArray = [],
+          nightNum = searchParams.nightNum,
+          pricePernight = 0;
+      for (var i = 0, len = searchParams.nightNum; i < len; i++) {
+        for (var j = 0, plen = searchParams.rooms.length; j < plen; j++) {
+          console.log(searchParams.rooms[j].selected);
+          if (searchParams.rooms[j].selected) {
+            pricePernight += searchParams.rooms[j].price
+          }
+        }
+        nightPriceArray.push(pricePernight);
+        pricePernight = 0;
+      }
+      return nightPriceArray;
+    };
+
+    // Showing detail popup
+    $scope.showPopDetail = function(ind){
+      $('#pop-room-detail-' + ind)
+        .addClass('active')
+        .fadeIn({
+          duration: 'normal',
+          easing: 'easeOutQuart'
+        });
+    }
+
+    // Get details
+    $scope.getExtraDetail = function(ind) {
+    	return $sce.trustAsHtml($scope.csExtraList.extras[ind].detail);
+    }
+    $scope.toggleExtra = function(e, ind){
+    	e.preventDefault();
+    	$scope.csExtraList.extras[ind].selected = !$scope.csExtraList.extras[ind].selected;
+    }
+    $scope.getPriceSelectedExtra = function(){
+    	var total = 0,
+    		extra = $scope.csExtraList.extras;
+    	for (var i = 0, len = extra.length; i < len; i++){
+    		if (extra[i].selected) {
+    			total += extra[i].price;
+    		}
+    	}
+    	return total;
+    }
+
+
+    $scope.selectedItem = function(item){
+    	return item.selected;
+    }
   	console.log($scope.csSearchParams);
   }])

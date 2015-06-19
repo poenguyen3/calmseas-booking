@@ -9,62 +9,64 @@
     .sum.col-xs-6
       .price.col-xs-12.no-pad.text-right
         span.unit VND
-        span.num 2,420,000
+        span.num {{getTotalSelectedPrice(true) | currency:'':0}}
       .room-night.col-xs-12.no-pad.text-right
-        span.room 1 phòng
+        span.room {{csSearchParams.roomSelected}} phòng
         span ,
-        span.night 1 đêm
+        span.night {{csSearchParams.nightNum}} đêm
     .clearfix
-  .summary-detail.col-xs-12#detailtotal11
-    .night.col-xs-12
-      .text.col-xs-7 Đêm 1
-      .price.col-xs-5
-        span.unit VND
-        span.num 1,200,000
-    .total-price.col-xs-12
-      .text.col-xs-7 Tổng cộng
-      .price.col-xs-5
-        span.unit VND
-        span.num 4,200,000
-    .included.col-xs-12
-      .text Bao gồm
-    .addition.col-xs-12
-      .text.col-xs-7 Dịch vụ
-      .price.col-xs-5
-        span.unit VND
-        span.num 108,00
-    .addition.col-xs-12
-      .text.col-xs-7 VAT
-      .price.col-xs-5
-        span.unit VND
-        span.num 408,00
-  .room.col-xs-12.no-pad(ng-class="{'remain': !room.selected, 'selected': room.selected}" ng-repeat="room in csSearchParams.rooms track by $index")
-    .room-info(ng-show="room.selected")
-      .room-num.col-xs-4 Phòng {{$index + 1}}
+  .summary-content-container.col-xs-12.no-pad
+    .summary-detail.col-xs-12#detailtotal11
+      .night.col-xs-12(ng-repeat="night in getNightPrice() track by $index")
+        .text.col-xs-7 Đêm {{$index + 1}}
+        .price.col-xs-5
+          span.unit VND
+          span.num {{night | currency:'':0}}
+      .total-price.col-xs-12
+        .text.col-xs-7 Tổng cộng
+        .price.col-xs-5
+          span.unit VND
+          span.num {{getTotalSelectedPrice() | currency:'':0}}
+      .included.col-xs-12
+        .text Bao gồm
+      .addition.col-xs-12
+        .text.col-xs-7 Dịch vụ
+        .price.col-xs-5
+          span.unit VND
+          span.num {{0 | currency:'':0}}
+      .addition.col-xs-12
+        .text.col-xs-7 VAT
+        .price.col-xs-5
+          span.unit VND
+          span.num {{0 | currency:'':0}}
+    .room.col-xs-12.no-pad(ng-class="{'remain': !room.selected, 'selected': room.selected}" ng-repeat="room in csSearchParams.rooms track by $index")
+      .room-info(ng-show="room.selected")
+        .room-num.col-xs-4 Phòng {{$index + 1}}
+        .price.col-xs-8.text-right
+          span.unit VND
+          span.num {{room.price * csSearchParams.nightNum | currency:'':0}}
+        .room-name.col-xs-12 {{room.name}}
+        .package-name.col-xs-12 {{room.package}}
+        .remove-btn.col-xs-12.text-center
+          a(href="#").remove.brown-text(ng-click="unselectRoom($event, $index)") Xóa
+      span.text(ng-hide="room.selected") Chọn phòng {{$index + 1}}
+    .room.selected.extra.col-xs-12.no-pad
+      .room-num.col-xs-4 Gói thêm
       .price.col-xs-8.text-right
         span.unit VND
-        span.num {{room.calPrice}}
-      .room-name.col-xs-12 {{room.name}}
-      .package-name.col-xs-12 {{room.package}}
-      .remove-btn.col-xs-12.text-center
-        a(href="#").remove.brown-text(ng-click="unselectRoom($event, $index)") Xóa
-    span.text(ng-hide="room.selected") Chọn phòng {{$index + 1}}
-  .room.selected.extra.col-xs-12.no-pad
-    .room-num.col-xs-4 Gói thêm
-    .price.col-xs-8.text-right
-      span.unit VND
-      span.num 2,410,000
-    .detail-link.col-xs-12 
-      a(href="#").brown-text.detail-link(ng-click="toggleDetail($event, 'detail111')")
-        span.text Chi tiết
-        span.fa.fa-caret-down
-  .room.selected.detail.col-xs-12.no-pad#detail111
-    .extra-name.col-xs-6 Bữa tối buffet BBQ
-    .price.col-xs-6.text-right
-      span.unit VND
-      span.num 2,410,000
-    .remove.col-xs-12
-      a(href="#").brown-text
-        span.text Bỏ
+        span.num {{getPriceSelectedExtra() | currency:'':0}}
+      .detail-link.col-xs-12
+        a(href="#").brown-text.detail-link(ng-click="toggleDetail($event, 'detail111')")
+          span.text Chi tiết
+          span.fa.fa-caret-down
+    .room.selected.detail.col-xs-12.no-pad#detail111
+      .extra-selected(ng-repeat="extra in csExtraList.extras | filter: selectedItem ")
+        .extra-name.col-xs-6 extra.name
+        .price.col-xs-6.text-right
+          span.unit VND
+          span.num {{extra.price | currency:'':0}}
+        .remove.col-xs-12
+          a(href="#").brown-text(ng-click="toggleExtra($event, extra.ind)")
+            span.text Bỏ
   .book-button.col-xs-12.no-pad
-    button.btn.brown-btn.no-rad.col-xs-12.no-pad Đặt phòng
+    button.btn.brown-btn.no-rad.col-xs-12.no-pad(ng-click="nextStep($event)") {{labels.validateBtnText}}

@@ -340,10 +340,62 @@ body {
     }
 
     .gallery-slider {
-      height: 330px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 0px;
       overflow: hidden;
-      > img {
-        max-width: 100%;
+      .slide {
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .slick-next, .slick-prev {
+        padding: 8px;
+        border-radius: 14px;
+        background-color: #333333;
+        background-color: rgba(0,0,0,0.5);
+        width: 28px;
+        height: 28px;
+        top: 100%;
+        margin-top: -40px;
+        z-index: 4;
+        &:before {
+          position: absolute;
+          top: 2px;
+          left: 4px;
+
+        }
+      }
+      .slick-next {
+        right: 10px;
+      }
+      .slick-prev {
+        left: 100%;
+        margin-left: -70px;
+      }
+
+      .slick-dots {
+        position: absolute;
+        bottom: 5px;
+        li {
+          width: 12px;
+          button {
+            width: 12px;
+            height: 12px;
+            border-radius: 6px;
+            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.7);
+            &:before {
+              display: none;
+            }
+          }
+          &.slick-active {
+            button {
+              background-color: #A59169;
+            }
+          }
+        }
       }
     }
 
@@ -503,121 +555,122 @@ body {
       color: gray;
     }
   }
-
-  .summary-detail {
-    border-bottom: 1px solid #c4c4c4;
-    background-color: #f5f5f5;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    display: none;
-    .text {
-      font-size: 1rem;
-      line-height: 1.3rem;
-      color: #333333;
-    }
-    .night, .total-price, .included, .addition {
-      .no-pad;
-      padding: 4px 0;
-      .text {
-        .no-pad;
-        color: #565656;
-      }
-    }
-    .price {
-      line-height: 1.3rem;
-      padding-left: 0;
-      padding-right: 0;
-      .text-right;
-      .unit {
-        font-size: 0.7rem;
-        color: #787878;
-      }
-      .num {
-        font-size: 1rem;
-        color: #666666;
-        padding-left: 4px;
-      }
-    }
-    .total-price {
-      .text {
-        color: #111111;
-        font-weight: bold;
-      }
-      .price {
-        .unit, .num {
-          font-weight: 500;
-          color: #333333;
-        }
-      }
-    }
-    .included {
+  .summary-content-container {
+    .summary-detail {
+      border-bottom: 1px solid #c4c4c4;
+      background-color: #f5f5f5;
       padding-top: 15px;
-    }
-
-  }
-
-  > .room {
-    border-bottom: 1px solid #c4c4c4;
-    &.remain {
-      border: 1px dotted #c4c4c4;
-      background: #f5f5f5;
-      margin: 10px 0;
-      height: 70px;
-      .text-center;
-      .text {
-        line-height: 70px;
-        color: gray;
-      }
-    }
-
-    &.detail {
+      padding-bottom: 15px;
       display: none;
-    }
-
-
-    &.selected {
-      padding: 15px 0;
-      .room-num {
-        font-weight: bold;
+      .text {
         font-size: 1rem;
         line-height: 1.3rem;
         color: #333333;
-        padding-right: 0;
+      }
+      .night, .total-price, .included, .addition {
+        .no-pad;
+        padding: 4px 0;
+        .text {
+          .no-pad;
+          color: #565656;
+        }
       }
       .price {
         line-height: 1.3rem;
-        padding-left: 0px;
+        padding-left: 0;
+        padding-right: 0;
+        .text-right;
         .unit {
-          font-size: 0.8rem;
-          color: #343434;
+          font-size: 0.7rem;
+          color: #787878;
         }
         .num {
-          font-size: 1.2rem;
-          color: #222222;
+          font-size: 1rem;
+          color: #666666;
           padding-left: 4px;
         }
       }
-      .room-name, .package-name, .extra-name {
-        font-weight: 100;
-        font-size: 1rem;
-        color: gray;
-        line-height: 1.6rem;
-      }
-      .detail-link {
-        .fa {
-          padding-left: 4px;
+      .total-price {
+        .text {
+          color: #111111;
+          font-weight: bold;
+        }
+        .price {
+          .unit, .num {
+            font-weight: 500;
+            color: #333333;
+          }
         }
       }
-      .package-name {
-        padding-bottom: 15px;
+      .included {
+        padding-top: 15px;
       }
-      .remove-btn {
-        padding-top: 5px;
+
+    }
+
+     .room {
+      border-bottom: 1px solid #c4c4c4;
+      &.remain {
+        border: 1px dotted #c4c4c4;
+        background: #f5f5f5;
+        margin: 10px 0;
+        height: 70px;
+        .text-center;
+        .text {
+          line-height: 70px;
+          color: gray;
+        }
       }
-      .package-name {
-        border-bottom: 1px dashed #cecece;
-        &.no-border {
-          border-bottom: 0px;
+
+      &.detail {
+        display: none;
+      }
+
+
+      &.selected {
+        padding: 15px 0;
+        .room-num {
+          font-weight: bold;
+          font-size: 1rem;
+          line-height: 1.3rem;
+          color: #333333;
+          padding-right: 0;
+        }
+        .price {
+          line-height: 1.3rem;
+          padding-left: 0px;
+          .unit {
+            font-size: 0.8rem;
+            color: #343434;
+          }
+          .num {
+            font-size: 1.2rem;
+            color: #222222;
+            padding-left: 4px;
+          }
+        }
+        .room-name, .package-name, .extra-name {
+          font-weight: 100;
+          font-size: 1rem;
+          color: gray;
+          line-height: 1.6rem;
+        }
+        .detail-link {
+          .fa {
+            padding-left: 4px;
+          }
+        }
+        .package-name {
+          padding-bottom: 15px;
+        }
+        .remove-btn {
+          padding-top: 5px;
+        }
+        .package-name {
+          border-bottom: 1px dashed #cecece;
+          &.no-border {
+            border-bottom: 0px;
+          }
         }
       }
     }
@@ -684,6 +737,7 @@ body {
           color: #565656;
           line-height: 1.3rem;
           font-size: 1rem;
+          display: none;
           p {
             padding-top: 8px;
           }
@@ -953,4 +1007,177 @@ body {
     display: block;
   }
 
+}
+
+.cs-popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 21;
+  top: 0px;
+  left: 0px;
+  .bg-dark3;
+  overflow: auto;
+  left: -120%;
+  &.active {
+    left: 0px;
+    display: none;
+  }
+  .close-btn {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    .text-center;
+    .text-white;
+    font-size: 1.6rem;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    background-color: #A59169;
+    .pointer;
+  }
+
+  .gallery-slider {
+    .slide {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .slick-next, .slick-prev {
+      padding: 8px;
+      border-radius: 14px;
+      background-color: #333333;
+      background-color: rgba(0,0,0,0.5);
+      width: 28px;
+      height: 28px;
+      top: 100%;
+      margin-top: -40px;
+      z-index: 4;
+      &:before {
+        position: absolute;
+        top: 2px;
+        left: 4px;
+
+      }
+    }
+    .slick-next {
+      right: 10px;
+    }
+    .slick-prev {
+      left: 100%;
+      margin-left: -70px;
+    }
+
+    .slick-dots {
+      position: absolute;
+      bottom: 5px;
+      li {
+        width: 12px;
+        button {
+          width: 12px;
+          height: 12px;
+          border-radius: 6px;
+          background-color: #ffffff;
+          background-color: rgba(255, 255, 255, 0.7);
+          &:before {
+            display: none;
+          }
+        }
+        &.slick-active {
+          button {
+            background-color: #A59169;
+          }
+        }
+      }
+    }
+  }
+
+  .thumb-slider {
+    .slide {
+      padding: 4px;
+      margin: 5px;
+      &.slick-active {
+        background-color: #fefefe;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .slick-next, .slick-prev {
+      padding: 8px;
+      border-radius: 14px;
+      background-color: #333333;
+      background-color: rgba(0,0,0,0.5);
+      width: 28px;
+      height: 28px;
+      z-index: 4;
+      &:before {
+        position: absolute;
+        top: 2px;
+        left: 4px;
+
+      }
+    }
+    .slick-next {
+      right: 20px;
+    }
+    .slick-prev {
+      left: 20px;
+    }
+  }
+
+
+  .infos {
+    color: #f5f5f5;
+    padding: 25px;
+    padding-top: 50px;
+    .room-name {
+      font-size: 1.8rem;
+      padding-top: 10px;
+      padding-bottom: 15px;
+    }
+    .room-main-brief {
+      font-size: 1.3rem;
+      line-height: 1.8rem;
+      padding-bottom: 30px;
+    }
+    .room-features {
+      .fea {
+        .fa {
+          padding-right: 4px;
+        }
+        line-height: 1.3rem;
+      }
+    }
+    .room-brief {
+      padding-top: 32px;
+      .title {
+        color: #ffffff;
+        padding-bottom: 20px;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+      .content {
+        .fa {
+          padding-right: 7px;
+          color: #cfcfcf;
+        }
+        color: #b3b3b3;
+        font-size: 1rem;
+      }
+    }
+  }
+
+}
+#flash-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: #eeeeee;
+  display: none;
+  z-index: 55;
 }

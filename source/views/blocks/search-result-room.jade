@@ -2,45 +2,74 @@
   .caption.col-xs-12.bg-dark3.text-white
     span {{room.name}}
   .gallery-slider.col-xs-12.no-pad
-    img(src="{{img.src}}" alt="img.alt" ng-repeat="img in room.imgs")
+    .slide(ng-repeat="img in room.imgs" on-finish-slider)
+      img(src="{{img.src}}" alt="img.alt")
   .more-detail.col-xs-12
     .more-detail-link
-      a(href="javascript:void(0)")
+      a(href="javascript:void(0)" ng-click="showPopDetail($index)")
         span Thông tin và hình ảnh cụ thể
         span.fa.fa-caret-right
   .cs-package-container(ng-repeat="pack in room.packages track by $index")
     .cs-room-package.col-xs-12.bg-light
-      .cs-package-name.col-xs-7.col-sm-9
+      .cs-package-name.col-xs-7.col-sm-8
         span.upper.name {{pack.name}}
-        a(href="#").brown-text
+        a(href="#").brown-text(ng-click="showFeatureDetail($event, $parent.$index, $index, 0)")
           span Chi tiết
           span.fa.fa-caret-down
-      .cs-package-price.col-xs-5.col-sm-3.no-pad.text-right
+      .cs-package-price.col-xs-5.col-sm-4.no-pad.text-right
         .cs-amount.col-xs-12
           span.unit VND
-          span.num {{pack.calPrice}}
+          span.num {{pack.price * csSearchParams.nightNum | currency:'':0}}
         .cs-rp-sum.col-xs-12.no-pad
           span.night {{csSearchParams.nightNum}} đêm
           span ,
-          span.person 1 người lớn
+          span.person {{csSearchParams.rooms[csSearchParams.selectingRoom].adult}} người lớn
       .cs-package-info.col-sm-9.hidden-xs.no-pad
-        .feature.col-sm-4(ng-repeat="fea in pack.feature track by $index" ng-click="showFeatureDetail($event, $parent.$index, $index)")
+        .feature.col-sm-4(ng-repeat="fea in pack.feature track by $index" ng-click="showFeatureDetail($event, $parent.$parent.$index, $parent.$index, $index)")
           span.col-sm-2.fa.no-pad(ng-class="fea.icon")
           span.col-sm-10.prop.no-pad {{fea.text}}
       .cs-package-book.col-xs-12.col-sm-3
         button.btn.btn-block.no-rad.brown-btn(ng-click="selectPackage($event, $parent.$index, $index)")
-          span.book-text Chọn phòng
+          span.book-text Chọn phòng {{csSearchParams.selectingRoom + 1}}
       .cs-package-detail.col-xs-12.visible-xs
-        span.detail-text Xem chi tiết
+        span.detail-text(ng-click="showFeatureDetail($event, $parent.$index, $index, 0)") Xem chi tiết
         i.fa.fa-caret-down
-    .cs-feature-detail.col-xs-12.no-pad(class="pack-{{$parent.$index}} detail-{{$index}}", ng-repeat="fea in pack.feature track by $index")
+    .cs-feature-detail.col-xs-12.no-pad(id="detail-{{$parent.$parent.$index}}-{{$parent.$index}}-{{$index}}", ng-repeat="fea in pack.feature track by $index")
       .col-xs-12.no-pad.lb
         .title.col-sm-9.hidden-xs.no-pad {{fea.text}}
         .close-btn.col-sm-3.hidden-xs.no-pad.text-right
-          a(href="#").brown-text Đóng
+          a(href="#").brown-text(ng-click="showFeatureDetail($event, $parent.$parent.$index, $parent.$index, $index)") Đóng
       .content.col-xs-12.no-pad {{fea.detail.content}}
       .clearfix
         .col-sm-12.term.text-right
           a(href="#").brown-text Chính sách và điều kiện
   .clearfix
 .clearfix
+.cs-popup(cs-popup).room-dettail(id="pop-room-detail-{{$index}}" ng-repeat="room in csRoomList.rooms track by $index")
+  .gallery-slider-container.col-md-6.col-xs-12.no-pad
+    .gallery-slider(ng-class="'pop-detail-slider' + $index")
+      .slide(ng-repeat="img in room.imgs" on-finish-slider)
+        img(src="{{img.src}}" alt="img.alt")
+    .thumb-slider(data-id="pop-detail-slider{{$index}}")
+      .slide(ng-repeat="img in room.imgs" on-finish-thumbslider)
+        img(src="{{img.src}}" alt="img.alt")
+  .infos.col-md-6.col-xs-12.no-pad
+    .room-name.col-xs-12 {{room.name}}
+    .room-main-brief.col-xs-12  {{room.mainbrief}}
+    .room-features.col-xs-12
+      .fea.col-xs-4.no-pad(ng-repeat="fea in room.feature track by $index")
+        span(ng-class="'fa fa-' + fea.icon")
+        span.text {{fea.text}}
+    .room-brief.col-xs-12
+      .title.col-xs-12.no-pad Số khách tối đa
+      .content.col-xs-12.no-pad
+        span.fa.fa-users
+        span.text {{room.maxocc.total}} người ({{room.maxocc.adult}} người lớn, {{room.maxocc.child}} trẻ em)
+    .room-brief.col-xs-12(ng-repeat="brief in room.briefs track by $index")
+      .title.col-xs-12.no-pad {{brief.title}}
+      .content.col-xs-12.no-pad
+        span.text {{brief.text}}
+  .close-btn
+    .fa.fa-close
+#flash-overlay
+

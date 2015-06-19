@@ -22,10 +22,4 @@ var Site = (function($, window, undefined) {
 })(jQuery, window);
 
 jQuery(function() {
-  $('.step-link').on('click', function(){
-    $('.step-nav').removeClass('active');
-    $(this).parents('.step-nav').addClass('active');
-    $('.step-container').hide();
-    $('.step-' + $(this).data('id')).stop().show();
-  });
 });

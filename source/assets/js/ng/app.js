@@ -1,1 +1,1 @@
-angular.module('calm-booking', []);
+angular.module('calm-booking', ['ngSanitize']);

@@ -42,7 +42,7 @@ module.exports = function(grunt) {
         files: [{
           '<%= meta.build %>js/modernizr.js': ['<%= meta.assets %>js/libs/modernizr.2.8.3.js','<%= meta.assets %>js/libs/detectizr.js'],
           '<%= meta.build %>js/libs.js': ['<%= meta.assets %>js/libs/jquery-1.11.2.js', '<%= meta.assets %>js/libs/plugins/*.js'],
-          '<%= meta.build %>js/ng.js': ['<%= meta.assets %>js/libs/ng.js'],
+          '<%= meta.build %>js/ng.js': ['<%= meta.assets %>js/libs/ng.js', '<%= meta.assets %>js/libs/angular-sanitize.min.js'],
           '<%= meta.build %>js/app.js': ['<%= meta.assets %>js/ng/app.js','<%= meta.assets %>js/ng/**/*.js'],
           '<%= meta.build %>js/l10n.js': '<%= meta.assets %>js/l10n.js',
           '<%= meta.build %>js/script.js': ['<%= meta.assets %>js/site.js', '<%= meta.assets %>js/plugins/*.js'],

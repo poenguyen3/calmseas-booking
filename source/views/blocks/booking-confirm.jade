@@ -4,7 +4,7 @@
     span.title.col-xs-10.col-sm-12
       span.lb Thông tin đặt phòng
       span -
-      span.time Từ ngày 20/06 đến ngày 22/06 năm 2015
+      span.time Từ ngày {{csSearchParams.checkin}} đến ngày {{csSearchParams.checkout}}
     span.col-xs-2.visible-xs
       span.fa.fa-caret-down
   .cs-hotel-info
@@ -25,87 +25,48 @@
     .clearfix
   .cs-book-summary.col-xs-12.no-pad
     .cs-room-summary.col-xs-12.col-md-8
-      .book-room.col-xs-12
+      .book-room.col-xs-12(ng-repeat="room in csSearchParams.rooms | filter: selectedItem track by $index")
         .room-num-customer.col-xs-6.col-sm-3
-          .num Phòng 1
+          .num Phòng {{$index + 1}}
           .customer
-            span 2 Người lớn
+            span {{room.adult}} Người lớn
             br
-            span 1 trẻ em
+            span {{room.child}} 1 trẻ em
         .room-name.col-sm-6.hidden-xs
           .name  Standard Room
-          .package-name Gói tiết kiệm mùa hè
+          .package-name {{room.package}}
         .room-price.col-xs-6.col-sm-3
           .price.col-xs-12.no-pad
             span.unit VND
-            span.num 1,200,000
+            span.num {{room.price * csSearchParams.nightNum | currency:'':0}}
           .more-detail.col-xs-12.text-right.no-pad
             a(href="#").brown-text
               span.text Chi tiết
               span.fa.fa-caret-down
       .book-room.col-xs-12
-        .room-num-customer.col-xs-6.col-sm-3
-          .num Phòng 1
-          .customer
-            span 2 Người lớn
-            br
-            span 1 trẻ em
-        .room-name.col-sm-6.hidden-xs
-          .name  Standard Room
-          .package-name Gói tiết kiệm mùa hè
-        .room-price.col-xs-6.col-sm-3
+        .room-num-customer.col-xs-6.col-sm-5
+          .num Gói thêm
+        .room-price.col-xs-6.col-sm-7
           .price.col-xs-12.no-pad
             span.unit VND
-            span.num 1,200,000
+            span.num {{getPriceSelectedExtra() | currency:'':0}}
           .more-detail.col-xs-12.text-right.no-pad
             a(href="#").brown-text
               span.text Chi tiết
               span.fa.fa-caret-down
-      .book-room.col-xs-12
-        .room-num-customer.col-xs-6.col-sm-3
-          .num Phòng 1
-          .customer
-            span 2 Người lớn
-            br
-            span 1 trẻ em
-        .room-name.col-sm-6.hidden-xs
-          .name  Standard Room
-          .package-name Gói tiết kiệm mùa hè
-        .room-price.col-xs-6.col-sm-3
-          .price.col-xs-12.no-pad
-            span.unit VND
-            span.num 1,200,000
-          .more-detail.col-xs-12.text-right.no-pad
-            a(href="#").brown-text
-              span.text Chi tiết
-              span.fa.fa-caret-down
-        .sum-detail.col-sm-9.col-sm-offset-3
-          .fea.col-xs-7.col-sm-7 Ngày 19/06
+        .sum-detail.col-sm-9.col-sm-offset-3.show(ng-repeat="extra in csExtraList.extras | filter: selectedItem track by $index")
+          .fea.col-xs-7.col-sm-7 {{extra.name}}
           .price.col-xs-5.col-sm-5
             span.unit VND
-            span.num 1,200,000
-        .sum-detail.col-sm-9.col-sm-offset-3
-          .fea.col-xs-7.col-sm-7 Ngày 20/06
-          .price.col-xs-5.col-sm-5
-            span.unit VND
-            span.num 1,200,000
+            span.num {{extra.price | currency:'':0}}
       .book-room.total.col-xs-12
-        .room-num-customer.col-xs-6.col-sm-3
-          .num.big Total
-        .room-price.col-xs-6.col-sm-9
+        .room-num-customer.col-xs-6.col-sm-5
+          .num.big Tổng cộng
+        .room-price.col-xs-6.col-sm-7
           .price.col-xs-12.no-pad.big.text-right
             span.unit VND
-            span.num 2,400,000
-        .sum-detail.col-sm-9.col-sm-offset-3.show
-          .fea.col-xs-7.col-sm-7 Ngày 19/06
-          .price.col-xs-5.col-sm-5
-            span.unit VND
-            span.num 1,200,000
-        .sum-detail.col-sm-9.col-sm-offset-3.show
-          .fea.col-xs-7.col-sm-7 Ngày 20/06
-          .price.col-xs-5.col-sm-5
-            span.unit VND
-            span.num 1,200,000
+            span.num {{getTotalSelectedPrice() | currency:'':0}}
+        
     .cs-features.col-xs-12.col-md-4.text-center
       .feature.col-xs-12.text-center
         .icon.fa.fa-thumbs-up.green

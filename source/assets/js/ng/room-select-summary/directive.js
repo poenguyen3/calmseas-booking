@@ -3,16 +3,58 @@ angular.module('calm-booking')
     return {
       restrict: 'A',
       link: function(scope, elm, attrs) {
-      	console.log(elm);
-      	elm.on('resize', function(){
+        var win = $(window);
 
-      	});
+        function setOriginOffset() {
+          elm.attr('style', '');
+          elm.data('origin-top', elm.offset().top);
+          elm.data('origin-left', elm.offset().left);
+          win.trigger('scroll.setSummaryOffset');
+        }
+        win.on('resize', function(){
+          setOriginOffset();
+        })
+        setOriginOffset();
 
       	scope.toggleDetail = function(e, id) {
       		e.preventDefault();
       		$('#' + id).slideToggle();
       		return false;
       	};
+
+        win.on('summaryResize', function(){
+          var padding = 40,
+              totalHeadH = elm.find('.total').outerHeight(),
+              bookBtnH = elm.find('.book-button').outerHeight(),
+              winH = win.outerHeight();
+          console.log('in', winH, elm.outerHeight);
+          if ((windH - padding) < elm.outerHeight()) {
+            elm.find('..summary-content-container').height(winH - padding - totalHeadH - bookBtnH);
+          }
+        });
+
+        win.on('scroll.setSummaryOffset', function(){
+          if (win.scrollTop() > parseInt(elm.data('origin-top'))){
+            elm.css({
+              position: 'fixed',
+              top: 10,
+              marginTop: 0,
+              left: elm.data('origin-left')
+            });
+          } else {
+            elm.attr('style', '');
+          }
+        });
+
+        scope.nextStep = function(e){
+          e.preventDefault();
+          var navScope = angular.element('header.cs-header').scope();
+          if ($('.step-nav.step-1').hasClass('active')) {
+            navScope.goToStep2(e);
+          } else {
+            navScope.goToStep3(e);
+          }
+        }
       }
   }
 });
