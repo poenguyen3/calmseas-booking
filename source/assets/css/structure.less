@@ -120,6 +120,7 @@ body {
   line-height: 60px;
   font-size: 1.2rem;
   .no-pad;
+  border-bottom: 2px solid #A59169;
   .container {
     .no-pad;
   }
@@ -171,12 +172,13 @@ body {
   .container {
     cursor: pointer;
 
-    .cs-search-roomsnum {
+    .cs-search-form {
       display: none;
     }
 
-    .cs-search-form {
-      display: none;
+    .cs-search-roomsnum {
+      font-size: 1.3rem;
+      line-height: 38px;
     }
 
     &.editing {
@@ -192,6 +194,9 @@ body {
       .cs-search-rooms {
         display: none;
       }
+      .cs-search-button {
+        padding: 24px 0;
+      }
       .cs-search-summary {
         color: #f5f5f5;
        .content {
@@ -202,9 +207,6 @@ body {
         .cs-search-roomsnum {
           display: inline-block;
           color: #999999;
-          font-size: 1.3rem;
-          height: 50px;
-          line-height: 50px;
         }
         .cs-search-day {
           .for-display {
@@ -239,7 +241,8 @@ body {
   }
 
   .cs-search-summary {
-    padding: 16px 0;
+    padding-top: 16px;
+    padding-bottom: 8px;
     color: #333333;
    .content {
       display: block;
@@ -481,7 +484,7 @@ body {
 
       .cs-package-price {
 
-        .cs-amount {
+        .cs-real {
           font-weight: bold;
           color: #333333;
           .unit {
@@ -492,10 +495,47 @@ body {
             font-size: 1.5rem;
           }
         }
-        .cs-rp-sum {
-          font-size: 0.9rem;
+
+        .cs-max-occ {
+          padding: 6px 0;
+          .text {
+            color: #444444;
+          }
+          .adult {
+            padding: 10px;
+          }
+          .fa {
+            color: #666666;
+            padding-left: 5px;
+          }
+        }
+
+        .cs-before {
+          font-size: 1rem;
           color: gray;
           line-height: 1.5rem;
+          text-decoration: line-through;
+        }
+      }
+
+      .cs-package-specs {
+        padding: 8px 0;
+        border: 1px solid #cecece;
+        background-color: #fefeee;
+        padding: 8px;
+        border-radius: 5px;
+        margin: 8px 0;
+
+        .spec {
+          padding: 5px 0;
+          padding-right: 4px;
+          color: #444444;
+          font-size: 0.9rem;
+          .fa {
+            color: #4caf50;
+            padding-right: 5px;
+            padding-bottom: 3px;
+          }
         }
       }
 
@@ -515,10 +555,24 @@ body {
 
       .cs-package-book {
         padding: 10px 0;
-        .book-text {
-          font-weight: bold;
-          font-size: 0.9rem;
-          line-height: 1.5rem;
+        .input-group {
+          width: 120px;
+          float: right;
+          height: 40px;
+        }
+        input {
+          max-width: 70px;
+          text-align: center;
+          height: 40px;
+          line-height: 40px;
+          &.active {
+            color: #333333;
+            background-color: #a5d6a7;
+          }
+        }
+        button {
+          height: 40px;
+          width: 40px;
         }
       }
     }
@@ -534,7 +588,7 @@ body {
 
   .total {
     padding: 10px 0;
-    z-index: 11;
+    z-index: 1;
     border-top: 3px solid #222222;
     border-bottom: 1px solid #c4c4c4;
     .lb {

@@ -16,8 +16,9 @@ angular.module('calm-booking')
   		checkin: todayFm,
   		checkout: nextDateFm,
   		nightNum: 1,
-      	roomSelected: 0,
-      	selectingRoom: 0,
+    	roomSelected: 0,
+      maxRoomSelected: 5,
+    	selectingRoom: 0,
   		rooms: [
   			{
           selected: false,
@@ -36,7 +37,9 @@ angular.module('calm-booking')
   				img: 'images/photos/bar4.jpg',
   				name: 'Bữa tối buffet BBQ',
   				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
-  				price: 1300000,
+  				selected: 0,
+          before_price: 2000000,
+          price: 1300000,
   				selected: false
   			},
   			{
@@ -44,7 +47,9 @@ angular.module('calm-booking')
   				img: 'images/photos/bar4.jpg',
   				name: 'Bữa tối buffet BBQ',
   				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
-  				price: 1300000,
+  				selected: 0,
+          before_price: 2000000,
+          price: 1300000,
   				selected: false
   			},
   			{
@@ -52,7 +57,9 @@ angular.module('calm-booking')
   				img: 'images/photos/bar4.jpg',
   				name: 'Bữa tối buffet BBQ',
   				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
-  				price: 1300000,
+  				selected: 0,
+          before_price: 2000000,
+          price: 1300000,
   				selected: false
   			},
   			{
@@ -60,7 +67,9 @@ angular.module('calm-booking')
   				img: 'images/photos/bar4.jpg',
   				name: 'Bữa tối buffet BBQ',
   				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
-  				price: 1300000,
+  				selected: 0,
+          before_price: 2000000,
+          price: 1300000,
   				selected: false
   			}
   		],
@@ -112,10 +121,23 @@ angular.module('calm-booking')
               text: 'Giường đơn, giường đôi'
             }
           ],
-  				packages: [
+          packages: [
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						price: 1200000,
+  						selected: 0,
+              before_price: 2000000,
+              price: 1200000,
+              specs: [
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                }
+              ],
   						feature: [
   							{
   								icon: 'fa-close',
@@ -142,8 +164,21 @@ angular.module('calm-booking')
   					},
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						price: 1500000,
-  						feature: [
+  						selected: 0,
+              before_price: 2000000,
+              price: 1500000,
+  						specs: [
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                }
+              ],
+              feature: [
   							{
   								icon: 'fa-close',
   								text: 'Không bao gồm bữa sáng',
@@ -169,8 +204,21 @@ angular.module('calm-booking')
   					},
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						price: 1300000,
-  						feature: [
+  						selected: 0,
+              before_price: 2000000,
+              price: 1300000,
+  						specs: [
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                }
+              ],
+              feature: [
   							{
   								icon: 'fa-close',
   								text: 'Không bao gồm bữa sáng',
@@ -243,8 +291,21 @@ angular.module('calm-booking')
   				packages: [
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						price: 1200000,
-  						feature: [
+  						selected: 0,
+              before_price: 2000000,
+              price: 1200000,
+  						specs: [
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                }
+              ],
+              feature: [
   							{
   								icon: 'fa-close',
   								text: 'Không bao gồm bữa sáng',
@@ -270,8 +331,21 @@ angular.module('calm-booking')
   					},
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						price: 1200000,
-  						feature: [
+  						selected: 0,
+              before_price: 2000000,
+              price: 1200000,
+  						specs: [
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                }
+              ],
+              feature: [
   							{
   								icon: 'fa-close',
   								text: 'Không bao gồm bữa sáng',
@@ -297,8 +371,21 @@ angular.module('calm-booking')
   					},
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						price: 1200000,
-  						feature: [
+  						selected: 0,
+              before_price: 2000000,
+              price: 1200000,
+  						specs: [
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                }
+              ],
+              feature: [
   							{
   								icon: 'fa-close',
   								text: 'Không bao gồm bữa sáng',
@@ -373,8 +460,21 @@ angular.module('calm-booking')
   				packages: [
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						price: 1200000,
-  						feature: [
+  						selected: 0,
+              before_price: 2000000,
+              price: 1200000,
+  						specs: [
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                }
+              ],
+              feature: [
   							{
   								icon: 'fa-close',
   								text: 'Không bao gồm bữa sáng',
@@ -400,8 +500,21 @@ angular.module('calm-booking')
   					},
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						price: 1200000,
-  						feature: [
+  						selected: 0,
+              before_price: 2000000,
+              price: 1200000,
+  						specs: [
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                }
+              ],
+              feature: [
   							{
   								icon: 'fa-close',
   								text: 'Không bao gồm bữa sáng',
@@ -427,8 +540,21 @@ angular.module('calm-booking')
   					},
   					{
   						name: 'GÓI KHÔNG BỮA SÁNG',
-  						price: 1200000,
-  						feature: [
+  						selected: 0,
+              before_price: 2000000,
+              price: 1200000,
+  						specs: [
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                },
+                {
+                  title: 'Có giường thêm'
+                }
+              ],
+              feature: [
   							{
   								icon: 'fa-close',
   								text: 'Không bao gồm bữa sáng',
@@ -511,47 +637,63 @@ angular.module('calm-booking')
   	}
 
   	// Selecting package handling
-  	$scope.selectPackage = function(e, roomInd, packInd){
-  		e.preventDefault();
-  		var csSearch = $scope.csSearchParams,
-    			roomList = $scope.csRoomList;
-      $scope.csSearchParams.roomSelected++;
-  		for (var i = 0, len = csSearch.rooms.length; i < len; i++){
-  			if (!csSearch.rooms[i].selected) {
-  				csSearch.rooms[i].name = roomList.rooms[roomInd].name;
-  				csSearch.rooms[i].package = roomList.rooms[roomInd].packages[packInd].name;
-  				csSearch.rooms[i].price = roomList.rooms[roomInd].packages[packInd].price;
-  				csSearch.rooms[i].selected = true;
-          $scope.csSearchParams.selectingRoom = i + 1;
-  				return;
-  			}
-  		}
-      alert('Hiện tại hệ thống chỉ cho phép đặt tối đa một lúc 3 phòng! Mong quý khách thông cảm');
+  	$scope.selectRoom = function(e, packInd, roomInd){
+      var csSearch = $scope.csSearchParams,
+          rooms = $scope.csRoomList.rooms,
+          maxRoom = csSearch.maxRoomSelected;
+      if (csSearch.roomSelected < maxRoom) {
+        rooms[roomInd].packages[packInd].selected++;
+        csSearch.roomSelected++;
+      } else {
+        alert('Hiện tại quý khách chỉ có thể đặt tối đa ' + maxRoom + ' phòng.')
+      }
+
+      // e.preventDefault();
+  		// var csSearch = $scope.csSearchParams,
+    // 			roomList = $scope.csRoomList;
+    //   $scope.csSearchParams.roomSelected++;
+  		// for (var i = 0, len = csSearch.rooms.length; i < len; i++){
+  		// 	if (!csSearch.rooms[i].selected) {
+  		// 		csSearch.rooms[i].name = roomList.rooms[roomInd].name;
+  		// 		csSearch.rooms[i].package = roomList.rooms[roomInd].packages[packInd].name;
+  		// 		csSearch.rooms[i].price = roomList.rooms[roomInd].packages[packInd].price;
+  		// 		csSearch.rooms[i].selected = true;
+    //       $scope.csSearchParams.selectingRoom = i + 1;
+  		// 		return;
+  		// 	}
+  		// }
+    //   alert('Hiện tại hệ thống chỉ cho phép đặt tối đa một lúc 3 phòng! Mong quý khách thông cảm');
   	};
 
-  	$scope.unselectRoom = function(e, roomInd){
+  	$scope.unselectRoom = function(e, packInd, roomInd){
   		e.preventDefault();
-      var rooms = $scope.csSearchParams.rooms,
-          len = rooms.length - 1,
-          lastRoom = true,
-          selectingRoom = roomInd;
-      $scope.csSearchParams.roomSelected--;
-      console.log(roomInd);
-      if (roomInd < 2) {
-        for (var i = roomInd; i < len; i++){
-          if (rooms[i+1].selected) {
-            $scope.csSearchParams.rooms[i] = $.extend(true, {}, rooms[i+1]);
-            $scope.csSearchParams.rooms[i+1].selected = false;
-            lastRoom = false;
-            selectingRoom = i + 1;
-          }
-        }
-        $scope.csSearchParams.selectingRoom = selectingRoom;
-        if (!lastRoom) {
-          return;
-        }
+      var csSearch = $scope.csSearchParams,
+          rooms = $scope.csRoomList.rooms;
+      if (rooms[roomInd].packages[packInd].selected > 0) {
+        rooms[roomInd].packages[packInd].selected--;
+        csSearch.roomSelected--;
       }
-  		rooms[roomInd].selected = false;
+    //   var rooms = $scope.csSearchParams.rooms,
+    //       len = rooms.length - 1,
+    //       lastRoom = true,
+    //       selectingRoom = roomInd;
+    //   $scope.csSearchParams.roomSelected--;
+    //   console.log(roomInd);
+    //   if (roomInd < 2) {
+    //     for (var i = roomInd; i < len; i++){
+    //       if (rooms[i+1].selected) {
+    //         $scope.csSearchParams.rooms[i] = $.extend(true, {}, rooms[i+1]);
+    //         $scope.csSearchParams.rooms[i+1].selected = false;
+    //         lastRoom = false;
+    //         selectingRoom = i + 1;
+    //       }
+    //     }
+    //     $scope.csSearchParams.selectingRoom = selectingRoom;
+    //     if (!lastRoom) {
+    //       return;
+    //     }
+    //   }
+  		// rooms[roomInd].selected = false;
   	}
 
     // Calculate money amount

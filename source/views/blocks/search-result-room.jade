@@ -16,21 +16,35 @@
         a(href="#").brown-text.hidden-xs(ng-click="showFeatureDetail($event, $parent.$index, $index, 0)")
           span Chi tiết
           span.fa.fa-caret-down
+        .cs-package-specs.cols-xs-12
+          .spec.col-xs-12.col-sm-6.col-md-4.no-pad(ng-repeat="spec in pack.specs track by $index")
+            span.fa.fa-check-circle
+            span.text {{spec.title}}
+          .clearfix
       .cs-package-price.col-xs-5.col-sm-4.no-pad.text-right
-        .cs-amount.col-xs-12.no-pad
+        .cs-real.col-xs-12.no-pad
           span.unit VND
-          span.num {{pack.price * csSearchParams.nightNum | currency:'':0}}
-        .cs-rp-sum.col-xs-12.no-pad
-          span.night {{csSearchParams.nightNum}} đêm
-          span ,
-          span.person {{csSearchParams.rooms[csSearchParams.selectingRoom].adult}} người lớn
+          span.num {{pack.price | currency:'':0}}
+        .cs-before.col-xs-12.no-pad
+          span {{pack.before_price | currency:'':0}}
+        .cs-max-occ.col-xs-12.no-pad
+          span.adult(title="Số lượng người lớn tối đa")
+            span.text 2
+            span.fa.fa-user
+          span.child(title="Số lượng trẻ em tối đa (1 đến 12 tuổi)")
+            span.text 2
+            span.fa.fa-child
       .cs-package-info.col-sm-9.hidden-xs.no-pad
         .feature.col-sm-4(ng-repeat="fea in pack.feature track by $index" ng-click="showFeatureDetail($event, $parent.$parent.$index, $parent.$index, $index)")
           span.col-sm-2.fa.no-pad(ng-class="fea.icon")
           span.col-sm-10.prop.no-pad {{fea.text}}
       .cs-package-book.col-xs-12.col-sm-3
-        button.btn.btn-block.no-rad.brown-btn(ng-click="selectPackage($event, $parent.$index, $index)")
-          span.book-text Chọn phòng {{csSearchParams.selectingRoom + 1}}
+        .input-group
+          span.input-group-btn
+            button.btn.brown-btn(ng-click="unselectRoom($event, $index, $parent.$index)") -
+          input.form-control(type="text" disabled ng-class="{'active': pack.selected}" ng-model="pack.selected")
+          span.input-group-btn
+            button.btn.brown-btn(ng-click="selectRoom($event, $index, $parent.$index)") +
       .cs-package-detail.col-xs-12.visible-xs
         span.detail-text(ng-click="showFeatureDetail($event, $parent.$index, $index, 0)") Xem chi tiết
         i.fa.fa-caret-down

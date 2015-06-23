@@ -1,9 +1,9 @@
-.cs-search-container(ng-controller="search-form" search-form-control ng-click="checkExpand($event)")
+.cs-search-container(ng-controller="search-form" search-form-control)
   .container.no-pad
-    .cs-search-button.text-center.col-xs-12.col-sm-12.col-md-3
+    .cs-search-button.text-center.col-xs-12.col-sm-12.col-md-3(ng-click="toggleEdit($event)")
       span.bold-text CHỈNH TÙY CHỌN
       .fa.fa-caret-down
-    .cs-search-summary.col-xs-12.col-sm-12.col-md-9
+    .cs-search-summary.col-xs-12.col-sm-12.col-md-9(ng-click="expandEdit($event)")
       .cs-search-day.col-xs-12.col-sm-12.col-md-7
         .checkin.col-xs-6.col-sm-6.col-md-6.for-display
           .title
@@ -32,61 +32,8 @@
             span.field
               input#checkout.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.datepicker-out(ng-model="csSearchParams.checkout", type='text', name='arrival', readonly='readonly', style='')
       .cs-search-roomsnum.col-xs-12.col-sm-6.col-md-5.text-center
-        span {{csSearchParams.nightNum}} đêm
-      .cs-search-rooms.col-xs-6.col-sm-6.col-md-5.hidden-xs
-        .cs-search-room.col-md-4(ng-repeat="room in csSearchParams.rooms track by $index")
-            span.bold-text.lb Phòng {{$index + 1}}
-            span.content
-              span.text {{room.adult}} người lớn {{ (room.childs.length) && ('- ' +room.childs.length + ' trẻ em') || ''}}
+        span {{csSearchParams.nightNum}} đêm -
+        span  0 phòng
       .clearfix
     .clearfix
-    .cs-search-form.bg-dark3
-      form
-        .cs-room.col-xs-12.col-sm-12.col-md-12(ng-repeat="room in csSearchParams.rooms track by $index")
-          .cs-room-title.pad-top.col-xs-12.col-sm-3.col-md-2
-            span
-              span.col-xs-9.col-sm-12.col-md-12
-                span.fa.fa-hotel
-                span.room-num Phòng {{$index + 1}}
-                span.remove-room(ng-click="removeRoom($event)" ng-show="(($index + 1) === csSearchParams.rooms.length) && $index > 0").fa.fa-minus.brown-text.pointer
-          .cs-room-adults.pad-top.col-xs-12.col-sm-4.col-md-4
-            .col-xs-6.col-sm-6.col-md-6
-              .input-group
-                span.input-group-btn
-                  button.less-adult.btn.btn-sm.brown-btn(ng-click="downGuestNum('adult', $index)") -
-                input.adult1.form-control.input-sm(type='text', disabled, name='adults1', ng-model="room.adult")
-                span.input-group-btn
-                  button.btn.btn-sm.brown-btn(ng-click="upGuestNum('adult', $index)") +
-            .col-xs-6.col-sm-6.col-md-6.unit
-              span.f(data-key='adult', data-mode='1', data-fallback='', data-placeholders='%20')   Người lớn
-          .cs-room-people.pad-top.col-xs-12.col-sm-4.col-md-4
-            .col-xs-12.col-sm-12.col-md-12.no-pad
-              .col-xs-6.col-sm-6.col-md-6
-                .input-group
-                  span.input-group-btn
-                    button.less-children-1.btn.btn-sm.brown-btn(ng-click="downGuestNum('child', $index)") -
-                  input.form-control.input-sm(type='text', disabled, name='children1', ng-model="room.childs.length")
-                  span.input-group-btn
-                    button.more-child.btn.btn-sm.brown-btn(ng-click="upGuestNum('child', $index)") +
-              .col-xs-6.col-sm-6.col-md-6.unit
-                span.fb-translate(data-key='child', data-mode='1', data-fallback='', data-placeholders='%20')   Trẻ em
-                i.fa.fa-info-circle(title='(Từ 0 đến 12 tuổi)')
-            .child-age(ng-repeat="child in room.childs track by $index")
-              .col-xs-12(style='margin-top: 10px; padding:0px')
-                .col-xs-6.col-sm-6.col-md-6.unit(style='text-align:right; padding-left:0px; padding-right:5px;')
-                  span Tuổi bé {{$index + 1}}
-                .col-xs-6.col-sm-6.col-md-6
-                  .input-group
-                    span.input-group-btn
-                      button.btn.btn-sm.brown-btn(ng-click="downAge($parent.$index, $index)") -
-                    input.form-control.input-sm(type='text', disabled, data-child='1', name='childrenAges1-1', ng-model="child")
-                    span.input-group-btn
-                      button.btn.btn-sm.brown-btn(ng-click="upAge($parent.$index, $index)")  +
-        .add-rooms.col-xs-12.brown-text
-          a(href='#' ng-click="addRoom($event)").brown-text
-            span.fa.fa-plus
-            span {{'Thêm phòng'}}
-        .col-xs-12
-          .fa.fa-check.close-search-button(ng-click="collapseForm($event)")
-        .clearfix
-    .cs-search-button-mobile
+
