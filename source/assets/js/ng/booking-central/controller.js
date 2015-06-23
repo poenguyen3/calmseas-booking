@@ -3,7 +3,12 @@ angular.module('calm-booking')
   	var today = new Date(),
   		nextDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
   		todayFm = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear(),
-  		nextDateFm = nextDate.getDate() + '-' + (nextDate.getMonth() + 1) + '-' + nextDate.getFullYear();
+  		nextDateFm = nextDate.getDate() + '-' + (nextDate.getMonth() + 1) + '-' + nextDate.getFullYear(),
+      roomTemplate = {
+        selected: false,
+        adult: 1,
+        childs: []
+      };
   	$scope.labels = {
   		validateBtnText: 'Đặt phòng'
   	};
@@ -15,19 +20,9 @@ angular.module('calm-booking')
       	selectingRoom: 0,
   		rooms: [
   			{
-  				selected: false,
-				adult: 1,
-				childs: [],
-			},
-  			{
-  				selected: false,
-  				adult: 1,
-  				childs: [],
-				},
-  			{
-  				selected: false,
-  				adult: 1,
-  				childs: [],
+          selected: false,
+          adult: 1,
+          childs: []
   			}
   		]
   	};
@@ -51,7 +46,7 @@ angular.module('calm-booking')
   				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
   				price: 1300000,
   				selected: false
-  			},  			
+  			},
   			{
   				ind: 2,
   				img: 'images/photos/bar4.jpg',
@@ -59,7 +54,7 @@ angular.module('calm-booking')
   				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
   				price: 1300000,
   				selected: false
-  			},  			
+  			},
   			{
   				ind: 3,
   				img: 'images/photos/bar4.jpg',
@@ -537,11 +532,13 @@ angular.module('calm-booking')
   	$scope.unselectRoom = function(e, roomInd){
   		e.preventDefault();
       var rooms = $scope.csSearchParams.rooms,
+          len = rooms.length - 1,
           lastRoom = true,
           selectingRoom = roomInd;
       $scope.csSearchParams.roomSelected--;
+      console.log(roomInd);
       if (roomInd < 2) {
-        for (var i = roomInd; i < 2; i++){
+        for (var i = roomInd; i < len; i++){
           if (rooms[i+1].selected) {
             $scope.csSearchParams.rooms[i] = $.extend(true, {}, rooms[i+1]);
             $scope.csSearchParams.rooms[i+1].selected = false;
@@ -621,6 +618,27 @@ angular.module('calm-booking')
     		}
     	}
     	return total;
+    }
+
+    $scope.isFullRoom = function(){
+      if ($scope.csSearchParams.rooms.length < 3) {
+        return false;
+      }
+      return true;
+    };
+
+    $scope.addRoom = function(e){
+      e.preventDefault();
+      if (!$scope.isFullRoom()) {
+        $scope.csSearchParams.rooms.push($.extend(true, {}, roomTemplate));
+      }
+    }
+
+    $scope.removeRoom = function(e){
+      e.preventDefault();
+      if ($scope.csSearchParams.rooms.length > 1) {
+        $scope.csSearchParams.rooms.pop();
+      }
     }
 
 

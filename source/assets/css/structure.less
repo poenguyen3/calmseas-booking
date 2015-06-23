@@ -167,7 +167,6 @@ body {
   .container {
     cursor: pointer;
 
-
     .cs-search-roomsnum {
       display: none;
     }
@@ -203,14 +202,16 @@ body {
           height: 50px;
           line-height: 50px;
         }
-
         .cs-search-day {
-          .field {
-            display: block;
+          .for-display {
+            display: none;
           }
-          .title {
-            .fa {
-              color: #888888;
+          .for-edit {
+            display: block;
+            .title {
+              .fa {
+                color: #888888;
+              }
             }
           }
         }
@@ -252,7 +253,7 @@ body {
         margin-right: 8px;
       }
 
-      .field {
+      .for-edit {
         display: none;
       }
     }
@@ -275,10 +276,18 @@ body {
       position: absolute;
       font-size: 2rem;
       right: 20px;
-      bottom: 20px;
+      bottom: -10px;
       .pointer;
       &:hover {
         color: #A59169;
+      }
+    }
+    .add-rooms {
+      line-height: 2.4rem;
+      padding-left: 45px;
+      .pointer;
+      .fa {
+        padding-right: 4px;
       }
     }
     .cs-room {
@@ -296,6 +305,7 @@ body {
       .room-num {
         padding-top: 10px;
         padding-left: 6px;
+        padding-right: 4px;
       }
       .unit {
         padding: 0px;
@@ -866,6 +876,7 @@ body {
           line-height: 1.7rem;
         }
         .room-price {
+          text-align: right;
           .price {
             .unit {
               font-size: 0.8rem;

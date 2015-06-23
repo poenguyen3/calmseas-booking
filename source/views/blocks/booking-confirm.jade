@@ -50,10 +50,6 @@
           .price.col-xs-12.no-pad
             span.unit VND
             span.num {{getPriceSelectedExtra() | currency:'':0}}
-          .more-detail.col-xs-12.text-right.no-pad
-            a(href="#").brown-text
-              span.text Chi tiết
-              span.fa.fa-caret-down
         .sum-detail.col-sm-9.col-sm-offset-3.show(ng-repeat="extra in csExtraList.extras | filter: selectedItem track by $index")
           .fea.col-xs-7.col-sm-7 {{extra.name}}
           .price.col-xs-5.col-sm-5
@@ -66,7 +62,7 @@
           .price.col-xs-12.no-pad.big.text-right
             span.unit VND
             span.num {{getTotalSelectedPrice() | currency:'':0}}
-        
+
     .cs-features.col-xs-12.col-md-4.text-center
       .feature.col-xs-12.text-center
         .icon.fa.fa-thumbs-up.green

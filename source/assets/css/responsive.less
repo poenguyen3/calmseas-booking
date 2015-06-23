@@ -14,3 +14,167 @@
 @custom-mobile1: 600px;
 
 @custom-tab-height: 600px;
+
+@bt-xs-max: 767px;
+@bt-sm-min: 768px;
+@bt-sm-max: 991px;
+@bt-md-min: 992px;
+@bt-md-max: 1199px;
+@bt-lg-min: 1200px;
+@min-desk-width: 960px;
+
+
+@media (max-width: @bt-xs-max) {
+
+
+  .cs-search-result {
+    .cs-result-rooms {
+      .cs-room-package {
+        .cs-package-name {
+          padding: 0px;
+        }
+
+        .cs-package-detail {
+          text-align: center;
+          padding: 7px 0;
+          .brown-text;
+          .fa {
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: @min-desk-width) {
+  .confirm {
+    h2 {
+      &.title {
+        text-align: center;
+      }
+    }
+  }
+
+  .cs-search-result, .cs-extras-container{
+    width: 100%;
+    clear: both;
+  }
+
+  .cs-search-container {
+    .cs-search-day {
+      .title {
+        margin-top: 12px;
+      }
+      .for-display {
+        text-align: center;
+        padding-bottom: 6px;
+      }
+    }
+    .cs-search-rooms {
+      display: none;
+    }
+    .cs-search-summary {
+      padding: 0px;
+    }
+
+    .cs-search-button {
+      background-color: #444444;
+      color: #ffffff;
+    }
+
+  }
+
+  .cs-room-select-summary {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 12;
+    padding-bottom: 70px;
+    max-height: 100%;
+    overflow: auto;
+
+    .summary-content {
+      display: none;
+    }
+
+    .desk-mode {
+      &.book-button {
+        display: none !important;
+      }
+    }
+    .fixed-widget {
+      height: 70px;
+      width: 100%;
+      position: fixed;
+      padding-bottom: 70px;
+      bottom: 0px;
+      left: 0px;
+      background: #343434;
+      display: block;
+      padding: 8px;
+      z-index: 11;
+
+      >div {
+        height: 100%;
+      }
+      button {
+        height: 100%;
+        border: 0px;
+      }
+
+      .sum-line {
+        height: 22px;
+        line-height: 35px;
+        color: #ffffff;
+        font-size: 1.1rem;
+
+      }
+      .up-arrow {
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 1.4rem;
+      }
+      .detail-link {
+        font-size: 1rem;
+        .fa {
+          padding-left: 6px;
+        }
+      }
+      .roomnight, .price {
+        text-align: right;
+      }
+      .price {
+        .unit {
+          font-size: 0.9rem;
+        }
+        .num {
+          padding-left: 8px;
+        }
+      }
+      .roomnight {
+        font-size: 0.8rem;
+        color: #c8c8c8;
+      }
+    }
+  }
+}
+
+@media (max-width: @custom-mobile) {
+  .cs-search-result {
+    .cs-result-rooms {
+      .cs-room-package {
+        .cs-package-price {
+          .cs-amount {
+            .num {
+              font-size: 1.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

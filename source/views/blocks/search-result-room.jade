@@ -13,11 +13,11 @@
     .cs-room-package.col-xs-12.bg-light
       .cs-package-name.col-xs-7.col-sm-8
         span.upper.name {{pack.name}}
-        a(href="#").brown-text(ng-click="showFeatureDetail($event, $parent.$index, $index, 0)")
+        a(href="#").brown-text.hidden-xs(ng-click="showFeatureDetail($event, $parent.$index, $index, 0)")
           span Chi tiết
           span.fa.fa-caret-down
       .cs-package-price.col-xs-5.col-sm-4.no-pad.text-right
-        .cs-amount.col-xs-12
+        .cs-amount.col-xs-12.no-pad
           span.unit VND
           span.num {{pack.price * csSearchParams.nightNum | currency:'':0}}
         .cs-rp-sum.col-xs-12.no-pad

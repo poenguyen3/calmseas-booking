@@ -5,25 +5,35 @@
       .fa.fa-caret-down
     .cs-search-summary.col-xs-12.col-sm-12.col-md-9
       .cs-search-day.col-xs-12.col-sm-12.col-md-7
-        .checkin.col-xs-12.col-sm-6.col-md-6
+        .checkin.col-xs-6.col-sm-6.col-md-6.for-display
           .title
             .fa.fa-calendar.left-i
             span.bold-text.lb Ngày đến
-            span.content
-              span.text {{csSearchParams.checkin}}
-              span.field
-                input#checkin.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.datepicker-in(ng-model="csSearchParams.checkin", type='text', name='arrival', readonly='readonly', style='')
-        .checkout.col-xs-12.col-sm-6.col-md-6
+          span.content
+            span.text {{csSearchParams.checkin}}
+        .checkin.col-xs-12.col-sm-6.col-md-6.for-edit
+          .title
+            .fa.fa-calendar.left-i
+            span.bold-text.lb Ngày đến
+          span.content
+            span.field
+              input#checkin.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.datepicker-in(ng-model="csSearchParams.checkin", type='text', name='arrival', readonly='readonly', style='')
+        .checkout.col-xs-6.col-sm-6.col-md-6.for-display
           .title
             .fa.fa-calendar.left-i
             span.bold-text.lb Ngày đi
-            span.content
-              span.text {{csSearchParams.checkout}}
-              span.field
-                input#checkout.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.datepicker-out(ng-model="csSearchParams.checkout", type='text', name='arrival', readonly='readonly', style='')
-      .cs-search-roomsnum.col-xs-6.col-sm-6.col-md-5.text-center
+          span.content
+            span.text {{csSearchParams.checkout}}
+        .checkout.col-xs-12.col-sm-6.col-md-6.for-edit
+          .title
+            .fa.fa-calendar.left-i
+            span.bold-text.lb Ngày đi
+          span.content
+            span.field
+              input#checkout.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.datepicker-out(ng-model="csSearchParams.checkout", type='text', name='arrival', readonly='readonly', style='')
+      .cs-search-roomsnum.col-xs-12.col-sm-6.col-md-5.text-center
         span {{csSearchParams.nightNum}} đêm
-      .cs-search-rooms.col-xs-6.col-sm-6.col-md-5
+      .cs-search-rooms.col-xs-6.col-sm-6.col-md-5.hidden-xs
         .cs-search-room.col-md-4(ng-repeat="room in csSearchParams.rooms track by $index")
             span.bold-text.lb Phòng {{$index + 1}}
             span.content
@@ -38,6 +48,7 @@
               span.col-xs-9.col-sm-12.col-md-12
                 span.fa.fa-hotel
                 span.room-num Phòng {{$index + 1}}
+                span.remove-room(ng-click="removeRoom($event)" ng-show="(($index + 1) === csSearchParams.rooms.length) && $index > 0").fa.fa-minus.brown-text.pointer
           .cs-room-adults.pad-top.col-xs-12.col-sm-4.col-md-4
             .col-xs-6.col-sm-6.col-md-6
               .input-group
@@ -49,7 +60,7 @@
             .col-xs-6.col-sm-6.col-md-6.unit
               span.f(data-key='adult', data-mode='1', data-fallback='', data-placeholders='%20')   Người lớn
           .cs-room-people.pad-top.col-xs-12.col-sm-4.col-md-4
-            .col-xs-12.col-sm-12.col-md-12
+            .col-xs-12.col-sm-12.col-md-12.no-pad
               .col-xs-6.col-sm-6.col-md-6
                 .input-group
                   span.input-group-btn
@@ -71,6 +82,11 @@
                     input.form-control.input-sm(type='text', disabled, data-child='1', name='childrenAges1-1', ng-model="child")
                     span.input-group-btn
                       button.btn.btn-sm.brown-btn(ng-click="upAge($parent.$index, $index)")  +
+        .add-rooms.col-xs-12.brown-text
+          a(href='#' ng-click="addRoom($event)").brown-text
+            span.fa.fa-plus
+            span {{'Thêm phòng'}}
+        .col-xs-12
+          .fa.fa-check.close-search-button(ng-click="collapseForm($event)")
         .clearfix
-        .fa.fa-check.close-search-button(ng-click="collapseForm($event)")
     .cs-search-button-mobile
