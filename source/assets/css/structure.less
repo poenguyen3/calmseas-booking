@@ -112,49 +112,53 @@ body {
     }
   }
 
-  .header-steps {
-    position: absolute;
-    bottom: 10px;
 
-    .step-nav {
-      span {
-        display: inline-block;
-      }
-      .step-num {
-        padding: 6px 9px;
-        background: #333333;
-        color: #ffffff;
-        cursor: pointer;
-        border-radius: 4px;
-        &:hover {
-          background: #333333;
-          color: #ffffff;
-        }
-      }
+}
 
-      &.active {
-        .step-text {
-          background: #333333;
-          color: #ffffff;
-        }
+.cs-steps {
+  height: 60px;
+  line-height: 60px;
+  font-size: 1.2rem;
+  .no-pad;
+  .container {
+    .no-pad;
+  }
+  .text-center;
+  .step-nav {
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: #9c9c9c;
+      &:hover {
+        text-decoration: none;
+        color: #676767;
       }
+      &:visited {
+        text-decoration: none;
 
-      .step-text {
-        cursor: pointer;
-        padding-left: 6px;
-        background-color: rgba(0,0,0,0.4);
-        color: #ffffff;
-        border-radius: 0 4px 4px 0;
-        padding: 4px 9px;
-        font-family: Helvetica,'Helvetica Neue';
-        font-size: 0.9rem;
-        &:hover {
-          background: #333333;
-          color: #ffffff;
-        }
       }
-
     }
+
+    &.active {
+      &:before {
+        width: 0px;
+        height: 0px;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -8px;
+        border-width: 0px 6px 10px 6px;
+        border-color: #A59169 transparent;
+        border-style: solid;
+      }
+
+      a {
+        color: #A59169;
+      }
+    }
+
   }
 }
 
