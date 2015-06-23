@@ -19,13 +19,7 @@ angular.module('calm-booking')
     	roomSelected: 0,
       maxRoomSelected: 5,
     	selectingRoom: 0,
-  		rooms: [
-  			{
-          selected: false,
-          adult: 1,
-          childs: []
-  			}
-  		]
+  		rooms: []
   	};
   	$scope.confirm = {
   		rooms: []
@@ -84,6 +78,7 @@ angular.module('calm-booking')
             {src:'images/photos/standar1.jpg', alt: 'Calmsesa Booking'},
   					{src:'images/photos/standar1.jpg', alt: 'Calmsesa Booking'}
   				],
+          remain: 5,
           feature: [
             {
               icon: 'check',
@@ -127,6 +122,10 @@ angular.module('calm-booking')
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
+              maxocc: {
+                adult: 2,
+                child: 2
+              },
               specs: [
                 {
                   title: 'Có giường thêm'
@@ -167,7 +166,11 @@ angular.module('calm-booking')
   						selected: 0,
               before_price: 2000000,
               price: 1500000,
-  						specs: [
+  						maxocc: {
+                adult: 2,
+                child: 2
+              },
+              specs: [
                 {
                   title: 'Có giường thêm'
                 },
@@ -207,7 +210,11 @@ angular.module('calm-booking')
   						selected: 0,
               before_price: 2000000,
               price: 1300000,
-  						specs: [
+  						maxocc: {
+                adult: 2,
+                child: 2
+              },
+              specs: [
                 {
                   title: 'Có giường thêm'
                 },
@@ -251,6 +258,7 @@ angular.module('calm-booking')
             {src:'images/photos/double1.jpg', alt: 'Calmsesa Booking'},
   					{src:'images/photos/double1.jpg', alt: 'Calmsesa Booking'}
   				],
+          remain: 5,
           feature: [
             {
               icon: 'check',
@@ -294,7 +302,11 @@ angular.module('calm-booking')
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
-  						specs: [
+  						maxocc: {
+                adult: 2,
+                child: 2
+              },
+              specs: [
                 {
                   title: 'Có giường thêm'
                 },
@@ -334,7 +346,11 @@ angular.module('calm-booking')
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
-  						specs: [
+  						maxocc: {
+                adult: 2,
+                child: 2
+              },
+              specs: [
                 {
                   title: 'Có giường thêm'
                 },
@@ -374,7 +390,11 @@ angular.module('calm-booking')
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
-  						specs: [
+  						maxocc: {
+                adult: 2,
+                child: 2
+              },
+              specs: [
                 {
                   title: 'Có giường thêm'
                 },
@@ -420,6 +440,7 @@ angular.module('calm-booking')
             {src:'images/photos/suite1.jpg', alt: 'Calmsesa Booking'},
   					{src:'images/photos/suite1.jpg', alt: 'Calmsesa Booking'}
   				],
+          remain: 5,
           feature: [
             {
               icon: 'check',
@@ -463,7 +484,11 @@ angular.module('calm-booking')
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
-  						specs: [
+  						maxocc: {
+                adult: 2,
+                child: 2
+              },
+              specs: [
                 {
                   title: 'Có giường thêm'
                 },
@@ -503,7 +528,11 @@ angular.module('calm-booking')
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
-  						specs: [
+  						maxocc: {
+                adult: 2,
+                child: 2
+              },
+              specs: [
                 {
                   title: 'Có giường thêm'
                 },
@@ -543,7 +572,11 @@ angular.module('calm-booking')
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
-  						specs: [
+  						maxocc: {
+                adult: 2,
+                child: 2
+              },
+              specs: [
                 {
                   title: 'Có giường thêm'
                 },
@@ -623,78 +656,105 @@ angular.module('calm-booking')
   		}
   	}
 
-  	$scope.upAge = function(roomIndex, childIndex){
-  		var age = $scope.csSearchParams.rooms[roomIndex].childs[childIndex];
-  		if (age < 12) {
- 		 	$scope.csSearchParams.rooms[roomIndex].childs[childIndex] += 1;
-  		}
-  	}
-  	$scope.downAge = function(roomIndex, childIndex){
-  		var age = $scope.csSearchParams.rooms[roomIndex].childs[childIndex];
-  		if (age > 1) {
- 		 	$scope.csSearchParams.rooms[roomIndex].childs[childIndex] -= 1;
-  		}
-  	}
+    // Check selected room
+    $scope.checkSelectedRoom = function(roomInd, packInd){
+      var selectedRooms = $scope.csSearchParams.rooms,
+          len = selectedRooms.length,
+          checkID = roomInd + '-' + packInd;
+      for (var i = 0; i < len; i++){
+        if (selectedRooms[i].id === checkID) {
+          return selectedRooms[i];
+        }
+      }
+      return false;
+    };
 
   	// Selecting package handling
   	$scope.selectRoom = function(e, packInd, roomInd){
       var csSearch = $scope.csSearchParams,
-          rooms = $scope.csRoomList.rooms,
-          maxRoom = csSearch.maxRoomSelected;
-      if (csSearch.roomSelected < maxRoom) {
-        rooms[roomInd].packages[packInd].selected++;
+          room = $scope.csRoomList.rooms[roomInd],
+          pack = room.packages[packInd],
+          maxRoom = csSearch.maxRoomSelected,
+          roomInfo = null,
+          packInfo = null,
+          checkRoom = null;
+      if (csSearch.roomSelected < maxRoom) {        
+        room.remain--;
+        pack.selected++;
         csSearch.roomSelected++;
+        checkRoom = $scope.checkSelectedRoom(roomInd, packInd);
+        if (!checkRoom) {
+          roomInfo = {
+            roomName: room.name
+          };
+          packInfo = {
+            packName: pack.name,
+            price: pack.price
+          };          
+          roomObj = $.extend(true, {
+            id: roomInd + '-' + packInd,
+            num: 1
+          }, roomInfo, packInfo);
+          csSearch.rooms.push(roomObj);
+        } else {
+          checkRoom.num++;
+        }
       } else {
         alert('Hiện tại quý khách chỉ có thể đặt tối đa ' + maxRoom + ' phòng.')
       }
-
-      // e.preventDefault();
-  		// var csSearch = $scope.csSearchParams,
-    // 			roomList = $scope.csRoomList;
-    //   $scope.csSearchParams.roomSelected++;
-  		// for (var i = 0, len = csSearch.rooms.length; i < len; i++){
-  		// 	if (!csSearch.rooms[i].selected) {
-  		// 		csSearch.rooms[i].name = roomList.rooms[roomInd].name;
-  		// 		csSearch.rooms[i].package = roomList.rooms[roomInd].packages[packInd].name;
-  		// 		csSearch.rooms[i].price = roomList.rooms[roomInd].packages[packInd].price;
-  		// 		csSearch.rooms[i].selected = true;
-    //       $scope.csSearchParams.selectingRoom = i + 1;
-  		// 		return;
-  		// 	}
-  		// }
-    //   alert('Hiện tại hệ thống chỉ cho phép đặt tối đa một lúc 3 phòng! Mong quý khách thông cảm');
   	};
+
+    $scope.multiNightText = function(){
+      var nightNum = $scope.csSearchParams.nightNum;
+      return (nightNum > 1) ? ('x ' + nightNum) : '';
+    };
+
+    $scope.multiRoomText = function(roomInd){
+      var roomNum = $scope.csSearchParams.rooms[roomInd].num;
+      return (roomNum > 1) ? ('x ' + roomNum) : '';
+    };
 
   	$scope.unselectRoom = function(e, packInd, roomInd){
   		e.preventDefault();
       var csSearch = $scope.csSearchParams,
-          rooms = $scope.csRoomList.rooms;
+          rooms = $scope.csRoomList.rooms,
+          selectedRooms = csSearch.rooms,
+          checkID = roomInd + '-' + packInd;
       if (rooms[roomInd].packages[packInd].selected > 0) {
         rooms[roomInd].packages[packInd].selected--;
         csSearch.roomSelected--;
+        for (var i = 0, len = selectedRooms.length; i < len; i++){
+          if (selectedRooms[i].id === checkID) {
+            rooms[roomInd].remain++;
+            selectedRooms[i].num--;
+            if (!selectedRooms[i].num) {
+              selectedRooms.splice(i, 1);
+            }
+          }
+        }
       }
-    //   var rooms = $scope.csSearchParams.rooms,
-    //       len = rooms.length - 1,
-    //       lastRoom = true,
-    //       selectingRoom = roomInd;
-    //   $scope.csSearchParams.roomSelected--;
-    //   console.log(roomInd);
-    //   if (roomInd < 2) {
-    //     for (var i = roomInd; i < len; i++){
-    //       if (rooms[i+1].selected) {
-    //         $scope.csSearchParams.rooms[i] = $.extend(true, {}, rooms[i+1]);
-    //         $scope.csSearchParams.rooms[i+1].selected = false;
-    //         lastRoom = false;
-    //         selectingRoom = i + 1;
-    //       }
-    //     }
-    //     $scope.csSearchParams.selectingRoom = selectingRoom;
-    //     if (!lastRoom) {
-    //       return;
-    //     }
-    //   }
-  		// rooms[roomInd].selected = false;
-  	}
+  	};
+
+    $scope.removeRoom = function(e, checkID){
+      var csSearch = $scope.csSearchParams,
+          selectedRooms = csSearch.rooms,
+          checkIDcom = checkID.split('-'),
+          room = $scope.csRoomList.rooms[checkIDcom[0]],
+          pack = room.packages[checkIDcom[1]],
+          num = 0;
+      e.preventDefault();
+      for (var i = 0, len = selectedRooms.length; i < len; i++){
+        if (selectedRooms[i].id === checkID) {
+          num = selectedRooms[i].num;
+          room.remain += num;
+          pack.selected = 0;
+          csSearch.roomSelected -= num;
+          selectedRooms.splice(i, 1);
+          len--;
+          i--;
+        }
+      }
+    };
 
     // Calculate money amount
     $scope.getTotalSelectedPrice = function(){
@@ -703,9 +763,7 @@ angular.module('calm-booking')
           rooms = csSearchParams.rooms,
           total = 0;
       for (var i = 0,len = rooms.length; i < len; i++) {
-        if (rooms[i].selected) {
-          total += rooms[i].price * csSearchParams.nightNum;
-        }
+        total += rooms[i].price * rooms[i].num * csSearchParams.nightNum;
       }
       for (var i = 0, len = extras.length; i < len; i++){
       	if (extras[i].selected) {
@@ -717,15 +775,13 @@ angular.module('calm-booking')
 
     $scope.getNightPrice = function(){
       var searchParams = $scope.csSearchParams,
+          rooms = searchParams.rooms,
           nightPriceArray = [],
           nightNum = searchParams.nightNum,
           pricePernight = 0;
       for (var i = 0, len = searchParams.nightNum; i < len; i++) {
-        for (var j = 0, plen = searchParams.rooms.length; j < plen; j++) {
-          console.log(searchParams.rooms[j].selected);
-          if (searchParams.rooms[j].selected) {
-            pricePernight += searchParams.rooms[j].price
-          }
+        for (var j = 0, plen = rooms.length; j < plen; j++) {
+          pricePernight += rooms[j].price * rooms[j].num
         }
         nightPriceArray.push(pricePernight);
         pricePernight = 0;
@@ -775,14 +831,6 @@ angular.module('calm-booking')
         $scope.csSearchParams.rooms.push($.extend(true, {}, roomTemplate));
       }
     }
-
-    $scope.removeRoom = function(e){
-      e.preventDefault();
-      if ($scope.csSearchParams.rooms.length > 1) {
-        $scope.csSearchParams.rooms.pop();
-      }
-    }
-
 
     $scope.selectedItem = function(item){
     	return item.selected;
