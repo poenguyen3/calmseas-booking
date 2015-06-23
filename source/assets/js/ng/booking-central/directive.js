@@ -55,13 +55,14 @@ angular.module('calm-booking')
             e.preventDefault();
             elm.find('.step-1, .step-3').removeClass('active');
             elm.find('.step-2').addClass('active');
+            console.log(elm);
             $('.step-container').hide();
             $('.step-2').stop().show();
-            scope.labels.validateBtnText = 'Xác nhận';            
+            scope.labels.validateBtnText = 'Xác nhận';
           } else {
             alert("Bạn vui lòng chọn phòng trước khi tiếp tục!");
           }
         }
       }
-    } 
+    }
   });
