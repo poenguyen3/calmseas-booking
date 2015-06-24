@@ -16,31 +16,30 @@
         a(href="#").brown-text.hidden-xs(ng-click="showFeatureDetail($event, $parent.$index, $index, 0)")
           span Chi tiết
           span.fa.fa-caret-down
-        .cs-package-specs.cols-xs-12
-          .spec.col-xs-12.col-sm-6.col-md-4.no-pad(ng-repeat="spec in pack.specs track by $index")
+        .cs-package-specs.col-xs-12.col-sm-6
+          .spec.col-xs-12.no-pad(ng-repeat="spec in pack.specs track by $index")
             span.fa.fa-check-circle
             span.text {{spec.title}}
+        .cs-package-info.col-xs-12.col-sm-6.no-pad
+          .feature.col-xs-12(ng-repeat="fea in pack.feature track by $index" ng-click="showFeatureDetail($event, $parent.$parent.$index, $parent.$index, $index)")
+            span.col-sm-2.fa.no-pad(ng-class="fea.icon")
+            span.col-sm-10.prop.no-pad {{fea.text}}in
           .clearfix
+        .clearfix
       .cs-package-price.col-xs-5.col-sm-4.no-pad.text-right
-        .cs-real.col-xs-12.no-pad
-          span.unit VND
-          span.num {{pack.price | currency:'':0}} {{multiNightText()}}
         .cs-before.col-xs-12.no-pad
-          span {{pack.before_price | currency:'':0}}
-        .cs-max-occ.col-xs-12.no-pad
-          span.adult(title="Số lượng người lớn tối đa")
-            span.text {{pack.maxocc.adult}}
-            span.fa.fa-user
-          span.child(title="Số lượng trẻ em tối đa (1 đến 12 tuổi)")
-            span.text {{pack.maxocc.child}}
-            span.fa.fa-child
+          span.unit VND
+          span.text {{pack.before_price | currency:'':0}}
+        .cs-real.col-xs-12.no-pad
+          span.num {{pack.price | currency:'':0}} {{multiNightText()}}
         .cs-remain-room.col-xs-12.no-pad
           span.text còn {{room.remain}} phòng
-      .cs-package-info.col-sm-9.hidden-xs.no-pad
-        .feature.col-sm-4(ng-repeat="fea in pack.feature track by $index" ng-click="showFeatureDetail($event, $parent.$parent.$index, $parent.$index, $index)")
-          span.col-sm-2.fa.no-pad(ng-class="fea.icon")
-          span.col-sm-10.prop.no-pad {{fea.text}}
-      .cs-package-book.col-xs-12.col-sm-3
+        .cs-max-occ.col-xs-12.no-pad
+          span.adult(title="Số lượng người lớn tối đa")
+            span.fa.fa-user
+            span.fa.fa-user
+            span.fa.fa-plus 
+      .cs-package-book.col-xs-12.col-sm-4
         .input-group
           span.input-group-btn
             button.btn.brown-btn(ng-click="unselectRoom($event, $index, $parent.$index)") -
@@ -50,6 +49,7 @@
       .cs-package-detail.col-xs-12.visible-xs
         span.detail-text(ng-click="showFeatureDetail($event, $parent.$index, $index, 0)") Xem chi tiết
         i.fa.fa-caret-down
+      .clearfix
     .cs-feature-detail.col-xs-12.no-pad(id="detail-{{$parent.$parent.$index}}-{{$parent.$index}}-{{$index}}", ng-repeat="fea in pack.feature track by $index")
       .col-xs-12.no-pad.lb
         .title.col-sm-9.hidden-xs.no-pad {{fea.text}}
@@ -59,6 +59,7 @@
       .clearfix
         .col-sm-12.term.text-right
           a(href="#").brown-text Chính sách và điều kiện
+    .clearfix
   .clearfix
 .clearfix
 .cs-popup(cs-popup).room-dettail(id="pop-room-detail-{{$index}}" ng-repeat="room in csRoomList.rooms track by $index")

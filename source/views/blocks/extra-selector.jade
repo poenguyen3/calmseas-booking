@@ -1,25 +1,32 @@
 .cs-extras-container.col-xs-12.step-container.step-2(extras)
   .cs-extra-header
     h2.title Những tuỳ chọn cộng thêm khi ở khách sạn
-  .cs-extra-selects
+  .cs-extra-selects(ng-repeat="room in csSearchParams.rooms track by $index")
     .caption.col-xs-12.bg-dark3.text-white
-      span Các tuỳ chọn
-    .cs-extra.col-xs-12.no-pad.bg-light(ng-repeat="extra in csExtraList.extras track by $index")
-      .pic.col-sm-3.hidden-xs
-        img(src="images/photos/bar4.jpg" alt="booking calmseas")
-      .extra-info.col-xs-7.col-sm-5
-        .extra-name.col-xs-12 {{extra.name}}
-        .extra-detail-link.col-xs-12
-          a(href="#").brown-text(ng-click="toggleExtraDetail($event, $index)")
-            span.text Chi tiết
-            span.fa.fa-caret-down
-        .extra-detail.col-xs-12(ng-class="'detail-' + $index" ng-bind-html="extra.detail")
-        .extra-price.col-xs-12
-          span.unit VND
-          span.num {{extra.price | currency:'':0}}
-      .extra-select.col-xs-5.col-sm-4(ng-click="toggleExtra($event, $index)")
-        span.text Chọn
-        span.fa(ng-class="{'fa-check-square': extra.selected, 'fa-square-o': !extra.selected}")
+      span {{room.roomName}} - {{ room.packName }}
+      span.room-num x {{ room.num }}
+    .pic.col-xs-12.no-pad
+      img(src="{{ room.pic.src }}" alt="{{ room.pic.alt }}")
+    .cs-extra-group.col-xs-12.no-pad(ng-repeat="group in csExtraList.extras track by $index")
+      .group-name.col-xs-12.no-pad {{group.name}}
+      .cs-extra.col-xs-12.no-pad.bg-light(ng-repeat="extra in group.list track by $index")
+        .pic.col-sm-3.hidden-xs
+          img(src="{{ extra.img }}" alt="booking calmseas")
+        .extra-info.col-xs-7.col-sm-5
+          .extra-name.col-xs-12 {{extra.name}}
+          .extra-detail-link.col-xs-12
+            a(href="#").brown-text(ng-click="toggleExtraDetail($event, $index)")
+              span.text Chi tiết
+              span.fa.fa-caret-down
+          .extra-detail.col-xs-12(ng-class="'detail-' + $index" ng-bind-html="extra.detail")
+          .extra-price.col-xs-12
+            span.unit VND
+            span.num {{extra.price | currency:'':0}}
+        .extra-select.col-xs-5.col-sm-4(ng-click="toggleExtra($event, $index)")
+          span.text Chọn
+          span.fa(ng-class="{'fa-check-square': extra.selected, 'fa-square-o': !extra.selected}")
+      .clearfix
+    .clearfix
   .cs-extra-selects
     .caption.col-xs-12.bg-dark3.text-white
       span Yêu cầu đặc biệt

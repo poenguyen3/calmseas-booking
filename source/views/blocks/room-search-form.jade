@@ -1,36 +1,22 @@
 .cs-search-container(ng-controller="search-form" search-form-control)
-  .container.no-pad
-    .cs-search-button.text-center.col-xs-12.col-sm-12.col-md-3(ng-click="toggleEdit($event)")
-      span.bold-text CHỈNH TÙY CHỌN
-      .fa.fa-caret-down
+  .container.no-pad.editing
     .cs-search-summary.col-xs-12.col-sm-12.col-md-9(ng-click="expandEdit($event)")
       .cs-search-day.col-xs-12.col-sm-12.col-md-7
-        .checkin.col-xs-6.col-sm-6.col-md-6.for-display
-          .title
-            .fa.fa-calendar.left-i
-            span.bold-text.lb Ngày đến
-          span.content
-            span.text {{csSearchParams.checkin}}
-        .checkin.col-xs-12.col-sm-6.col-md-6.for-edit
+        .checkin.col-xs-6.col-sm-6.col-md-6
           .title
             .fa.fa-calendar.left-i
             span.bold-text.lb Ngày đến
           span.content
             span.field
               input#checkin.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.datepicker-in(ng-model="csSearchParams.checkin", type='text', name='arrival', readonly='readonly', style='')
-        .checkout.col-xs-6.col-sm-6.col-md-6.for-display
-          .title
-            .fa.fa-calendar.left-i
-            span.bold-text.lb Ngày đi
-          span.content
-            span.text {{csSearchParams.checkout}}
-        .checkout.col-xs-12.col-sm-6.col-md-6.for-edit
+        .checkout.col-xs-6.col-sm-6.col-md-6
           .title
             .fa.fa-calendar.left-i
             span.bold-text.lb Ngày đi
           span.content
             span.field
               input#checkout.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.datepicker-out(ng-model="csSearchParams.checkout", type='text', name='arrival', readonly='readonly', style='')
+        .clearfix
       .cs-search-roomsnum.col-xs-12.col-sm-12.col-md-5.text-center
         span {{csSearchParams.nightNum}} đêm -
         span  0 phòng
