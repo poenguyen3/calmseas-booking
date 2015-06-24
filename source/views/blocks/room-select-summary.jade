@@ -56,17 +56,16 @@
           .price.col-xs-5
             span.unit VND
             span.num {{0 | currency:'':0}}
-      .room.col-xs-12.no-pad.desk-mode(ng-class="{'remain': !room.selected, 'selected': room.selected}" ng-repeat="room in csSearchParams.rooms track by $index")
-        .room-info(ng-show="room.selected")
-          .room-num.col-xs-4 Phòng {{$index + 1}}
+      .room.col-xs-12.no-pad.desk-mode(ng-repeat="room in csSearchParams.rooms track by $index")
+        .room-info
+          .room-num.col-xs-4 Gói phòng {{$index + 1}}
           .price.col-xs-8.text-right
             span.unit VND
-            span.num {{room.price * csSearchParams.nightNum | currency:'':0}}
-          .room-name.col-xs-12 {{room.name}}
-          .package-name.col-xs-12 {{room.package}}
+            span.num {{room.price * csSearchParams.nightNum | currency:'':0}} {{multiRoomText($index)}}
+          .room-name.col-xs-12 {{room.roomName}}
+          .package-name.col-xs-12 {{room.packName}}
           .remove-btn.col-xs-12.text-center
-            a(href="#").remove.brown-text(ng-click="unselectRoom($event, $index)") Xóa
-        span.text(ng-hide="room.selected") Chọn phòng {{$index + 1}}
+            a(href="#").remove.brown-text(ng-click="removeRoom($event, room.id)") Xóa
       .room.selected.extra.col-xs-12.no-pad.desk-mode
         .room-num.col-xs-4 Gói thêm
         .price.col-xs-8.text-right

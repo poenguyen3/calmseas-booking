@@ -24,16 +24,18 @@
       .cs-package-price.col-xs-5.col-sm-4.no-pad.text-right
         .cs-real.col-xs-12.no-pad
           span.unit VND
-          span.num {{pack.price | currency:'':0}}
+          span.num {{pack.price | currency:'':0}} {{multiNightText()}}
         .cs-before.col-xs-12.no-pad
           span {{pack.before_price | currency:'':0}}
         .cs-max-occ.col-xs-12.no-pad
           span.adult(title="Số lượng người lớn tối đa")
-            span.text 2
+            span.text {{pack.maxocc.adult}}
             span.fa.fa-user
           span.child(title="Số lượng trẻ em tối đa (1 đến 12 tuổi)")
-            span.text 2
+            span.text {{pack.maxocc.child}}
             span.fa.fa-child
+        .cs-remain-room.col-xs-12.no-pad
+          span.text còn {{room.remain}} phòng
       .cs-package-info.col-sm-9.hidden-xs.no-pad
         .feature.col-sm-4(ng-repeat="fea in pack.feature track by $index" ng-click="showFeatureDetail($event, $parent.$parent.$index, $parent.$index, $index)")
           span.col-sm-2.fa.no-pad(ng-class="fea.icon")
