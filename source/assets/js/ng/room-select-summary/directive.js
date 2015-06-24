@@ -23,16 +23,19 @@ angular.module('calm-booking')
       		return false;
       	};
 
-        win.on('summaryResize', function(){
+        function setSummaryMaxHeight() {
           var padding = 40,
               totalHeadH = elm.find('.total').outerHeight(),
               bookBtnH = elm.find('.book-button').outerHeight(),
               winH = win.outerHeight();
-          console.log('in', winH, elm.outerHeight);
-          if ((windH - padding) < elm.outerHeight()) {
-            elm.find('..summary-content-container').height(winH - padding - totalHeadH - bookBtnH);
-          }
+          elm.find('.summary-content-container')
+              .css('max-height', winH - padding - totalHeadH - bookBtnH);
+        }
+        win.on('resize.summary', function(){
+          setSummaryMaxHeight();
         });
+        setSummaryMaxHeight();
+
 
         win.on('scroll.setSummaryOffset', function(){
           if (!elm.find('.summary-brief').is(':visible')) {
