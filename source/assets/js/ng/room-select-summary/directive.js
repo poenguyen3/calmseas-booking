@@ -11,9 +11,6 @@ angular.module('calm-booking')
           elm.data('origin-left', elm.offset().left);
           win.trigger('scroll.setSummaryOffset');
         }
-        win.on('resize', function(){
-          setOriginOffset();
-        })
         setOriginOffset();
 
       	scope.toggleDetail = function(e, id) {
@@ -31,11 +28,12 @@ angular.module('calm-booking')
           elm.find('.summary-content-container')
               .css('max-height', winH - padding - totalHeadH - bookBtnH);
         }
-        win.on('resize.summary', function(){
-          setSummaryMaxHeight();
-        });
         setSummaryMaxHeight();
 
+        win.on('resize.summary', function(){
+          setSummaryMaxHeight();
+          setOriginOffset();
+        });
 
         win.on('scroll.setSummaryOffset', function(){
           if (!elm.find('.summary-brief').is(':visible')) {
