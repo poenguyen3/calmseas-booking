@@ -14,7 +14,7 @@
       .sum-line.roomnight.col-xs-8.col-sm-6
           span.room {{csSearchParams.roomSelected}} phòng,
           span.night  {{csSearchParams.nightNum}} đêm
-    button.button.brown-btn.col-xs-4.col-sm-5.hidden-md.hidden-lg ĐẶT PHÒNG
+    button.button.brown-btn.col-xs-4.col-sm-5.hidden-md.hidden-lg(ng-click="nextStep($event)") {{labels.validateBtnText}}
   .summary-content
     .total.col-xs-12.no-pad.desk-mode
       .title.col-xs-6.no-pad
@@ -74,16 +74,20 @@
         .detail-link.col-xs-12
           a(href="#").brown-text.detail-link(ng-click="toggleDetail($event, 'detail111')")
             span.text Chi tiết
-            span.fa.fa-caret-down
+            span.fa.fa-caret-up
       .room.selected.detail.col-xs-12.no-pad#detail111
-        .extra-selected(ng-repeat="extra in csExtraList.extras | filter: selectedItem ")
-          .extra-name.col-xs-6 extra.name
-          .price.col-xs-6.text-right
-            span.unit VND
-            span.num {{extra.price | currency:'':0}}
-          .remove.col-xs-12
-            a(href="#").brown-text(ng-click="toggleExtra($event, extra.ind)")
-              span.text Bỏ
+        .room-extra(ng-repeat="room in csSearchParams.rooms track by $index")
+          .extra-group(ng-repeat="group in room.extras track by $index")
+            .extra-selected(ng-repeat="extra in group.list | filter: selectedItem ")
+              .extra-name.col-xs-6 {{extra.name}}
+              .price.col-xs-6.text-right
+                span.unit VND
+                span.num {{extra.price | currency:'':0}} {{multiExtraText(extra)}}
+              .remove.col-xs-12
+                a(href="#").brown-text(ng-click="toggleExtra($event, extra)")
+                  span.text Bỏ
+              .clearfix
+            .clearfix
     .book-button.col-xs-12.no-pad.desk-mode
       button.btn.brown-btn.no-rad.col-xs-12.no-pad(ng-click="nextStep($event)") {{labels.validateBtnText}}
     .clearfix

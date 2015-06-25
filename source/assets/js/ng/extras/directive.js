@@ -3,9 +3,11 @@ angular.module('calm-booking')
 		return {
 			restrict: 'A',
 			link: function(scope, elm, attrs){
-				scope.toggleExtraDetail = function(e, ind){
+				scope.toggleExtraDetail = function(e, ind, groupInd, packID){
 					e.preventDefault();
-					elm.find('.detail-' + ind).slideToggle();
+					console.log(ind, groupInd, packID);
+					$(e.currentTarget).toggleClass('active');
+					elm.find('.detail-' + packID + groupInd + '-' + ind).slideToggle().toggleClass('active');
 				}
 			}
 		}

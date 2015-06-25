@@ -32,7 +32,7 @@ angular.module('calm-booking')
           list: [
                   {
                     ind: 0,
-                    forPack: ['gg1'],
+                    forPack: ['gg2', 'gg3', 'gg4', 'gg5'],
                     img: 'images/photos/bar4.jpg',
                     name: 'Bữa tối buffet BBQ',
                     detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
@@ -43,7 +43,7 @@ angular.module('calm-booking')
                   },
                   {
                     ind: 1,
-                    forPack: ['gg1'],
+                    forPack: ['gg1', 'gg2', 'gg3', 'gg4', 'gg5'],
                     img: 'images/photos/bar4.jpg',
                     name: 'Bữa tối buffet BBQ',
                     detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
@@ -54,7 +54,7 @@ angular.module('calm-booking')
                   },
                   {
                     ind: 2,
-                    forPack: ['gg1'],
+                    forPack: ['gg1', 'gg2', 'gg3', 'gg4', 'gg5'],
                     img: 'images/photos/bar4.jpg',
                     name: 'Bữa tối buffet BBQ',
                     detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
@@ -65,7 +65,7 @@ angular.module('calm-booking')
                   },
                   {
                     ind: 3,
-                    forPack: ['gg1'],
+                    forPack: ['gg1', 'gg2', 'gg3', 'gg4', 'gg5'],
                     img: 'images/photos/bar4.jpg',
                     name: 'Bữa tối buffet BBQ',
                     detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
@@ -82,7 +82,7 @@ angular.module('calm-booking')
           list: [
                   {
                     ind: 0,
-                    forPack: ['gg1'],
+                    forPack: ['gg1', 'gg2', 'gg3', 'gg4', 'gg5'],
                     img: 'images/photos/beach1.jpg',
                     name: 'Khu bãi biển cá nhân',
                     detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
@@ -93,7 +93,7 @@ angular.module('calm-booking')
                   },
                   {
                     ind: 1,
-                    forPack: ['gg1'],
+                    forPack: ['gg1', 'gg2', 'gg3', 'gg4', 'gg5'],
                     img: 'images/photos/beach1.jpg',
                     name: 'Khu bãi biển cá nhân',
                     detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
@@ -101,7 +101,7 @@ angular.module('calm-booking')
                     before_price: 2000000,
                     price: 1300000,
                     selected: false
-                  },                 
+                  },
           ]
         }
   		],
@@ -201,7 +201,7 @@ angular.module('calm-booking')
   						]
   					},
   					{
-  						id: 'gg1',
+  						id: 'gg2',
               name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
@@ -246,7 +246,7 @@ angular.module('calm-booking')
   						]
   					},
   					{
-  						id: 'gg1',
+  						id: 'gg3',
               name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
@@ -339,7 +339,7 @@ angular.module('calm-booking')
           ],
   				packages: [
   					{
-  						id: 'gg1',
+  						id: 'gg4',
               name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
@@ -384,7 +384,7 @@ angular.module('calm-booking')
   						]
   					},
   					{
-  						id: 'gg1',
+  						id: 'gg5',
               name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
@@ -429,7 +429,7 @@ angular.module('calm-booking')
   						]
   					},
   					{
-  						id: 'gg1',
+  						id: 'gg6',
               name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
@@ -524,7 +524,7 @@ angular.module('calm-booking')
           ],
   				packages: [
   					{
-  						id: 'gg1',
+  						id: 'gg7',
               name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
@@ -569,7 +569,7 @@ angular.module('calm-booking')
   						]
   					},
   					{
-  						id: 'gg1',
+  						id: 'gg8',
               name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
@@ -614,7 +614,7 @@ angular.module('calm-booking')
   						]
   					},
   					{
-  						id: 'gg1',
+  						id: 'gg9',
               name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
@@ -716,6 +716,44 @@ angular.module('calm-booking')
       return false;
     };
 
+    $scope.changeExtra = function(extras){
+      console.log(extras);
+    }
+
+    $scope.extraUp = function(extra){
+      extra.num++;
+    };
+
+    $scope.extraDown = function(extra){
+      if (extra.num > 1) {
+        extra.num--;
+      }
+    };
+
+    $scope.applyExtras = function(packInd){
+      var appliedExtras = [],
+          extras = $scope.csExtraList.extras;
+      extras.forEach(function(group){
+        var tempExtras = [];
+        group.list.forEach(function(extra){
+          console.log(packInd, extra.forPack.indexOf(packInd));
+          if (extra.forPack.indexOf(packInd) != -1) {
+            tempExtras.push($.extend(true, {}, extra, {
+              additionReq: '',
+              num: 1
+            } ));
+          }
+        });
+        if (tempExtras.length) {
+          appliedExtras.push({
+            name: group.name,
+            list: tempExtras
+          });
+        }
+      });
+      return appliedExtras;
+    };
+
   	// Selecting package handling
   	$scope.selectRoom = function(e, packInd, roomInd){
       var csSearch = $scope.csSearchParams,
@@ -724,8 +762,9 @@ angular.module('calm-booking')
           maxRoom = csSearch.maxRoomSelected,
           roomInfo = null,
           packInfo = null,
-          checkRoom = null;
-      if (csSearch.roomSelected < maxRoom) {        
+          checkRoom = null,
+          extras = null;
+      if (csSearch.roomSelected < maxRoom) {
         room.remain--;
         pack.selected++;
         csSearch.roomSelected++;
@@ -739,11 +778,14 @@ angular.module('calm-booking')
             packName: pack.name,
             packID: pack.id,
             price: pack.price
-          };          
+          };
+          extras = {
+            extras: $scope.applyExtras(pack.id)
+          };
           roomObj = $.extend(true, {
             id: roomInd + '-' + packInd,
             num: 1
-          }, roomInfo, packInfo);
+          }, roomInfo, packInfo, extras);
           csSearch.rooms.push(roomObj);
           console.log(csSearch.rooms);
         } else {
@@ -752,6 +794,7 @@ angular.module('calm-booking')
       } else {
         alert('Hiện tại quý khách chỉ có thể đặt tối đa ' + maxRoom + ' phòng.')
       }
+      console.log(roomInfo);
   	};
 
     $scope.multiNightText = function(){
@@ -764,6 +807,13 @@ angular.module('calm-booking')
       return (roomNum > 1) ? ('x ' + roomNum) : '';
     };
 
+    $scope.multiExtraText = function(extra){
+      if (extra.num > 1) {
+        return 'x' + extra.num;
+      }
+      return '';
+    }
+
   	$scope.unselectRoom = function(e, packInd, roomInd){
   		e.preventDefault();
       var csSearch = $scope.csSearchParams,
@@ -774,11 +824,14 @@ angular.module('calm-booking')
         rooms[roomInd].packages[packInd].selected--;
         csSearch.roomSelected--;
         for (var i = 0, len = selectedRooms.length; i < len; i++){
+          console.log(i);
           if (selectedRooms[i].id === checkID) {
             rooms[roomInd].remain++;
             selectedRooms[i].num--;
             if (!selectedRooms[i].num) {
+              console.log(selectedRooms[i].num, i);
               selectedRooms.splice(i, 1);
+              i--;len--;
             }
           }
         }
@@ -814,11 +867,13 @@ angular.module('calm-booking')
           total = 0;
       for (var i = 0,len = rooms.length; i < len; i++) {
         total += rooms[i].price * rooms[i].num * csSearchParams.nightNum;
-      }
-      for (var i = 0, len = extras.length; i < len; i++){
-      	if (extras[i].selected) {
-      		total += extras[i].price;
-      	}
+        rooms[i].extras.forEach(function(group){
+          group.list.forEach(function(extra){
+            if (extra.selected) {
+              total += extra.price * extra.num;
+            }
+          });
+        });
       }
       return total;
     };
@@ -853,27 +908,43 @@ angular.module('calm-booking')
     $scope.getExtraDetail = function(ind) {
     	return $sce.trustAsHtml($scope.csExtraList.extras[ind].detail);
     }
-    $scope.toggleExtra = function(e, ind){
-    	e.preventDefault();
-    	$scope.csExtraList.extras[ind].selected = !$scope.csExtraList.extras[ind].selected;
+
+    $scope.toggleExtra = function(e, extra){
+      e.preventDefault();
+      extra.selected = !extra.selected;
     }
+
+    $scope.checkSelectedExtra = function(id, groupID, packID){
+      return false;
+    };
+
     $scope.getPriceSelectedExtra = function(){
     	var total = 0,
-    		extra = $scope.csExtraList.extras;
-    	for (var i = 0, len = extra.length; i < len; i++){
-    		if (extra[i].selected) {
-    			total += extra[i].price;
-    		}
-    	}
+    		  rooms = $scope.csSearchParams.rooms;
+      rooms.forEach(function(room){
+        room.extras.forEach(function(group){
+          group.list.forEach(function(extra){
+            if (extra.selected) {
+              total += extra.price * extra.num;
+            }
+          });
+        });
+      });
     	return total;
     }
 
-    $scope.isFullRoom = function(){
-      if ($scope.csSearchParams.rooms.length < 3) {
-        return false;
-      }
-      return true;
-    };
+    $scope.checkExtraForPack = function(packID, extras){
+      var showGroup = false;
+      extras.forEach(function(extra, i){
+        if (showGroup) {
+          return;
+        }
+        if (extra.forPack.indexOf(packID) > -1) {
+          showGroup = true;
+        }
+      });
+      return showGroup;
+    }
 
     $scope.addRoom = function(e){
       e.preventDefault();
@@ -886,4 +957,4 @@ angular.module('calm-booking')
     	return item.selected;
     }
   	console.log($scope.csSearchParams);
-  }])
+  }]);

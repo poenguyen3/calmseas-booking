@@ -11,7 +11,7 @@
         span.fa.fa-caret-right
   .cs-package-container(ng-repeat="pack in room.packages track by $index")
     .cs-room-package.col-xs-12.bg-light
-      .cs-package-name.col-xs-7.col-sm-8
+      .cs-package-name.col-xs-7.col-sm-9
         span.upper.name {{pack.name}}
         a(href="#").brown-text.hidden-xs(ng-click="showFeatureDetail($event, $parent.$index, $index, 0)")
           span Chi tiết
@@ -26,7 +26,7 @@
             span.col-sm-10.prop.no-pad {{fea.text}}in
           .clearfix
         .clearfix
-      .cs-package-price.col-xs-5.col-sm-4.no-pad.text-right
+      .cs-package-price.col-xs-5.col-sm-3.no-pad.text-right
         .cs-before.col-xs-12.no-pad
           span.unit VND
           span.text {{pack.before_price | currency:'':0}}
@@ -38,8 +38,8 @@
           span.adult(title="Số lượng người lớn tối đa")
             span.fa.fa-user
             span.fa.fa-user
-            span.fa.fa-plus 
-      .cs-package-book.col-xs-12.col-sm-4
+            span.fa.fa-plus
+      .cs-package-book.col-xs-12.col-sm-3
         .input-group
           span.input-group-btn
             button.btn.brown-btn(ng-click="unselectRoom($event, $index, $parent.$index)") -

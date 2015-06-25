@@ -142,7 +142,7 @@ body {
       }
     }
     .step-num {
-      
+
     }
 
     &.active {
@@ -467,14 +467,13 @@ body {
         padding: 15px;
       }
     }
-
     .cs-room-package {
-      padding: 0 15px;
-      padding-top: 20px;
+      padding: 20px 15px 12px;
       .u-border;
 
       .cs-package-name {
         color: #333333;
+        padding-right: 0px;
         .upper {
           font-size: 1.2rem;
           color: #454545;
@@ -490,11 +489,11 @@ body {
       }
 
       .cs-package-price {
-
         .cs-real {
+          padding-top: 3px;
           font-weight: bold;
           color: #333333;
-          
+
           .num {
             font-size: 1.5rem;
           }
@@ -506,7 +505,7 @@ body {
             padding-right: 5px;
           }
           .text {
-            text-decoration: line-through;          
+            text-decoration: line-through;
             color: gray;
           }
           font-size: 1rem;
@@ -514,7 +513,7 @@ body {
         }
 
         .cs-max-occ {
-          padding: 6px 0;
+          padding-top: 8px;
           .text {
             color: #444444;
           }
@@ -531,6 +530,7 @@ body {
         }
 
         .cs-remain-room {
+          padding-top: 8px;
           font-size: 0.9rem;
           color: #388E3C;
         }
@@ -563,19 +563,21 @@ body {
         .feature {
           .pointer;
           padding-top: 5px;
+          padding-right: 0;
+          line-height: 1.5rem;
         }
         color: gray;
         .fa {
           font-size: 1.2rem;
         }
         .prop {
-          padding-bottom: 10px;
+          padding-bottom: 4px;
           padding-left: 8px;
        }
       }
 
       .cs-package-book {
-        padding: 10px 0;
+        padding: 14px 0;
         .input-group {
           width: 110px;
           float: right;
@@ -701,6 +703,7 @@ body {
      .room {
       border-bottom: 1px solid #c4c4c4;
       padding: 15px 0;
+
       .room-num {
         font-weight: bold;
         font-size: 1rem;
@@ -744,6 +747,14 @@ body {
           border-bottom: 0px;
         }
       }
+      .extra-selected {
+        border-bottom: 1px dashed #dedede;
+        padding: 8px 0;
+        &:first {
+          border-bottom: 0px;
+        }
+      }
+
     }
   }
 
@@ -791,11 +802,10 @@ body {
     .cs-extra-group {
       .group-name {
         text-align: center;
-        font-size: 1.2rem;
-        color: #A59169;
-        line-height: 2rem;
-        border-bottom: 1px dashed #cecece;
-        .bg-light;
+        font-size: 1.4rem;
+        color: #ffffff;
+        padding: 8px 0;
+        background-color: #424242;
         border-left: 1px solid #c4c4c4;
         border-right: 1px solid #c4c4c4;
       }
@@ -810,6 +820,27 @@ body {
           max-width: 100%;
         }
       }
+      .unit {
+        font-size: 0.9rem;
+        color: #555555;
+        padding-top: 6px;
+      }
+      .input-group {
+        max-width: 100px;
+        padding-top: 15px;
+        float: right;
+        button {
+          width: 32px;
+          height: 32px;
+          line-height: 32px;
+          padding: 0px;
+        }
+        input {
+          .text-center;
+          height: 32px;
+          line-height: 32px;
+        }
+      }
       .extra-info {
         .no-pad;
 
@@ -822,6 +853,17 @@ body {
         .extra-detail-link {
           .fa {
             padding-left: 5px;
+          }
+          .fa-caret-up {
+            display: none;
+          }
+          a.active {
+            .fa-caret-down {
+              display: none;
+            }
+            .fa-caret-up {
+              display: inline;
+            }
           }
         }
         .extra-detail {
@@ -845,6 +887,7 @@ body {
           }
         }
       }
+
       .extra-select {
         .text-right;
         font-size: 1.3rem;
@@ -856,6 +899,17 @@ body {
         .fa {
           .brown-text;
           padding-left: 8px;
+        }
+        .fa-check-square {
+          display: none;
+        }
+        &.active {
+          .fa-square-o {
+            display: none;
+          }
+          .fa-check-square {
+            display: inline;
+          }
         }
       }
     }
@@ -875,6 +929,19 @@ body {
           font-size: 1rem;
           padding-top: 10px;
       }
+
+      &.for-extra {
+        border: 0px;
+        padding-bottom: 0px;
+        textarea {
+          height: 80px;
+          background-color: #f7f7f7;
+        }
+        .desc {
+          font-size: 0.8rem;
+        }
+      }
+
     }
   }
 }

@@ -7,29 +7,47 @@
       span.room-num x {{ room.num }}
     .pic.col-xs-12.no-pad
       img(src="{{ room.pic.src }}" alt="{{ room.pic.alt }}")
-    .cs-extra-group.col-xs-12.no-pad(ng-repeat="group in csExtraList.extras track by $index")
+    .cs-extra-group.col-xs-12.no-pad(ng-repeat="group in room.extras track by $index" ng-show="checkExtraForPack(room.packID, group.list)")
       .group-name.col-xs-12.no-pad {{group.name}}
-      .cs-extra.col-xs-12.no-pad.bg-light(ng-repeat="extra in group.list track by $index")
+      .cs-extra.col-xs-12.no-pad.bg-light(ng-repeat="extra in group.list track by $index" ng-show="extra.forPack.indexOf(room.packID) != -1")
         .pic.col-sm-3.hidden-xs
           img(src="{{ extra.img }}" alt="booking calmseas")
-        .extra-info.col-xs-7.col-sm-5
+        .extra-info.col-xs-7.col-sm-6
           .extra-name.col-xs-12 {{extra.name}}
           .extra-detail-link.col-xs-12
-            a(href="#").brown-text(ng-click="toggleExtraDetail($event, $index)")
+            a(href="#").brown-text(ng-click="toggleExtraDetail($event, $index, $parent.$index, room.packID)")
               span.text Chi tiết
               span.fa.fa-caret-down
-          .extra-detail.col-xs-12(ng-class="'detail-' + $index" ng-bind-html="extra.detail")
+              span.fa.fa-caret-up
+          .extra-detail.col-xs-12(ng-class="'detail-' + room.packID + $parent.$index + '-' + $index" ng-bind-html="extra.detail")
           .extra-price.col-xs-12
             span.unit VND
-            span.num {{extra.price | currency:'':0}}
-        .extra-select.col-xs-5.col-sm-4(ng-click="toggleExtra($event, $index)")
-          span.text Chọn
-          span.fa(ng-class="{'fa-check-square': extra.selected, 'fa-square-o': !extra.selected}")
+            span.num {{extra.price | currency:'':0}} {{multiExtraText(extra)}}
+        .extra-select.col-xs-5.col-sm-3( ng-class="{'active': extra.selected}")
+          .col-xs-12(ng-click="toggleExtra($event, extra)")
+            span.text Chọn
+            span.fa.fa-square-o
+            span.fa.fa-check-square
+          .col-xs-12.no-pad(ng-show="extra.selected")
+            .col-xs-12.no-pad
+              .input-group
+                span.input-group-btn
+                  button.btn.brown-btn(ng-click="extraDown(extra)") -
+                input.form-control(type="text" disabled ng-model="extra.num")
+                span.input-group-btn
+                  button.btn.brown-btn(ng-click="extraUp(extra)") +
+            .col-xs-12.no-pad
+              span.unit người
+        .clearfix
+        .cs-special-request.col-xs-12.no-pad.for-extra(ng-show="extra.selected")
+          .col-xs-12
+            textarea.form-control(placeholder="Nội dung yêu cầu" ng-model="extra.additionReq")
+          .col-xs-12.desc Những yêu cầu này sẽ được chúng tôi xem xét và sẽ làm hết sức mình để quý khách hài lòng.
       .clearfix
     .clearfix
   .cs-extra-selects
     .caption.col-xs-12.bg-dark3.text-white
-      span Yêu cầu đặc biệt
+      span Yêu cầu đặc biệt chung
     .cs-special-request.col-xs-12.no-pad
       .col-xs-12
         textarea.form-control(placeholder="Nội dung yêu cầu" ng-model="csExtraList.specialRequest")
