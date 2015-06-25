@@ -26,46 +26,84 @@ angular.module('calm-booking')
   	};
   	$scope.csExtraList = {
   		extras: [
-  			{
-  				ind: 0,
-  				img: 'images/photos/bar4.jpg',
-  				name: 'Bữa tối buffet BBQ',
-  				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
-  				selected: 0,
-          before_price: 2000000,
-          price: 1300000,
-  				selected: false
-  			},
-  			{
-  				ind: 1,
-  				img: 'images/photos/bar4.jpg',
-  				name: 'Bữa tối buffet BBQ',
-  				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
-  				selected: 0,
-          before_price: 2000000,
-          price: 1300000,
-  				selected: false
-  			},
-  			{
-  				ind: 2,
-  				img: 'images/photos/bar4.jpg',
-  				name: 'Bữa tối buffet BBQ',
-  				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
-  				selected: 0,
-          before_price: 2000000,
-          price: 1300000,
-  				selected: false
-  			},
-  			{
-  				ind: 3,
-  				img: 'images/photos/bar4.jpg',
-  				name: 'Bữa tối buffet BBQ',
-  				detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
-  				selected: 0,
-          before_price: 2000000,
-          price: 1300000,
-  				selected: false
-  			}
+        {
+          name: 'Ẩm thực',
+          id: 1,
+          list: [
+                  {
+                    ind: 0,
+                    forPack: ['gg1'],
+                    img: 'images/photos/bar4.jpg',
+                    name: 'Bữa tối buffet BBQ',
+                    detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
+                    selected: 0,
+                    before_price: 2000000,
+                    price: 1300000,
+                    selected: false,
+                  },
+                  {
+                    ind: 1,
+                    forPack: ['gg1'],
+                    img: 'images/photos/bar4.jpg',
+                    name: 'Bữa tối buffet BBQ',
+                    detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
+                    selected: 0,
+                    before_price: 2000000,
+                    price: 1300000,
+                    selected: false
+                  },
+                  {
+                    ind: 2,
+                    forPack: ['gg1'],
+                    img: 'images/photos/bar4.jpg',
+                    name: 'Bữa tối buffet BBQ',
+                    detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
+                    selected: 0,
+                    before_price: 2000000,
+                    price: 1300000,
+                    selected: false
+                  },
+                  {
+                    ind: 3,
+                    forPack: ['gg1'],
+                    img: 'images/photos/bar4.jpg',
+                    name: 'Bữa tối buffet BBQ',
+                    detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
+                    selected: 0,
+                    before_price: 2000000,
+                    price: 1300000,
+                    selected: false
+                  }
+          ]
+        },
+        {
+          name: 'Thư giãn',
+          id: 1,
+          list: [
+                  {
+                    ind: 0,
+                    forPack: ['gg1'],
+                    img: 'images/photos/beach1.jpg',
+                    name: 'Khu bãi biển cá nhân',
+                    detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
+                    selected: 0,
+                    before_price: 2000000,
+                    price: 1300000,
+                    selected: false,
+                  },
+                  {
+                    ind: 1,
+                    forPack: ['gg1'],
+                    img: 'images/photos/beach1.jpg',
+                    name: 'Khu bãi biển cá nhân',
+                    detail: '<p>Tận hưởng bữa ăn tối độc đáo với nhiều món ăn đặc sản và đầy hương vị</p><p>Thời điểm diễn ra: 6 giờ tối</p>',
+                    selected: 0,
+                    before_price: 2000000,
+                    price: 1300000,
+                    selected: false
+                  },                 
+          ]
+        }
   		],
   		specialRequest: ''
   	};
@@ -118,7 +156,8 @@ angular.module('calm-booking')
           ],
           packages: [
   					{
-  						name: 'GÓI KHÔNG BỮA SÁNG',
+  						id: 'gg1',
+              name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
@@ -162,7 +201,8 @@ angular.module('calm-booking')
   						]
   					},
   					{
-  						name: 'GÓI KHÔNG BỮA SÁNG',
+  						id: 'gg1',
+              name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
               price: 1500000,
@@ -206,7 +246,8 @@ angular.module('calm-booking')
   						]
   					},
   					{
-  						name: 'GÓI KHÔNG BỮA SÁNG',
+  						id: 'gg1',
+              name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
               price: 1300000,
@@ -298,7 +339,8 @@ angular.module('calm-booking')
           ],
   				packages: [
   					{
-  						name: 'GÓI KHÔNG BỮA SÁNG',
+  						id: 'gg1',
+              name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
@@ -342,7 +384,8 @@ angular.module('calm-booking')
   						]
   					},
   					{
-  						name: 'GÓI KHÔNG BỮA SÁNG',
+  						id: 'gg1',
+              name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
@@ -386,7 +429,8 @@ angular.module('calm-booking')
   						]
   					},
   					{
-  						name: 'GÓI KHÔNG BỮA SÁNG',
+  						id: 'gg1',
+              name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
@@ -480,7 +524,8 @@ angular.module('calm-booking')
           ],
   				packages: [
   					{
-  						name: 'GÓI KHÔNG BỮA SÁNG',
+  						id: 'gg1',
+              name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
@@ -524,7 +569,8 @@ angular.module('calm-booking')
   						]
   					},
   					{
-  						name: 'GÓI KHÔNG BỮA SÁNG',
+  						id: 'gg1',
+              name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
@@ -568,7 +614,8 @@ angular.module('calm-booking')
   						]
   					},
   					{
-  						name: 'GÓI KHÔNG BỮA SÁNG',
+  						id: 'gg1',
+              name: 'GÓI KHÔNG BỮA SÁNG',
   						selected: 0,
               before_price: 2000000,
               price: 1200000,
@@ -685,10 +732,12 @@ angular.module('calm-booking')
         checkRoom = $scope.checkSelectedRoom(roomInd, packInd);
         if (!checkRoom) {
           roomInfo = {
-            roomName: room.name
+            roomName: room.name,
+            pic: room.imgs[0]
           };
           packInfo = {
             packName: pack.name,
+            packID: pack.id,
             price: pack.price
           };          
           roomObj = $.extend(true, {
@@ -696,6 +745,7 @@ angular.module('calm-booking')
             num: 1
           }, roomInfo, packInfo);
           csSearch.rooms.push(roomObj);
+          console.log(csSearch.rooms);
         } else {
           checkRoom.num++;
         }

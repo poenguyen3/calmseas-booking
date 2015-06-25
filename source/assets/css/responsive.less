@@ -26,12 +26,24 @@
 
 @media (max-width: @bt-xs-max) {
 
-
+  .cs-steps {
+    .step-nav {
+      font-size: 0.9rem;
+    }
+  }
   .cs-search-result {
     .cs-result-rooms {
       .cs-room-package {
         .cs-package-name {
           padding: 0px;
+        }
+
+        .cs-package-info {
+          padding-top: 0px;
+          .feature {
+            padding-top: 8px;
+            padding-left: 0px;
+          }
         }
 
         .cs-package-detail {
@@ -162,7 +174,14 @@
     }
   }
 }
-
+@media (max-width: @custom-mobile1) {
+  .cs-steps {
+    .step-nav {
+      .no-pad;
+      font-size: 0.75rem;
+    }
+  }  
+}
 @media (max-width: @custom-mobile) {
   .cs-search-result {
     .cs-result-rooms {

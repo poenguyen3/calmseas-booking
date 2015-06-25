@@ -66,7 +66,7 @@ body {
 .tb-white-dark {background-color: #333333; color: #ffffff}
 
 .booking-container {
-  background-color: #f9f9f9;
+  background-color: #f5f5f5;
 }
 
 .container {
@@ -126,6 +126,7 @@ body {
   }
   .text-center;
   .step-nav {
+    height: 60px;
     a {
       display: block;
       width: 100%;
@@ -493,13 +494,23 @@ body {
         .cs-real {
           font-weight: bold;
           color: #333333;
+          
+          .num {
+            font-size: 1.5rem;
+          }
+        }
+
+        .cs-before {
           .unit {
             font-size: 1rem;
             padding-right: 5px;
           }
-          .num {
-            font-size: 1.5rem;
+          .text {
+            text-decoration: line-through;          
+            color: gray;
           }
+          font-size: 1rem;
+          line-height: 1.5rem;
         }
 
         .cs-max-occ {
@@ -514,6 +525,9 @@ body {
             color: #666666;
             padding-left: 5px;
           }
+          .fa-plus {
+            font-size: 0.6rem;
+          }
         }
 
         .cs-remain-room {
@@ -521,12 +535,6 @@ body {
           color: #388E3C;
         }
 
-        .cs-before {
-          font-size: 1rem;
-          color: gray;
-          line-height: 1.5rem;
-          text-decoration: line-through;
-        }
       }
 
       .cs-package-specs {
@@ -551,8 +559,10 @@ body {
       }
 
       .cs-package-info {
+        padding-top: 10px;
         .feature {
           .pointer;
+          padding-top: 5px;
         }
         color: gray;
         .fa {
@@ -567,23 +577,23 @@ body {
       .cs-package-book {
         padding: 10px 0;
         .input-group {
-          width: 120px;
+          width: 110px;
           float: right;
-          height: 40px;
+          height: 32px;
         }
         input {
-          max-width: 70px;
+          max-width: 50px;
           text-align: center;
-          height: 40px;
-          line-height: 40px;
+          height: 32px;
+          line-height: 32px;
           &.active {
             color: #333333;
             background-color: #a5d6a7;
           }
         }
         button {
-          height: 40px;
-          width: 40px;
+          height: 32px;
+          width: 32px;
         }
       }
     }
@@ -767,6 +777,28 @@ body {
       height: 50px;
       line-height: 50px;
       font-size: 1.4rem;
+      .room-num {
+        float: right;
+      }
+    }
+
+    .pic {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .cs-extra-group {
+      .group-name {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #A59169;
+        line-height: 2rem;
+        border-bottom: 1px dashed #cecece;
+        .bg-light;
+        border-left: 1px solid #c4c4c4;
+        border-right: 1px solid #c4c4c4;
+      }
     }
 
     .cs-extra {
