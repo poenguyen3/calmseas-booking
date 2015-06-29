@@ -5,17 +5,17 @@
     .caption.col-xs-12.bg-dark3.text-white
       span {{room.roomName}} - {{ room.packName }}
       span.room-num x {{ room.num }}
-    .pic.col-xs-12.no-pad
+    .pic.col-xs-12.no-pad.hide
       img(src="{{ room.pic.src }}" alt="{{ room.pic.alt }}")
     .cs-extra-group.col-xs-12.no-pad(ng-repeat="group in room.extras track by $index" ng-show="checkExtraForPack(room.packID, group.list)")
       .group-name.col-xs-12.no-pad {{group.name}}
       .cs-extra.col-xs-12.no-pad.bg-light(ng-repeat="extra in group.list track by $index" ng-show="extra.forPack.indexOf(room.packID) != -1")
-        .pic.col-sm-3.hidden-xs
+        .pic.col-sm-3.hidden-xs.hide
           img(src="{{ extra.img }}" alt="booking calmseas")
-        .extra-info.col-xs-7.col-sm-6
-          .extra-name.col-xs-12 {{extra.name}}
-          .extra-detail-link.col-xs-12
-            a(href="#").brown-text(ng-click="toggleExtraDetail($event, $index, $parent.$index, room.packID)")
+        .extra-info.col-xs-7.col-sm-9
+          .extra-name.col-xs-12 
+            span.title {{extra.name}}
+            a.extra-detail-link(href="#").brown-text(ng-click="toggleExtraDetail($event, $index, $parent.$index, room.packID)")
               span.text Chi tiết
               span.fa.fa-caret-down
               span.fa.fa-caret-up

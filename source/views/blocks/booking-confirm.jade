@@ -17,44 +17,47 @@
         span.prop Thời gian mở cửa
         span.value  24/24h
       .field.col-xs-12
-        span.prop Check-in vào lúc
+        hr
+      .field.col-xs-12
+        span.prop Ngày nhận phòng
+        span.value  {{csSearchParams.checkin}}
+      .field.col-xs-12
+        span.prop Giờ nhận phòng
         span.value  14:00
       .field.col-xs-12
-        span.prop Check-out vào lúc
+        span.prop Ngày trả phòng
+        span.value  {{csSearchParams.checkout}}
+      .field.col-xs-12
+        span.prop Giờ trả phòng
         span.value  12:00
     .clearfix
   .cs-book-summary.col-xs-12.no-pad
     .cs-room-summary.col-xs-12.col-md-8
-      .book-room.col-xs-12(ng-repeat="room in csSearchParams.rooms | filter: selectedItem track by $index")
+      .book-room.col-xs-12(ng-repeat="room in csSearchParams.rooms track by $index")
         .room-num-customer.col-xs-6.col-sm-3
           .num Phòng {{$index + 1}}
-          .customer
-            span {{room.adult}} Người lớn
-            br
-            span {{room.child}} 1 trẻ em
         .room-name.col-sm-6.hidden-xs
-          .name  Standard Room
-          .package-name {{room.package}}
+          .name  {{room.roomName}}
+          .package-name {{room.packName}}
         .room-price.col-xs-6.col-sm-3
           .price.col-xs-12.no-pad
             span.unit VND
             span.num {{room.price * csSearchParams.nightNum | currency:'':0}}
-          .more-detail.col-xs-12.text-right.no-pad
+            .multi {{multiRoomText($index)}}
+          .more-detail.col-xs-12.text-right.no-pad.hide
             a(href="#").brown-text
               span.text Chi tiết
               span.fa.fa-caret-down
-      .book-room.col-xs-12
-        .room-num-customer.col-xs-6.col-sm-5
-          .num Gói thêm
-        .room-price.col-xs-6.col-sm-7
-          .price.col-xs-12.no-pad
-            span.unit VND
-            span.num {{getPriceSelectedExtra() | currency:'':0}}
-        .sum-detail.col-sm-9.col-sm-offset-3.show(ng-repeat="extra in csExtraList.extras | filter: selectedItem track by $index")
-          .fea.col-xs-7.col-sm-7 {{extra.name}}
-          .price.col-xs-5.col-sm-5
-            span.unit VND
-            span.num {{extra.price | currency:'':0}}
+          .clearfix
+        .clearfix
+        .extras-detail.col-sm-9.col-sm-offset-3.show(ng-repeat="group in room.extras track by $index")
+          .extra-group(ng-repeat="extra in group.list | filter: selectedItem")
+            .extra.col-xs-7.col-sm-7 {{extra.name}}
+            .price.col-xs-5.col-sm-5
+              span.unit VND
+              span.num {{extra.price | currency:'':0}} 
+              .multi{{multiExtraText(extra)}}
+            .clearfix
       .book-room.total.col-xs-12
         .room-num-customer.col-xs-6.col-sm-5
           .num.big Tổng cộng
@@ -62,7 +65,14 @@
           .price.col-xs-12.no-pad.big.text-right
             span.unit VND
             span.num {{getTotalSelectedPrice() | currency:'':0}}
-
+        .clearfix
+        .extras-detail.col-sm-9.col-sm-offset-3.show
+          .extra-group
+            .extra.col-xs-7.col-sm-7 VAT 
+            .price.col-xs-5.col-sm-5
+              span.unit VND
+              span.num {{getTotalSelectedPrice() * 10 / 110 | currency:'':0}} 
+            .clearfix
     .cs-features.col-xs-12.col-md-4.text-center
       .feature.col-xs-12.text-center
         .icon.fa.fa-thumbs-up.green

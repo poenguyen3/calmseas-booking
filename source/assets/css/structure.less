@@ -788,6 +788,7 @@ body {
       height: 50px;
       line-height: 50px;
       font-size: 1.4rem;
+      background-color: #A59169;
       .room-num {
         float: right;
       }
@@ -805,7 +806,7 @@ body {
         font-size: 1.4rem;
         color: #ffffff;
         padding: 8px 0;
-        background-color: #424242;
+        background-color: #8d6e63;
         border-left: 1px solid #c4c4c4;
         border-right: 1px solid #c4c4c4;
       }
@@ -851,6 +852,8 @@ body {
         }
 
         .extra-detail-link {
+          font-size: 1rem;
+          padding-left: 8px;
           .fa {
             padding-left: 5px;
           }
@@ -867,7 +870,6 @@ body {
           }
         }
         .extra-detail {
-          padding-top: 15px;
           padding-bottom: 15px;
           color: #565656;
           line-height: 1.3rem;
@@ -1005,6 +1007,7 @@ body {
           border-top: 0px;
         }
         .room-num-customer {
+          .no-pad;
           .num {
             font-size: 1.3rem;
             color: #333333;
@@ -1021,15 +1024,17 @@ body {
           }
         }
         .room-name {
+          .no-pad;
           font-size: 1.2rem;
           color: gray;
           line-height: 1.7rem;
         }
         .room-price {
           text-align: right;
+          .no-pad;
           .price {
             .unit {
-              font-size: 0.8rem;
+              font-size: 0.9rem;
               padding-right: 4px;
               color: #666666;
             }
@@ -1056,17 +1061,23 @@ body {
           }
         }
 
-        .sum-detail {
-          border-top: 1px solid #eeeeee;
-          padding: 15px 0;
-          .fea {
+        .extras-detail {
+          .no-pad;
+          .extra-group {
+            border-top: 1px solid #cfcfcf;
+            margin-top: 8px;
+            padding-top: 8px;
+          }
+          .extra {
+            .no-pad;
             font-size: 1rem;
             color: #777777;
           }
           .price {
             .text-right;
+            .no-pad;
             .unit {
-              font-size: 0.9rem;
+              font-size: 0.8rem;
               padding-right: 5px;
               color: #666666;
             }

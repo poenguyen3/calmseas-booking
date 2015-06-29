@@ -34,6 +34,7 @@ angular.module('calm-booking')
             elm.find('.step-3').addClass('active');
             $('.step-container').hide();
             $('.step-3').stop().show();
+            $(window).scrollTop(500);
           } else {
             alert("Bạn vui lòng chọn phòng trước khi tiếp tục");
           }

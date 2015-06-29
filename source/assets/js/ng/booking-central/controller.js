@@ -875,6 +875,8 @@ angular.module('calm-booking')
           });
         });
       }
+      // add VAT
+      total += total * 10 / 100;
       return total;
     };
 
@@ -954,6 +956,7 @@ angular.module('calm-booking')
     }
 
     $scope.selectedItem = function(item){
+      console.log(item);
     	return item.selected;
     }
   	console.log($scope.csSearchParams);
