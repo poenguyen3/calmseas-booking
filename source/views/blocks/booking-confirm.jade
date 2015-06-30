@@ -59,12 +59,17 @@
               .multi{{multiExtraText(extra)}}
             .clearfix
       .book-room.col-xs-12
-        .room-num-customer.col-xs-6.col-sm-3(style="line-height: 36px")
+        .room-num-customer.col-xs-4.col-sm-3(style="line-height: 36px")
           .num Coupon
-        .room-name.col-sm-6.hidden-xs
-          input(type="text" class="form-control")
-        .room-price.col-xs-6.col-sm-3
+        .room-name.col-xs-6.col-sm-6.hidden-xs
+          input(type="text" class="form-control" ng-model="coupon")
+        .col-xs-12.col-sm-2
+          button.btn.brown-btn(ng-click="checkCoupon()") Kiểm tra
         .clearfix
+        .brief.col-xs-8.col-sm-10.no-pad
+          span Vui lòng nhập mã khuyễn mãi nếu có
+        .result.col-xs-4.col-sm-2
+          span {{couponResult}}
         .clearfix
       .book-room.total.col-xs-12
         .room-num-customer.col-xs-6.col-sm-5

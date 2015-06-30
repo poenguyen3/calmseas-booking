@@ -1,5 +1,6 @@
 angular.module('calm-booking')
-  .controller('booking-central', ['$scope', '$sce', function($scope, $sce){
+  .controller('booking-central', ['$scope', '$sce', 'booking', function($scope, $sce, booking){
+
   	var today = new Date(),
   		nextDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
   		todayFm = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear(),
@@ -21,9 +22,20 @@ angular.module('calm-booking')
     	selectingRoom: 0,
   		rooms: []
   	};
-  	$scope.confirm = {
-  		rooms: []
-  	};
+
+
+    $scope.couponApply = {
+      code: 'CSS2015',
+      type: 'priceoff',
+      value: 30
+    };
+    $scope.price = {
+      totalOff: 0
+    };
+
+    $scope.coupon = '';
+
+    booking.send($scope.csSearchParams);
   	$scope.csExtraList = {
   		extras: [
         {
@@ -877,6 +889,7 @@ angular.module('calm-booking')
       }
       // add VAT
       total += total * 10 / 100;
+      total *= 1 - $scope.price.totalOff;
       return total;
     };
 
@@ -955,8 +968,20 @@ angular.module('calm-booking')
       }
     }
 
+    $scope.checkCoupon = function(){  
+      if ($scope.coupon.toUpperCase() === $scope.couponApply.code) {
+        $scope.applyCoupon($scope.couponApply);
+      }
+    };
+    $scope.applyCoupon = function(coupon){
+      switch (coupon.type){
+        case 'priceoff':{
+          $scope.price.totalOff = 0.3;
+        }break;
+      }
+    }
+
     $scope.selectedItem = function(item){
-      console.log(item);
     	return item.selected;
     }
   	console.log($scope.csSearchParams);
