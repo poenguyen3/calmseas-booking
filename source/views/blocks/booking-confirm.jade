@@ -55,7 +55,7 @@
             .extra.col-xs-7.col-sm-7 {{extra.name}}
             .price.col-xs-5.col-sm-5
               span.unit VND
-              span.num {{extra.price | currency:'':0}} 
+              span.num {{extra.price | currency:'':0}}
               .multi{{multiExtraText(extra)}}
             .clearfix
       .book-room.col-xs-12
@@ -63,12 +63,13 @@
           .num Coupon
         .room-name.col-xs-6.col-sm-6.hidden-xs
           input(type="text" class="form-control" ng-model="coupon")
-        .col-xs-12.col-sm-2
+        .col-xs-12.col-sm-3
           button.btn.brown-btn(ng-click="checkCoupon()") Kiểm tra
         .clearfix
-        .brief.col-xs-8.col-sm-10.no-pad
+        .hidden-xs.col-sm-3
+        .brief.col-xs-8.col-sm-6.no-pad
           span Vui lòng nhập mã khuyễn mãi nếu có
-        .result.col-xs-4.col-sm-2
+        .result.col-xs-4.col-sm-3
           span {{couponResult}}
         .clearfix
       .book-room.total.col-xs-12
@@ -81,10 +82,10 @@
         .clearfix
         .extras-detail.col-sm-9.col-sm-offset-3.show
           .extra-group
-            .extra.col-xs-7.col-sm-7 VAT 
+            .extra.col-xs-7.col-sm-7 VAT
             .price.col-xs-5.col-sm-5
               span.unit VND
-              span.num {{getTotalSelectedPrice() * 10 / 110 | currency:'':0}} 
+              span.num {{getTotalSelectedPrice() * 10 / 110 | currency:'':0}}
             .clearfix
     .cs-features.col-xs-12.col-md-4.text-center
       .feature.col-xs-12.text-center
