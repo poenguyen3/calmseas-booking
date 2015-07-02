@@ -59,16 +59,16 @@
               .multi{{multiExtraText(extra)}}
             .clearfix
       .book-room.col-xs-12
-        .room-num-customer.col-xs-4.col-sm-3(style="line-height: 36px")
+        .room-num-customer.col-xs-3.col-sm-3(style="line-height: 36px")
           .num Coupon
-        .room-name.col-xs-6.col-sm-6.hidden-xs
+        .room-name.col-xs-6.col-sm-6
           input(type="text" class="form-control" ng-model="coupon")
-        .col-xs-12.col-sm-3
+        .col-xs-3.col-sm-3
           button.btn.brown-btn(ng-click="checkCoupon()") Kiểm tra
         .clearfix
         .hidden-xs.col-sm-3
         .brief.col-xs-8.col-sm-6.no-pad
-          span Vui lòng nhập mã khuyễn mãi nếu có
+          span {{couponResultText || 'Vui lòng nhập mã khuyễn mãi nếu có'}}
         .result.col-xs-4.col-sm-3
           span {{couponResult}}
         .clearfix
@@ -121,6 +121,10 @@
         input.form-control(type="text" name="firstname" required="required")
       .form-group
         label Số điện thoại
+        input.form-control(type="text" name="phoneNumber" required="required")
+      .form-group
+        label Họ tên người nhận phòng
+        label (Trong trường hợp bạn đặt phòng cho một người khác)
         input.form-control(type="text" name="phoneNumber" required="required")
 
     .cs-payment.col-xs-12.col-md-6

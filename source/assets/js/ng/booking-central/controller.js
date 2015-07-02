@@ -971,8 +971,12 @@ angular.module('calm-booking')
     $scope.checkCoupon = function(){  
       if ($scope.coupon.toUpperCase() === $scope.couponApply.code) {
         $scope.applyCoupon($scope.couponApply);
+        $scope.couponResultText = 'Giảm giá 30%';
+      } else {
+        $scope.couponResultText = 'Mã coupon không đúng! Vui lòng nhập lại';        
       }
     };
+
     $scope.applyCoupon = function(coupon){
       switch (coupon.type){
         case 'priceoff':{
