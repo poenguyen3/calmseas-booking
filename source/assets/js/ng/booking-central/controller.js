@@ -918,7 +918,13 @@ angular.module('calm-booking')
           easing: 'easeOutQuart'
         });
     }
-
+    $scope.getTotalRoomsNum = function(){
+      var total = 0;
+      $scope.csSearchParams.rooms.forEach(function(room){
+        total += room.num;
+      })
+      return total;
+    };
     // Get details
     $scope.getExtraDetail = function(ind) {
     	return $sce.trustAsHtml($scope.csExtraList.extras[ind].detail);
@@ -968,12 +974,12 @@ angular.module('calm-booking')
       }
     }
 
-    $scope.checkCoupon = function(){  
+    $scope.checkCoupon = function(){
       if ($scope.coupon.toUpperCase() === $scope.couponApply.code) {
         $scope.applyCoupon($scope.couponApply);
         $scope.couponResultText = 'Giảm giá 30%';
       } else {
-        $scope.couponResultText = 'Mã coupon không đúng! Vui lòng nhập lại';        
+        $scope.couponResultText = 'Mã coupon không đúng! Vui lòng nhập lại';
       }
     };
 

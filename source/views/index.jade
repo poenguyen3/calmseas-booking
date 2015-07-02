@@ -6,7 +6,9 @@ block vars
   -menuIndex = 0
 
 block container
-  #booking-container.booking-container(ng-app="calm-booking" ng-controller="booking-central")
+  #loading.loading
+    span ĐANG TẢI
+  #booking-container.booking-container(ng-app="calm-booking" ng-controller="booking-central" ng-cloak check-render)
     include blocks/booking-header
     include blocks/booking-steps
     include blocks/room-search-form

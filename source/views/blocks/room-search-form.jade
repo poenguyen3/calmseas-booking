@@ -18,8 +18,13 @@
               input#checkout.col-xs-12.col-sm-12.col-md-12.form-control.input-sm.datepicker-out(ng-model="csSearchParams.checkout", type='text', name='arrival', readonly='readonly', style='')
         .clearfix
       .cs-search-roomsnum.col-xs-12.col-sm-12.col-md-5.text-center
-        span {{csSearchParams.nightNum}} đêm -
-        span  0 phòng
+        span(ng-cloak ng-bind="csSearchParams.nightNum")
+        span &nbsp;
+        span đêm -
+        span &nbsp;
+        span(ng-cloak ng-bind="{{getTotalRoomsNum()}}")
+        span &nbsp;
+        span phòng
       .clearfix
     .clearfix
 

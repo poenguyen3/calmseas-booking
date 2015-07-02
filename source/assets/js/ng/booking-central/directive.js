@@ -1,4 +1,17 @@
 angular.module('calm-booking')
+  .directive('checkRender', ['$timeout', function($timeout){
+    return {
+      restrict: 'A',
+      link: function(scope, elm, attrs){
+        $timeout(function(){
+          $('#loading').fadeOut();
+          elm.fadeIn(1400, 'easeInQuart', function(){
+            $(window).trigger('resize.summary');
+          });
+        });
+      }
+    }
+  }])
   .directive('csPopup', function(){
     return {
       restrict: 'A',
